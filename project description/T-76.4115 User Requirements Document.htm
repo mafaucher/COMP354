@@ -1,0 +1,726 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0074)http://www.soberit.hut.fi/T-76.115/05-06/ohjeet/template/requirements.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+
+<title>T-76.4115 User Requirements Document</title>
+</head>
+
+<body>
+
+<h1>User Requirements Document</h1>
+
+<h2>Name of the group (edit)</h2>
+
+<table border="1" cellpadding="0">
+ <tbody><tr>
+  <th>
+  <p><font size="2">Version</font></p>
+  </th>
+  <th>
+  <p><font size="2">Date</font></p>
+  </th>
+  <th>
+  <p><font size="2">Author</font></p>
+  </th>
+  <th>
+  <p><font size="2">Description</font></p>
+  </th>
+ </tr>
+ <tr>
+  <td><font size="2">1.00</font></td>
+  <td><font size="2">8.8.2005</font></td>
+  <td><font size="2">Aaltio, Vanhanen</font></td>
+  <td>&nbsp;</td>
+ </tr>
+ </tbody></table>
+
+<h3><b>Contents</b></h3>
+<table border="0" id="table1" cellspacing="4">
+	<tbody><tr>
+		<td>
+<a href="http://www.soberit.hut.fi/T-76.115/05-06/ohjeet/template/requirements.html#_Toc82800390">1. Purpose of the document</a><br>
+<a href="http://www.soberit.hut.fi/T-76.115/05-06/ohjeet/template/requirements.html#_Toc82800391">2. Business goals</a><br>
+<a href="http://www.soberit.hut.fi/T-76.115/05-06/ohjeet/template/requirements.html#_Toc82800392">3. Main domain concepts</a><br>
+<a href="http://www.soberit.hut.fi/T-76.115/05-06/ohjeet/template/requirements.html#_Toc82800393">4. System overview</a><br>
+<a href="http://www.soberit.hut.fi/T-76.115/05-06/ohjeet/template/requirements.html#_Toc82800394">5. User groups</a><br>
+<a href="http://www.soberit.hut.fi/T-76.115/05-06/ohjeet/template/requirements.html#_Toc82800395">6. Functional requirements</a></td>
+		<td>
+<a href="http://www.soberit.hut.fi/T-76.115/05-06/ohjeet/template/requirements.html#_Toc82800396">7. Non-functional requirements (quality requirements, properties)</a><br>
+<a href="http://www.soberit.hut.fi/T-76.115/05-06/ohjeet/template/requirements.html#_Toc82800397">8. User requirements</a><br>
+<a href="http://www.soberit.hut.fi/T-76.115/05-06/ohjeet/template/requirements.html#_Toc82800398">9. Constraints</a><br>
+<a href="http://www.soberit.hut.fi/T-76.115/05-06/ohjeet/template/requirements.html#_Toc82800399">10. Solution ideas</a><br>
+<a href="http://www.soberit.hut.fi/T-76.115/05-06/ohjeet/template/requirements.html#_Toc82800400">11. Acronyms and abbreviations</a><br>
+<a href="http://www.soberit.hut.fi/T-76.115/05-06/ohjeet/template/requirements.html#_Toc82800401">12. References</a></td>
+	</tr>
+</tbody></table>
+
+<h2><a name="_Toc82800390">1. </a>Purpose of the document</h2>
+
+<p>The purpose of this document is to define requirements for system XXXXXXX
+(name of the system).</p>
+
+<p>The intended audience of this document is described in table 1.</p>
+
+<p><b>Table 1</b>: Intended audience of this document.</p>
+
+<table border="1">
+ <tbody><tr>
+  <td>
+  <p><b>Group of the readers</b></p>
+  </td>
+  <td>
+  <p><b>Reasons for reading</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p>Users and customers</p>
+  </td>
+  <td>
+  <p>To give feedback about the requirements</p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p>System developers</p>
+  </td>
+  <td>
+  <p>To understand what functions and properties the system must contain</p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p>Testers</p>
+  </td>
+  <td>
+  <p>To test the system against the requirements</p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p>Writers of user manuals</p>
+  </td>
+  <td>
+  <p>To get material for user manuals</p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p>Project team</p>
+  </td>
+  <td>
+  <p>To follow-up the status of the project against the requirements</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<h2><a name="_Toc82800391">2. </a>Business goals</h2>
+
+<p>This section describes the business problem (or business goals), in other
+words the reasons why the customer wants to develop a new system. </p>
+
+<p>Describe shortly the current way of doing business and the potential
+improvements the customer expects from the new system.</p>
+
+<h2><a name="_Toc82800392">3. </a>Main domain concepts</h2>
+
+<p>This chapter gives a brief introduction to the problem domain. It might
+include</p>
+
+<ul>
+ <li>Textual definitions of the most important domain concepts</li>
+ <li>A conceptual data model defining the relationship between the most important domain concepts</li>
+</ul>
+
+<p><b>Table 2</b>. Main domain concepts of the users</p>
+
+<table border="1">
+ <tbody><tr>
+  <td>
+  <p><b>Concept</b></p>
+  </td>
+  <td>
+  <p><b>Description</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p>Loyal Customer</p>
+  </td>
+  <td>
+  <p>Someone who has registered with Company xxx web site. Gets
+  special prices and offers. All his orders are registered in the database.</p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p>&nbsp;</p>
+  </td>
+  <td>
+  <p>&nbsp;</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<h2><a name="_Toc82800393">4. </a>System overview</h2>
+
+<p>This section is a high level description of the intended solution (=the
+system). It might include </p>
+
+<ul>
+ <li>a list of essential features of the system</li>
+ <li>a graph (for example a use case diagram) that defines the users and the main functions of the system</li>
+</ul>
+
+<h2><a name="_Toc82800394">5. </a>User groups </h2>
+
+<p>This section describes intended users of the system.</p>
+
+<p><b>Table 3</b>. Users of the system</p>
+
+<table border="1">
+ <tbody><tr>
+  <td>
+  <p><b>User group</b></p>
+  </td>
+  <td>
+  <p><b>Description</b></p>
+  </td>
+  <td>
+  <p><b>Number of users</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p>User group A</p>
+  </td>
+  <td>
+  <p>&nbsp;</p>
+  </td>
+  <td>
+  <p>n persons</p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p>User group B</p>
+  </td>
+  <td>
+  <p>&nbsp;</p>
+  </td>
+  <td>
+  <p>&nbsp;</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<h2><a name="_Toc82800395">6. </a>Functional requirements</h2>
+
+<p>This section defines the functionality (services) that the system must
+provide in order to meet the business goals.</p>
+
+<p>Functional requirements can be organized in several ways, e.g. by feature or
+by use case. The layout can be determined by each group – the example layout
+below can be used.</p>
+
+<table border="1">
+ <tbody><tr>
+  <th>
+  <p>ID</p>
+  </th>
+  <th>
+  <p>Ver</p>
+  </th>
+  <th>
+  <p>Feature</p>
+  </th>
+  <th>
+  <p>Requirement</p>
+  </th>
+  <th>
+  <p>Source</p>
+  </th>
+  <th>
+  <p>Rationale</p>
+  </th>
+  <th>
+  <p>Priority</p>
+  </th>
+  <th>
+  <p>Status</p>
+  </th>
+  <th>
+  <p>Traces to use cases</p>
+  </th>
+ </tr>
+ 
+ <tr>
+  <td>
+  <p>F1</p>
+  </td>
+  <td>
+  <p>1</p>
+  </td>
+  <td>
+  <p>Ordering</p>
+  </td>
+  <td>
+  <p>The user shall be able to order any company xxx product.</p>
+  </td>
+  <td>
+  <p>Product Manager N.N.</p>
+  </td>
+  <td>
+  <p>With the current site, all products cannot be ordered. According to user
+  interviews, users don’t want to order anything since they cannot order
+  everything they want at the same time.</p>
+  </td>
+  <td>
+  <p>Must</p>
+  </td>
+  <td>
+  <p>Proposed</p>
+  </td>
+  <td>
+  <p>Order goodies</p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p>F2</p>
+  </td>
+  <td>
+  <p>1</p>
+  </td>
+  <td>
+  <p>Ordering</p>
+  </td>
+  <td>
+  <p>Loyal customers shall be able to get special prices and offers.</p>
+  </td>
+  <td>
+  <p>Product Manager N.N.</p>
+  </td>
+  <td>
+  <p>We want everybody to be loyal customers.</p>
+  </td>
+  <td>
+  <p>Must</p>
+  </td>
+  <td>
+  <p>Proposed</p>
+  </td>
+  <td>
+  <p>Order goodies, browse products, </p>
+  </td>
+ </tr>
+</tbody></table>
+
+
+<h2><a name="_Toc82800396">7. </a>Non-functional
+requirements (quality requirements, properties)</h2>
+
+<p>Non-functional requirements are documented in this section. The layout can be
+determined by each group – the example layout below can be used.</p>
+
+<table border="1">
+ <tbody><tr>
+  <th>
+  <p>ID</p>
+  </th>
+  <th>
+  <p>Ver</p>
+  </th>
+  <th>
+  <p>Requirement</p>
+  </th>
+  <th>
+  <p>Source</p>
+  </th>
+  <th>
+  <p>Rationale</p>
+  </th>
+  <th>
+  <p>Priority</p>
+  </th>
+  <th>
+  <p>Status</p>
+  </th>
+  <th>
+  <p>Traces to use cases</p>
+  </th>
+ </tr>
+ <tr>
+  <td>
+  <p>S1</p>
+  </td>
+  <td>
+  <p>1</p>
+  </td>
+  <td>
+  <p>Only registered users are allowed to use the system</p>
+  </td>
+  <td>
+  <p>Security Manager S.M.</p>
+  </td>
+  <td>
+  <p>Confidential information must not leak out of the company.</p>
+  </td>
+  <td>
+  <p>Must</p>
+  </td>
+  <td>
+  <p>Proposed</p>
+  </td>
+  <td>
+  <p>Register, Login, Logout</p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p>O1</p>
+  </td>
+  <td>
+  <p>1</p>
+  </td>
+  <td>
+  <p>It shall be possible to use the system with a portable phone (wap).</p>
+  </td>
+  <td>
+  <p>Product Manager N.N.</p>
+  </td>
+  <td>
+  <p>The whole point of the new system is to enable customers to order
+  wireless.</p>
+  </td>
+  <td>
+  <p>Must</p>
+  </td>
+  <td>
+  <p>Proposed</p>
+  </td>
+  <td>
+  <p>Order goodies</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<h2><a name="_Toc82800397">8. </a>User requirements (use cases)</h2>
+
+<p>Use cases are strongly recommended to be used in documenting user requirements.
+The following sections are typically included in use case descriptions:</p>
+
+<ul>
+ <li>Name: Unique name of the
+     use case (the same as the name in the use case diagram)</li>
+ <li>Summary: Short description
+     of the use case</li>
+ <li>Actors: List of users and
+     the other systems that interacts directly with a system</li>
+ <li>Preconditions: Description
+     of "start situation" and goals of the users</li>
+ <li>Basic sequence:
+     Description of main actions</li>
+ <li>Exceptions: Descriptions
+     of special situations, violations of business rules etc.</li>
+ <li>Post conditions: Description
+     of "end situation"</li>
+ <li>Priority</li>
+ <li>Status</li>
+ <li>Traces to requirements</li>
+ <li>Traces to test cases</li>
+</ul>
+
+
+<table border="1">
+ <tbody><tr>
+  <td>
+  <p><b>Name</b></p>
+  </td>
+  <td>
+  <p>Login</p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><b>Summary</b></p>
+  </td>
+  <td>
+  <p>The user is requesting a function that requires the user to be registered. The
+  user must be identified.</p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><b>Actors</b></p>
+  </td>
+  <td>
+  <p>Any user.</p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><b>Preconditions</b></p>
+  </td>
+  <td>
+  <p>-</p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><b>Basic
+  Sequence</b></p>
+  </td>
+  <td>
+  <p>1. The system requests an identification (username, password)<br>
+	2. The user enters his username and password.<br>
+	3. The system checks the validity of the username and password.<br>
+	4. The system grants the user access to the system.</p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><b>Exceptions</b></p>
+  </td>
+  <td>
+  <p>4a. If the identification is not valid, the message “You are NOT welcome here”
+  will be given.<br>
+	4b. If the identification is valid but the password has expired, the message “Your
+  password has expired. Please enter new password” will be given. The user has
+  to enter the new password twice identically. The password will be changed and
+  the user will be granted access to the system.</p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><b>Post Conditions</b></p>
+  </td>
+  <td>
+    <p>A valid user has been granted access to the system. </p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><b>Priority</b></p>
+  </td>
+  <td>
+  <p>Must</p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><b>Status</b></p>
+  </td>
+  <td>
+  <p>Implemented</p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><b>Traces to requirements</b></p>
+  </td>
+  <td>
+  <p>S1</p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p><b>Traces to test cases</b></p>
+  </td>
+  <td>
+  <p>T1, T2, T3.</p>
+  </td>
+ </tr>
+</tbody></table>
+
+
+<h2><a name="_Toc82800398">9. </a>Constraints</h2>
+
+<p>In this section, solution constraints are listed. These might include</p>
+
+<ul>
+ <li>Standards</li>
+ <li>Software constraints</li>
+ <li>Hardware constraints</li>
+</ul>
+
+<table border="1">
+ <tbody><tr>
+  <th>
+  <p>ID</p>
+  </th>
+  <th>
+  <p>Ver</p>
+  </th>
+  <th>
+  <p>Constraint</p>
+  </th>
+  <th>
+  <p>Source</p>
+  </th>
+  <th>
+  <p>Rationale</p>
+  </th>
+  <th>
+  <p>Priority</p>
+  </th>
+  <th>
+  <p>Status</p>
+  </th>
+  <th>
+  <p>Traces to use cases</p>
+  </th>
+ </tr>
+ <tr>
+  <td>
+  <p>C1</p>
+  </td>
+  <td>
+  <p>1</p>
+  </td>
+  <td>
+  <p>The user interface must run on any well-known browser including IE, Opera
+  and Mozilla. </p>
+  </td>
+  <td>
+  <p>Technical Coordinator N.N</p>
+  </td>
+  <td>
+  <p>People have different browsers – we want to serve them all.</p>
+  </td>
+  <td>
+  <p>Must</p>
+  </td>
+  <td>
+  <p>Proposed</p>
+  </td>
+  <td>
+  <p>All use cases with browser interface</p>
+  </td>
+ </tr>
+</tbody></table>
+
+
+<h2><a name="_Toc82800399">10. </a>Solution ideas</h2>
+
+<p>A list of possible solution ideas that came up during requirements definition
+- and possibly a short description of each idea. Keep it short!</p>
+
+<table border="1">
+ <tbody><tr>
+  <th>
+  <p>ID</p>
+  </th>
+  <th>
+  <p>Ver</p>
+  </th>
+  <th>
+  <p>Solution idea</p>
+  </th>
+  <th>
+  <p>Source</p>
+  </th>
+  <th>
+  <p>Rationale</p>
+  </th>
+  <th>
+  <p>Traces to use cases</p>
+  </th>
+ </tr>
+ <tr>
+  <td>
+  <p>SI1</p>
+  </td>
+  <td>
+  <p>1</p>
+  </td>
+  <td>
+  <p>Special offers could be shown in the left-most column - the way they are 
+  shown at amazon.com</p>
+  </td>
+  <td>
+  <p>Technical Coordinator N.N</p>
+  </td>
+  <td>
+  <p>This came up when our usability specialist evaluated several interesting sites where products are sold.</p>
+  </td>
+  <td>
+  <p>Order goodies</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p>
+
+</p><h2><a name="_Toc82800400">11. </a>Acronyms and abbreviations</h2>
+
+<p>A glossary explaining the special terms and abbreviations used in this
+document are explained here.</p>
+
+<p><b>Table x</b>. Acronyms</p>
+
+<table border="1">
+ <tbody><tr>
+  <td>
+  <p><b>Acronym/abbreviation/special term</b></p>
+  </td>
+  <td>
+  <p><b>Description</b></p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p>&nbsp;</p>
+  </td>
+  <td>
+  <p>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p>&nbsp;</p>
+  </td>
+  <td>
+  <p>&nbsp;</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<h2><a name="_Toc82800401">12. </a>References</h2>
+
+<p>List here all the documents that have been used as an information source and
+are necessary for understanding of this document. List also other
+specifications that have been used as a reference.</p>
+
+<p><b>Table x</b>. A list of all other relevant documents</p>
+
+<table border="1">
+ <tbody><tr>
+  <th>
+  <p>Name of the document</p>
+  </th>
+  <th>
+  <p>Short description of the document contents</p>
+  </th>
+ </tr>
+ <tr>
+  <td>
+  <p>&nbsp;</p>
+  </td>
+  <td>
+  <p>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+  <p>&nbsp;</p>
+  </td>
+  <td>
+  <p>&nbsp;</p>
+  </td>
+ </tr>
+</tbody>
+</table>
+
+
+</body></html>
