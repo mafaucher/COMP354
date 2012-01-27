@@ -209,33 +209,53 @@ public class StaXParser {
     			  content += " ";
     		}
     		
-    		content += "| Total Hours | Projects" + "\n" +
-					 "--------------------------------------" + "\n";
-
+    		content += "| Total Hours | Projects" + "\r\n" + "--------------------------------------" + "\r\n";  // <=== The "\r\n" is for newline
+    																											 // so that in a text file every record
+    																											 // appears under. row after row.
+    		
+    		System.out.println(content.substring(0,content.length()-2));	// <=== WRITE HEADER TO CONSOLE WINDOW
+    																		// .substring(0,content.length()-2) is to remove extra linefeed
+    																		// so that it writes to console window exactly as seen in the file 
+    		
+    		String _temp_Person_output_row_ = ""; 	// <=== Temporary string to hold all the data to be written to console
+    												// window in a row by row manner.
+    		
 	    	for ( Person temp : people ){
 	    		currnamelen = temp.getName().length();
-
+	    			
 	    		content += temp.getName();
+	    		
+	    		
+	    		_temp_Person_output_row_ += temp.getName(); 
 	    		
 	     		for (i=0; i<((longestnamelen-currnamelen)+1); i++){
 	    			  content += " ";
+	    			  _temp_Person_output_row_ += " ";
 	    		}
 	    		
 	     		String roundedHours = String.format("%.2f", temp.getTotalHours());
 	    		content +="| ";
+	    		_temp_Person_output_row_ += "| ";
+	    		
+	    		
     			    		
 	     		content += roundedHours;
+	     		_temp_Person_output_row_ += roundedHours;
+	     		
 	    		currhourslen = Double.toString(temp.getTotalHours()).length();
 
 	    		currhourslen = headers[1].length();
-
+	    		
 	    		
 	     		for (i=0; i<((longesthourslen-currhourslen)-1); i++){
 	    			  content += " ";
+	    			  _temp_Person_output_row_ += " ";
 	    		}
-	     		content += "| " + temp.getProjects() + "\n";
-
+	     		content += "| " + temp.getProjects() + "\r\n";
+	     		_temp_Person_output_row_ += "| " + temp.getProjects() + "\r\n";
 	    	}
+	    	
+     		System.out.println(_temp_Person_output_row_);
     	
 
     		
