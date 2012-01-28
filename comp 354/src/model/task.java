@@ -1,12 +1,12 @@
 package model;
-public class task {
+public class Task {
 	private String identifier;
 	private String title;
 	private String description;
+	private String startdate;
 	private String duration;
 	private String deliverable;
 	private String deadline;
-	private String personassigned;
 	private String completion;
 	
 	public String getIdentifier() {
@@ -46,13 +46,6 @@ public class task {
 	public void setDeadline(String deadline){
 		this.deadline=deadline;
 	}
-	public String getPersonassigned(){
-		return personassigned;
-	}
-	
-	public void setPersonassigned(String personassigned) {
-		this.personassigned = personassigned;
-	}
 	public String getCompletion(){
 		return completion;
 	}
@@ -61,9 +54,10 @@ public class task {
 	}
 
 
+
 	@Override
 	public String toString() {
 		return "task [identifier=" + identifier + ", title=" + title + ", description="
-				+ description + ", duration=" + duration + ", deliverable=" + deliverable + ", deadline=" + deadline + ", people assigned=" + personassigned + ", completion=" + completion + "]";
+				+ description + ", duration=" + duration + ", deliverable=" + deliverable + ", deadline=" + deadline + ", completion=" + completion + "]";
 	}
 }

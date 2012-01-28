@@ -23,18 +23,30 @@ import javax.xml.stream.events.XMLEvent;
 
 public class StaXParser {
 	static final String TASK="task";
+	static final String PERSON="person";
+	static final String SUBTASK="subtask";
 	static final String IDENTIFIER = "identifier";
+	static final String ID = "id";
+	static final String PARENTID = "parentid";
 	static final String TITLE = "title";
 	static final String DESCRIPTION = "description";
 	static final String DURATION = "duration";
 	static final String DELIVERABLE = "deliverable";
+	static final String STARTDATE = "startdate";
 	static final String DEADLINE = "deadline";
-	static final String PERSONASSIGNED = "personassigned";
+	static final String SUBTASKS = "subtasks";
 	static final String COMPLETION = "completion";
+	static final String PRIORITY = "priority";
+	static final String PEOPLEASSIGNED = "peopleassigned";
+	static final String FNAME = "fname";
+	static final String LNAME = "lname";
+	static final String JOBTITLE = "jobtitle";
+	static final String JOBDESCRIPTION = "jobdescription";
+	static final String CLEARANCE = "clearance";
 
 	@SuppressWarnings({ "unchecked", "null" })
-	public List<task> readConfig(String configFile) {
-		List<task> tasks = new ArrayList<task>();
+	public List<Task> readTasks(String configFile) {
+		List<Task> tasks = new ArrayList<Task>();
 		try {
 			// First create a new XMLInputFactory
 			XMLInputFactory inputFactory = XMLInputFactory.newInstance();
@@ -42,7 +54,7 @@ public class StaXParser {
 			InputStream in = new FileInputStream(configFile);
 			XMLEventReader eventReader = inputFactory.createXMLEventReader(in);
 			// Read the XML document
-			task task = null;
+			Task task = null;
 
 			while (eventReader.hasNext()) {
 				XMLEvent event = eventReader.nextEvent();
@@ -51,7 +63,7 @@ public class StaXParser {
 					StartElement startElement = event.asStartElement();
 					// If we have a item element we create a new item
 					if (startElement.getName().getLocalPart() == (TASK)) {
-						task = new task();
+						task = new Task();
 						// We read the attributes from this tag and add the date
 						// attribute to our object
 						/*Iterator<Attribute> attributes = startElement
@@ -100,15 +112,15 @@ public class StaXParser {
 						continue;
 					}
 					if (event.asStartElement().getName().getLocalPart()
-							.equals(DEADLINE)) {
+							.equals(STARTDATE)) {
 						event = eventReader.nextEvent();
 						task.setDeadline(event.asCharacters().getData());
 						continue;
 					}
 					if (event.asStartElement().getName().getLocalPart()
-							.equals(PERSONASSIGNED)) {
+							.equals(DEADLINE)) {
 						event = eventReader.nextEvent();
-						task.setPersonassigned(event.asCharacters().getData());
+						task.setDeadline(event.asCharacters().getData());
 						continue;
 					}
 					if (event.asStartElement().getName().getLocalPart()
@@ -135,149 +147,200 @@ public class StaXParser {
 		return tasks;
 	}
 	
-    public static void processOutput( List<task> taskList )
-    {	
-    	try{
+	public List<Subtask> readSubtasks(String configFile) {
+		List<Subtask> subtasks = new ArrayList<Subtask>();
+		try {
+			// First create a new XMLInputFactory
+			XMLInputFactory inputFactory = XMLInputFactory.newInstance();
+			// Setup a new eventReader
+			InputStream in = new FileInputStream(configFile);
+			XMLEventReader eventReader = inputFactory.createXMLEventReader(in);
+			// Read the XML document
+			Subtask subtask = null;
 
-    		ArrayList uniquenames = new ArrayList(); 
-    		ArrayList<Person> people = new ArrayList<Person>();
-    		
-    		System.out.println("Writing Output File...");
-    		
-    		int n = 0;
-    		int longestnamelen = 0;
-    		int longesthourslen = 0;	
-    		int longestprojlistlen = 0;	
-    		
-    		for (task task : taskList) {
-    			String[] names =  task.getPersonassigned().toString().split( ",\\s*" );
+			while (eventReader.hasNext()) {
+				XMLEvent event = eventReader.nextEvent();
 
-    			for ( String string : names ){
-    				int onproj = names.length;
-    				double timedistro = (Double.parseDouble(task.getDuration()) / onproj);
+				if (event.isStartElement()) {
+					StartElement startElement = event.asStartElement();
+					// If we have a item element we create a new item
+					if (startElement.getName().getLocalPart() == (SUBTASK)) {
+						subtask = new Subtask();
+						// We read the attributes from this tag and add the date
+						// attribute to our object
+						/*Iterator<Attribute> attributes = startElement
+								.getAttributes();
+						while (attributes.hasNext()) {
+							Attribute attribute = attributes.next();
+							if (attribute.getName().toString().equals(DATE)) {
+								item.setDate(attribute.getValue());
+							}
 
-			    	if(string.length() > longestnamelen){
-			    		longestnamelen = string.length();    			    		
-			    	}
-			    	
+						}*/
+					}
 
-    			    if(!uniquenames.contains(string)){
-    			    	Person temp = new Person();
-    			    	
-    			    	temp.setName(string);
-    			    	temp.setTotalHours(timedistro);
-    			    	temp.setProjects(task.getIdentifier());
-    	    	
-    			    	people.add(temp);    
-    			    	uniquenames.add(string);
-    			    }
-    			    else{
-    			    	Iterator iterator = people.iterator();
-    					
-    			    	for ( Person temp : people ){
-    			    			if( string.equals(temp.getName())){
-    			    				temp.setTotalHours(timedistro);
-    			    				temp.setProjects(task.getIdentifier());
-    			    				
-    						    	if(temp.getProjects().toString().length() > longestprojlistlen){
-    						    		longestprojlistlen = temp.getProjects().toString().length();    
-    						    	}
-    						    	
-    						    	if(Double.toString(temp.getTotalHours()).length() > longesthourslen){
-    						    		longesthourslen = Double.toString(temp.getTotalHours()).length();
-    						    	}
-    			    			}
-    			    	}
-    			    	
-    			    }
-    			}    			
-    		}
-    		
-    		
-    		String[] headers = {"Name","Total Hours","Project List"};
-    		
-    		// Write out the file header
-    		String content = "Name";
-    		
-    		int i = 0;
-    		int currnamelen = 0;
-    		int currhourslen = 0;
-    		int headerlen = 0;
-    		int projlistlen = 0;
-    		
-    		for (i=0; i<(longestnamelen-3); i++){
-    			  content += " ";
-    		}
-    		
-    		content += "| Total Hours | Projects" + "\r\n" + "--------------------------------------" + "\r\n";  // <=== The "\r\n" is for newline
-    																											 // so that in a text file every record
-    																											 // appears under. row after row.
-    		
-    		System.out.println(content.substring(0,content.length()-2));	// <=== WRITE HEADER TO CONSOLE WINDOW
-    																		// .substring(0,content.length()-2) is to remove extra linefeed
-    																		// so that it writes to console window exactly as seen in the file 
-    		
-    		String _temp_Person_output_row_ = ""; 	// <=== Temporary string to hold all the data to be written to console
-    												// window in a row by row manner.
-    		
-	    	for ( Person temp : people ){
-	    		currnamelen = temp.getName().length();
-	    			
-	    		content += temp.getName();
-	    		
-	    		
-	    		_temp_Person_output_row_ += temp.getName(); 
-	    		
-	     		for (i=0; i<((longestnamelen-currnamelen)+1); i++){
-	    			  content += " ";
-	    			  _temp_Person_output_row_ += " ";
-	    		}
-	    		
-	     		String roundedHours = String.format("%.2f", temp.getTotalHours());
-	    		content +="| ";
-	    		_temp_Person_output_row_ += "| ";
-	    		
-	    		
-    			    		
-	     		content += roundedHours;
-	     		_temp_Person_output_row_ += roundedHours;
-	     		
-	    		currhourslen = Double.toString(temp.getTotalHours()).length();
+					if (event.isStartElement()) {
+						if (event.asStartElement().getName().getLocalPart()
+								.equals(IDENTIFIER)) {
+							event = eventReader.nextEvent();
+							subtask.setIdentifier(event.asCharacters().getData());
+							continue;
+						}
+					}
+					if (event.isStartElement()) {
+						if (event.asStartElement().getName().getLocalPart()
+								.equals(PARENTID)) {
+							event = eventReader.nextEvent();
+							subtask.setParentID(event.asCharacters().getData());
+							continue;
+						}
+					}
+					if (event.asStartElement().getName().getLocalPart()
+							.equals(TITLE)) {
+						event = eventReader.nextEvent();
+						subtask.setTitle(event.asCharacters().getData());
+						continue;
+					}
 
-	    		currhourslen = headers[1].length();
-	    		
-	    		
-	     		for (i=0; i<((longesthourslen-currhourslen)-1); i++){
-	    			  content += " ";
-	    			  _temp_Person_output_row_ += " ";
-	    		}
-	     		content += "| " + temp.getProjects() + "\r\n";
-	     		_temp_Person_output_row_ += "| " + temp.getProjects() + "\r\n";
-	    	}
-	    	
-     		System.out.println(_temp_Person_output_row_);
-    	
+					if (event.asStartElement().getName().getLocalPart()
+							.equals(DESCRIPTION)) {
+						event = eventReader.nextEvent();
+						subtask.setDescription(event.asCharacters().getData());
+						continue;
+					}
 
-    		
+					if (event.asStartElement().getName().getLocalPart()
+							.equals(DURATION)) {
+						event = eventReader.nextEvent();
+						subtask.setDuration(event.asCharacters().getData());
+						continue;
+					}
+					if (event.asStartElement().getName().getLocalPart()
+							.equals(PRIORITY)) {
+						event = eventReader.nextEvent();
+						subtask.setPriority(event.asCharacters().getData());
+						continue;
+					}
 
-    		File file = new File("people.txt"); // Name of the output file
- 
-    		// If the file does not exists, create it.
-    		if(!file.exists()){
-    		   file.createNewFile();
-    		}
- 
-    		FileOutputStream fop=new FileOutputStream(file);
-		//get the content in bytes
-    		fop.write(content.getBytes());
-    		fop.flush();
-	        fop.close();
- 
-            System.out.println("Output File Successfully Written.");
- 
-    	}catch(IOException e){
-    		e.printStackTrace();
-    	}
-    }
+					if (event.asStartElement().getName().getLocalPart().equals(ID)) {					
+					
+						event = eventReader.nextEvent();
+
+						subtask.setPeopleassigned(event.asCharacters().getData());
+						continue;
+		
+					}
+
+				}
+				// If we reach the end of an item element we add it to the list
+				if (event.isEndElement()) {
+					EndElement endElement = event.asEndElement();
+					if (endElement.getName().getLocalPart() == (SUBTASK)) {
+						subtasks.add(subtask);
+					}
+				}
+
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (XMLStreamException e) {
+			e.printStackTrace();
+		}
+		
+		return subtasks;
+	}
+	
+	public List<Person> readPeople(String configFile) {
+		List<Person> people = new ArrayList<Person>();
+		try {
+			// First create a new XMLInputFactory
+			XMLInputFactory inputFactory = XMLInputFactory.newInstance();
+			// Setup a new eventReader
+			InputStream in = new FileInputStream(configFile);
+			XMLEventReader eventReader = inputFactory.createXMLEventReader(in);
+			// Read the XML document
+			Person person = null;
+
+			while (eventReader.hasNext()) {
+				XMLEvent event = eventReader.nextEvent();
+
+				if (event.isStartElement()) {
+					StartElement startElement = event.asStartElement();
+					// If we have a item element we create a new item
+					if (startElement.getName().getLocalPart() == (PERSON)) {
+						person = new Person();
+						// We read the attributes from this tag and add the date
+						// attribute to our object
+						/*Iterator<Attribute> attributes = startElement
+								.getAttributes();
+						while (attributes.hasNext()) {
+							Attribute attribute = attributes.next();
+							if (attribute.getName().toString().equals(DATE)) {
+								item.setDate(attribute.getValue());
+							}
+
+						}*/
+					}
+
+					if (event.isStartElement()) {
+						if (event.asStartElement().getName().getLocalPart()
+								.equals(IDENTIFIER)) {
+							event = eventReader.nextEvent();
+							person.setIdentifier(event.asCharacters().getData());
+							continue;
+						}
+					}
+					if (event.asStartElement().getName().getLocalPart()
+							.equals(FNAME)) {
+						event = eventReader.nextEvent();
+						person.setFName(event.asCharacters().getData());
+						continue;
+					}
+
+					if (event.asStartElement().getName().getLocalPart()
+							.equals(LNAME)) {
+						event = eventReader.nextEvent();
+						person.setLName(event.asCharacters().getData());
+						continue;
+					}
+					if (event.asStartElement().getName().getLocalPart()
+							.equals(JOBTITLE)) {
+						event = eventReader.nextEvent();
+						person.setJobTitle(event.asCharacters().getData());
+						continue;
+					}
+
+					if (event.asStartElement().getName().getLocalPart()
+							.equals(JOBDESCRIPTION)) {
+						event = eventReader.nextEvent();
+						person.setJobDescription(event.asCharacters().getData());
+						continue;
+					}
+
+					if (event.asStartElement().getName().getLocalPart()
+							.equals(CLEARANCE)) {
+						event = eventReader.nextEvent();
+						person.setClearance(event.asCharacters().getData());
+						continue;
+					}
+	
+				}
+				// If we reach the end of an item element we add it to the list
+				if (event.isEndElement()) {
+					EndElement endElement = event.asEndElement();
+					if (endElement.getName().getLocalPart() == (PERSON)) {
+						people.add(person);
+					}
+				}
+
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (XMLStreamException e) {
+			e.printStackTrace();
+		}
+		return people;
+	}
+
 }
 
