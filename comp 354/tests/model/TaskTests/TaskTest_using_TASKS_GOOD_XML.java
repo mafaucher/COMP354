@@ -1,61 +1,60 @@
-package model.unit_tests;
+package model.TaskTests;
 
 import static org.junit.Assert.*;
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
 import junit.framework.Assert;
 
 import model.StaXParser;
-import model.task;
+import model.Task;
 
-
+import org.junit.AfterClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
 
 
 @RunWith(Parameterized.class)
-public class taskTest__with_staXParser_using_GOOD_XML  {
+public class TaskTest_using_TASKS_GOOD_XML {
 
-		
 	private static StaXParser __StaXParser__;
-
+	
+	private static String dataFile = "tests/resources/TASKS_GOOD.xml";
+	
 	private static String IDENTIFIER;
 	private static String TITLE;
 	private static String DESCRIPTION;
 	private static String DURATION;
 	private static String DELIVERABLE;
 	private static String DEADLINE;
-	private static String PERSONASSIGNED;
+	//private static String PERSONASSIGNED;
 	private static String COMPLETION;
 	
-	public taskTest__with_staXParser_using_GOOD_XML (	task _param1_, 	Boolean _b1_
-									     	
-											) {
-		this.IDENTIFIER = _param1_.getIdentifier();
-		this.TITLE = _param1_.getTitle();
-		this.DESCRIPTION = _param1_.getDescription();
-		this.DURATION = _param1_.getDuration();
-		this.DELIVERABLE = _param1_.getDelivarable();
-		this.DEADLINE = _param1_.getDeadline();
-		this.PERSONASSIGNED = _param1_.getPersonassigned();
-		this.COMPLETION = _param1_.getCompletion();
-	}
 	
+	public TaskTest_using_TASKS_GOOD_XML (	Task _param1_, 	Boolean _b1_) {				
+		IDENTIFIER = _param1_.getIdentifier();
+		TITLE = _param1_.getTitle();
+		DESCRIPTION = _param1_.getDescription();
+		DURATION = _param1_.getDuration();
+		DELIVERABLE = _param1_.getDelivarable();
+		DEADLINE = _param1_.getDeadline();
+		//PERSONASSIGNED = _param1_.getPersonassigned();
+		COMPLETION = _param1_.getCompletion();				
+	}
 	
 	@Parameterized.Parameters 
     public static List<Object[]> data() {
-    	 __StaXParser__= new StaXParser();
-    	 List<task> ___task_list_object___=__StaXParser__.readConfig("TASKS_GOOD.xml");
+ 		System.out.println("Testing using file: "+ dataFile );  
+		System.out.println("___________________________________________________________________________________________________________" );   	
+ 		
+ 		__StaXParser__= new StaXParser();    	 
+    	List<Task> ___task_list_object___=__StaXParser__.readTasks(dataFile);
     	 
     	 /*
     	 System.out.println("_____________________________________________________________________________________________");
@@ -71,12 +70,12 @@ public class taskTest__with_staXParser_using_GOOD_XML  {
         	 System.out.println("_____________________________________________________________________________________________");
     	 }
     	 */
-    	 task tempObject1 = ___task_list_object___.get(0);
-    	 task tempObject2 = ___task_list_object___.get(1);
-    	 task tempObject3 = ___task_list_object___.get(2);
-    	 task tempObject4 = ___task_list_object___.get(3);
-    	 task tempObject5 = ___task_list_object___.get(4);
-    	 task tempObject6 = ___task_list_object___.get(5);
+    	 Task tempObject1 = ___task_list_object___.get(0);
+    	 Task tempObject2 = ___task_list_object___.get(1);
+    	 Task tempObject3 = ___task_list_object___.get(2);
+    	 Task tempObject4 = ___task_list_object___.get(3);
+    	 Task tempObject5 = ___task_list_object___.get(4);
+    	 Task tempObject6 = ___task_list_object___.get(5);
     	 
     	 
 
@@ -92,13 +91,15 @@ public class taskTest__with_staXParser_using_GOOD_XML  {
          });    	 
     }
 	
-	
+    @AfterClass public static void logout() {
+    	System.out.println("_____________________________________________________________________________________________");
+  }
 	@Test
 	public void testSetIdentifier() {
 		//fail("Not yet implemented");
 		System.out.println("Testing Identifier:		" + IDENTIFIER);		
 		String  PATTERN_IDENTIFIER = "^[0-9]+$";
-		Assert.assertTrue(this.IDENTIFIER.matches(PATTERN_IDENTIFIER));		
+		Assert.assertTrue(IDENTIFIER.matches(PATTERN_IDENTIFIER));		
 	}
 
 	@Test
@@ -106,7 +107,7 @@ public class taskTest__with_staXParser_using_GOOD_XML  {
 		//fail("Not yet implemented");
 		System.out.println("Testing Title: 			" + TITLE);
 		String  PATTERN_TITLE = "^[a-zA-Z ]+$";
-		Assert.assertTrue(this.TITLE.matches(PATTERN_TITLE));
+		Assert.assertTrue(TITLE.matches(PATTERN_TITLE));
 
 	}
 
@@ -115,7 +116,7 @@ public class taskTest__with_staXParser_using_GOOD_XML  {
 		//fail("Not yet implemented");
 		System.out.println("Testing Description: 		" + DESCRIPTION);
 		String  PATTERN_DECRIPTION = "^(?:\\p{L}\\p{M}*|[\\ ,.-])*$";
-		Assert.assertTrue(this.DESCRIPTION.matches(PATTERN_DECRIPTION));
+		Assert.assertTrue(DESCRIPTION.matches(PATTERN_DECRIPTION));
 
 	}
 
@@ -124,7 +125,7 @@ public class taskTest__with_staXParser_using_GOOD_XML  {
 		//fail("Not yet implemented");
 		System.out.println("Testing Duration: 		" + DURATION);
 		String  PATTERN_DURATION = "^[0-9]+$";
-		Assert.assertTrue(this.DURATION.matches(PATTERN_DURATION));
+		Assert.assertTrue(DURATION.matches(PATTERN_DURATION));
 
 	}
 
@@ -133,7 +134,7 @@ public class taskTest__with_staXParser_using_GOOD_XML  {
 		//fail("Not yet implemented");
 		System.out.println("Testing Deliverable: 		" + DELIVERABLE);
 		String  PATTERN_DELIVARABLE = "^(?:\\p{L}\\p{M}*|[\\ ,.-])*$";
-		Assert.assertTrue(this.DELIVERABLE.matches(PATTERN_DELIVARABLE));
+		Assert.assertTrue(DELIVERABLE.matches(PATTERN_DELIVARABLE));
 
 	}
 
@@ -152,22 +153,22 @@ public class taskTest__with_staXParser_using_GOOD_XML  {
 			Assert.assertTrue(!true);
 		}
 	}
-
+	/*
 	@Test
 	public void testSetPersonassigned() {
 		//fail("Not yet implemented");
 		System.out.println("Testing Person assigned:	" + PERSONASSIGNED);
 		String  PATTERN_PERSONASSIGNED = "^(?:\\p{L}\\p{M}*|[\\ ,.-])*$";
-		Assert.assertTrue(this.PERSONASSIGNED.matches(PATTERN_PERSONASSIGNED));
+		Assert.assertTrue(PERSONASSIGNED.matches(PATTERN_PERSONASSIGNED));
 
 	}
-
+	*/
 	@Test
 	public void testSetCompletion() {
 		//fail("Not yet implemented");
 		System.out.println("Testing Completion: 		" + COMPLETION);
 		String  PATTERN_COMPLETION = "^[0-9]+$";
-		Assert.assertTrue(this.COMPLETION.matches(PATTERN_COMPLETION));
+		Assert.assertTrue(COMPLETION.matches(PATTERN_COMPLETION));
 
 	}
 

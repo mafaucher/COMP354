@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<!-- COMP 354 Project - Group 1 - XML Subtask File-->
+<subtasks>
+    <subtask>
+		<identifier>0</identifier>
+		<parentid>0</parentid>
+		<priority>1</priority>
+		<title>Character Modelling</title>
+		<duration>90</duration>
+		<description>Modelling for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>0</id>
+			<id>2</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>1</identifier>
+		<parentid>0</parentid>
+		<priority>1</priority>
+		<title>Environment Modelling</title>
+		<duration>90</duration>
+		<description>Modelling for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>3</id>
+			<id>4</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>2</identifier>
+		<parentid>1</parentid>
+		<priority>1</priority>
+		<title>Heads Up Display</title>
+		<duration>90</duration>
+		<description>Modelling for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>5</id>
+			<id>6</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>3</identifier>
+		<parentid>1</parentid>
+		<priority>1</priority>
+		<title>Menus</title>
+		<duration>90</duration>
+		<description>Modelling for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>7</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>4</identifier>
+		<parentid>2</parentid>
+		<priority>1</priority>
+		<title>Compliance Testing</title>
+		<duration>90</duration>
+		<description>Modelling for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>2</id>
+			<id>6</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>5</identifier>
+		<parentid>2</parentid>
+		<priority>1</priority>
+		<title>QA Testing</title>
+		<duration>90</duration>
+		<description>Modelling for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>0</id>
+			<id>1</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>6</identifier>
+		<parentid>2</parentid>		
+		<priority>1</priority>
+		<title>Stress Testing</title>
+		<duration>90</duration>
+		<description>Modelling for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>4</id>
+			<id>6</id>
+			<id>7</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>7</identifier>
+		<parentid>3</parentid>		
+		<priority>1</priority>
+		<title>Gameplay Mechanics</title>
+		<duration>90</duration>
+		<description>Modelling for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>7</id>
+			<id>0</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>8</identifier>
+		<parentid>3</parentid>
+		<priority>1</priority>
+		<title>Level Design</title>
+		<duration>90</duration>
+		<description>Modelling for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>6</id>
+			<id>5</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>9</identifier>
+		<parentid>4</parentid>
+		<priority>1</priority>
+		<title>Enemy AI</title>
+		<duration>90</duration>
+		<description>Modelling for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>2</id>
+			<id>4</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>10</identifier>
+		<parentid>4</parentid>
+		<priority>1</priority>
+		<title>Non-Player Character AI</title>
+		<duration>90</duration>
+		<description>Modelling for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>3</id>
+			<id>1</id>
+		</peopleassigned>
+    </subtask>	
+	
+	<subtask>
+		<identifier>11</identifier>
+		<parentid>5</parentid>
+		<priority>1</priority>
+		<title>Internal System Documentation</title>
+		<duration>90</duration>
+		<description>Modelling for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>7</id>
+			<id>5</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>12</identifier>
+		<parentid>5</parentid>
+		<priority>1</priority>
+		<title>User Manuals</title>
+		<duration>90</duration>
+		<description>Modelling for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>6</id>
+			<id>4</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>13</identifier>
+		<parentid>6</parentid>
+		<priority>1</priority>
+		<title>System Integration</title>
+		<duration>90</duration>
+		<description>Modelling for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>0</id>
+			<id>1</id>
+			<id>2</id>
+			<id>3</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>14</identifier>
+		<parentid>6</parentid>
+		<priority>1</priority>
+		<title>Documentation Compiling</title>
+		<duration>90</duration>
+		<description>Modelling for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>4</id>
+			<id>5</id>
+			<id>6</id>
+			<id>7</id>
+		</peopleassigned>
+    </subtask>		
+</subtasks>
