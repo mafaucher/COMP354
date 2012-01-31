@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE people SYSTEM "tests\resources\PERSON_DTD_SCHEMA.dtd">
+<!-- COMP 354 Project - Group 1 - XML People File-->
+<people>
+    <person>
+		 <identifier>0</identifier>
+		 <fname>Kai</fname>
+		 <lname>Wang</lname>
+		 <jobtitle>Test Title</jobtitle>
+		 <jobdescription>Test Job Description</jobdescription>
+		 <clearance>0<clearance>
+    </person>
+    <person>
+		 <identifier>1</identifier>
+		 <fname>Dmitry</fname>
+		 <lname>Kuznetsov</lname>
+		 <jobtitle>Test Title</jobtitle>
+		 <jobdescription>Test Job Description</jobdescription>
+		 <clearance>0</clearance>
+    </person>
+    <person>
+		 <identifier>2</identifier>
+		 <fname>William</fname>
+		 <lname>Ling</lname>
+		 <jobtitle>Test Title</jobtitle>
+		 <jobdescription>Test Job Description</jobdescription>
+		 <clearance>0</clearance>
+    </person>
+    <person>
+		 <identifier>3</identifier>
+		 <fname>Jeffrey</fname>
+		 <lname>How</lname>
+		 <jobtitle>Test Title</jobtitle>
+		 <jobdescription>Test Job Description</jobdescription>
+		 <clearance>0</clearance>
+    </person>
+    <person>
+		 <identifier>4</identifier>
+		 <fname>Jonathan</fname>
+		 <lname>Bergeron</lname>
+		 <jobtitle>Test Title</jobtitle>
+		 <jobdescription>Test Job Description</jobdescription>
+		 <clearance>0</clearance>
+    </person>
+    <person>
+		 <identifier>5</identifier>
+		 <fname>Alain</fname>
+		 <lname>Sakha</lname>
+		 <jobtitle>Test Title</jobtitle>
+		 <jobdescription>Test Job Description</jobdescription>
+		 <clearance>0</clearance>
+    </person>
+    <person>
+		 <identifier>6</identifier>
+		 <fname>Marc-Andre</fname>
+		 <lname>Faucher</lname>
+		 <jobtitle>Test Title</jobtitle>
+		 <jobdescription>Test Job Description</jobdescription>
+		 <clearance>0</clearance>
+    </person>
+    <person>
+		 <identifier>7</identifier>
+		 <fname>Thomas</fname>
+		 <lname>Paulin</lname>
+		 <jobtitle>Test Title</jobtitle>
+		 <jobdescription>Test Job Description</jobdescription>
+		 <clearance>0</clearance>
+    </person>
+</people>
+

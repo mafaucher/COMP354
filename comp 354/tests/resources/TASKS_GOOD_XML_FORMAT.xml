@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!DOCTYPE tasks SYSTEM "tests\resources\TASK_DTD_SCHEMA.dtd">
+<!-- COMP 354 Project - Group 1 - XML Task File-->
+<tasks>
+    <task>
+   	 <identifier>0</identifier>
+   	 <title>Modelling</title>
+   	 <description>Modelling for the game. Includes Character and Environment Modelling</description>
+   	 <duration>175</duration>
+   	 <deliverable>Zipped Folder Containing all Models and Documentation</deliverable>
+   	 <deadline>Feb 18, 2012</deadline>
+   	 <personassigned>Kai, Tom</personassigned>
+   	 <completion>0</completion>
+   	 <subtask></subtask>
+    </task>
+
+    <task>
+   	 <identifier>1</identifier>
+   	 <title>User Interface</title>
+   	 <description>Design and creation of the user interface for the game. Includes the in-game HUD and front-end menus.</description>
+   	 <duration>114</duration>
+   	 <deliverable>Zipped Folder Containing all Interface files and Documentation</deliverable>
+   	 <deadline>Feb 15, 2012</deadline>
+   	 <personassigned>Jonathon, Jeff</personassigned>
+   	 <completion>0</completion>
+   	 <subtask></subtask>
+    </task>
+
+    <task>
+   	 <identifier>2</identifier>
+   	 <title>Testing</title>
+   	 <description>Testing for the game. Included QA and Compliance testing</description>
+   	 <duration>366</duration>
+   	 <deliverable>Completed Testing checklist with bug reports.</deliverable>
+   	 <deadline>Feb 10, 2012</deadline>
+   	 <personassigned>Willie, Dmitry, Alain</personassigned>
+   	 <completion>0</completion>
+   	 <subtask></subtask>
+    </task>
+
+    <task>
+   	 <identifier>3</identifier>
+   	 <title>Development</title>
+   	 <description>Development of source code for the game. Includes elements of gameplay, level design, etc.</description>
+   	 <duration>200</duration>
+   	 <deliverable>Zipped folder containing all main game files</deliverable>
+   	 <deadline>Feb 9, 2012</deadline>
+   	 <personassigned>Tom, Jeff, Willie, Dmitry</personassigned>
+   	 <completion>0</completion>
+   	 <subtask></subtask>
+    </task>
+
+    <task>
+   	 <identifier>4</identifier>
+   	 <title>Artificial Intelligence</title>
+   	 <description>Artificial Intelligence</description>
+   	 <duration>90</duration>
+   	 <deliverable>Zipped folder containing algorithms and AI code</deliverable>
+   	 <deadline>Feb 15, 2012</deadline>
+   	 <personassigned>Kai, Jonathon, Alain</personassigned>
+   	 <completion>0</completion>
+   	 <subtask></subtask>
+    </task>
+
+    <task>
+   	 <identifier>5</identifier>
+   	 <title>Documentation</title>
+   	 <description>All internal and external documentation for the game</description>
+   	 <duration>100</duration>
+   	 <deliverable>Zipped folder containing all documentation, including user manuals</deliverable>
+   	 <deadline>Feb 21, 2012</deadline>
+   	 <personassigned>Alain, Dmitry</personassigned>
+   	 <completion>0</completion>
+   	 <subtask></subtask>
+    </task>
+
+    <task>
+   	 <identifier>6</identifier>
+   	 <title>Integration</title>
+   	 <description>Integration of all features from all tasks</description>
+   	 <duration>250</duration>
+   	 <deliverable>Finalized game executable</deliverable>
+   	 <deadline>Feb 30, 2012</deadline>
+   	 <personassigned>Tom, Jeff, Willie, Jonathon, Kai, Alain</personassigned>
+   	 <completion>0</completion>
+   	 <subtask></subtask>
+    </task>
+</tasks>

@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<!DOCTYPE subtasks SYSTEM "tests\resources\SUBTASK_DTD_SCHEMA.dtd">
+<!-- COMP 354 Project - Group 1 - XML Subtask File-->
+<subtasks>
+    <subtask>
+		<idendtifier>gg0</identifier>
+		<parentid>gds0</parentid>
+		<priority>gsf1</priority>
+		<title>Charac$%#ter Modelling</title>
+		<duration>9gf0</duration>
+		<description>M.FGodelling f$or the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>g0</id>
+			<id>g2</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>fg1</identifier>
+		<parentid>g0</parentid>
+		<priority>fg1</priority>
+		<title>Enviro$%nment Modelling</title>
+		<duration>9g0</duration>
+		<description>$%Modelling for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>3</id>
+			<id>4</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>fg2</identifier>
+		<parentid>1g</parentid>
+		<priority>gf1</priority>
+		<title>Heads$% Up Display</title>
+		<duration>9gf0</duration>
+		<description>M$%odelling for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>5</id>
+			<id>6</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>dgf3</identifier>
+		<parentid>fdg1</parentid>
+		<priority>fg1</priority>
+		<title>Menu$%s</title>
+		<duration>9fg0</duration>
+		<description>$#%Modelling for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>7</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>fg4</identifier>
+		<parentid>2fd</parentid>
+		<priority>1fdgdf</priority>
+		<title>Complianc454$e Testing</title>
+		<duration>gf90</duration>
+		<description>$#%Modelling for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>2</id>
+			<id>6</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>fg5</identifier>
+		<parentid>fg2</parentid>
+		<priority>fgd1</priority>
+		<title>QA Tes$#%ting</title>
+		<duration>9fdgs0</duration>
+		<description>Mo$%delling for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>0</id>
+			<id>1</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>dfg6</identifier>
+		<parentid>fdsg2</parentid>		
+		<priority>dfsg1</priority>
+		<title>Stress435$% Testing</title>
+		<duration>9gf0</duration>
+		<description>Modelling for the game.$#% Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>4</id>
+			<id>6</id>
+			<id>7</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>gf7</identifier>
+		<parentid>3dfsg</parentid>		
+		<priority>1dfsg</priority>
+		<title>Gamepl#$%#$ay Mechanics</title>
+		<duration>fg90</duration>
+		<description>#$%Modelling for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>7</id>
+			<id>0</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>gfd8</identifier>
+		<parentid>3dfsg</parentid>
+		<priority>1dfsg</priority>
+		<title>Level D#$%esign</title>
+		<duration>9dfg0</duration>
+		<description>Modelling for th#$%e game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>6</id>
+			<id>5</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>dfg9</identifier>
+		<parentid>gdsf4</parentid>
+		<priority>dfsg1</priority>
+		<title>Ene#$%#$my AI</title>
+		<duration>90fg</duration>
+		<description>Modelli#$%#$ng for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>2</id>
+			<id>4</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>dfsg10</identifier>
+		<parentid>dfg4</parentid>
+		<priority>dsfg1</priority>
+		<title>Non-PDFG$#%layer Character AI</title>
+		<duration>9dfg0</duration>
+		<description>Modell#$%ing for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>3</id>
+			<id>1</id>
+		</peopleassigned>
+    </subtask>	
+	
+	<subtask>
+		<identifier>gsdf11</identifier>
+		<parentid>dfsg5</parentid>
+		<priority>dfsg1</priority>
+		<title>Internal Sy#$%stem Documentation</title>
+		<duration>9dfsg0</duration>
+		<description>Modell#$%ing for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>7</id>
+			<id>5</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>1gdfs2</identifier>
+		<parentid>dfsg5</parentid>
+		<priority>dfsg1</priority>
+		<title>User Ma543nuals</title>
+		<duration>DFSG90</duration>
+		<description>Modelling for the ga#$%me. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>6</id>
+			<id>4</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>1dfg3</identifier>
+		<parentid>dfsg6</parentid>
+		<priority>dfsg1</priority>
+		<title>Syste#$%m Integration</title>
+		<duration>90sdfg</duration>
+		<description>Model#$%ling for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>0</id>
+			<id>1</id>
+			<id>2</id>
+			<id>3</id>
+		</peopleassigned>
+    </subtask>
+	
+	<subtask>
+		<identifier>1dfsg4</identifier>
+		<parentid>6dfsg</parentid>
+		<priority>dfsg1</priority>
+		<title>Docum#$%entation Compiling</title>
+		<duration>9dfsg0</duration>
+		<description>Modellin#$%g for the game. Includes Character and Environment Modelling</description>
+		<peopleassigned>
+			<id>4</id>
+			<id>5</id>
+			<id>6</id>
+			<id>7</id>
+		</peopleassigned>
+    </subtask>		
+</subtasks>
