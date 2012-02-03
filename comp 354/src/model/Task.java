@@ -59,7 +59,9 @@ public class Task {
     		return peopleassigned;
     	}
     	public void setPeopleassigned(String peopleassigned) {
-    		this.peopleassigned.add(peopleassigned);
+    		if(!this.peopleassigned.contains(peopleassigned)){
+    			this.peopleassigned.add(peopleassigned);
+    		}
     	}
 
 

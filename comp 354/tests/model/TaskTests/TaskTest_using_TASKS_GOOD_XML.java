@@ -11,7 +11,7 @@ import java.util.List;
 
 import junit.framework.Assert;
 
-import model.StaXParser;
+import model.XMLParser;
 import model.Task;
 
 import org.junit.AfterClass;
@@ -23,7 +23,7 @@ import org.junit.runners.Parameterized;
 @RunWith(Parameterized.class)
 public class TaskTest_using_TASKS_GOOD_XML {
 
-	private static StaXParser __StaXParser__;
+	private static XMLParser __StaXParser__;
 	
 	private static String dataFile = "tests/resources/TASKS_GOOD.xml";
 	
@@ -53,7 +53,7 @@ public class TaskTest_using_TASKS_GOOD_XML {
  		System.out.println("Testing using file: "+ dataFile );  
 		System.out.println("___________________________________________________________________________________________________________" );   	
  		
- 		__StaXParser__= new StaXParser();    	 
+ 		__StaXParser__= new XMLParser();    	 
     	List<Task> ___task_list_object___=__StaXParser__.readTasks(dataFile);
     	 
     	 /*

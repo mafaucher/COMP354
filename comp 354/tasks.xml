@@ -12,12 +12,14 @@
 		<peopleassigned>
 			<id>0</id>
 			<id>1</id>
+			<id>1</id>
+			<id>6</id>
 		</peopleassigned>
 		<completion>0</completion>
     </task>
 
     <task>
-		<identifier>1</identifier>
+		<identifier>fail here</identifier>
 		<title>User Interface</title>
 		<description>Design and creation of the user interface for the game. Includes the in-game HUD and front-end menus.</description>
 		<startdate>Feb 18, 2012</startdate>
@@ -42,6 +44,7 @@
 		<peopleassigned>
 			<id>4</id>
 			<id>5</id>
+			<id>7</id>
 		</peopleassigned>
 		<completion>0</completion>
     </task>
@@ -51,7 +54,7 @@
 		<title>Development</title>
 		<description>Development of source code for the game. Includes elements of gameplay, level design, etc.</description>
 		<startdate>Feb 18, 2012</startdate>
-		<duration>200</duration>
+		<duration>fail here</duration>
 		<deliverable>Zipped folder containing all main game files</deliverable>
 		<deadline>Feb 9, 2012</deadline>
 		<peopleassigned>
@@ -66,7 +69,7 @@
 		<title>Artificial Intelligence</title>
 		<description>Artificial Intelligence</description>
 		<startdate>Feb 18, 2012</startdate>
-		<duration>90</duration>
+		<duration>235</duration>
 		<deliverable>Zipped folder containing algorithms and AI code</deliverable>
 		<deadline>Feb 15, 2012</deadline>
 		<peopleassigned>
@@ -74,10 +77,12 @@
 			<id>2</id>
 		</peopleassigned>
 		<completion>0</completion>
+			
     </task>
 
     <task>
-		<identifier>5</identifier>
+		
+<identifier>5</identifier>
 		<title>Documentation</title>
 		<description>All internal and external documentation for the game</description>
 		<startdate>Feb 18, 2012</startdate>
@@ -85,27 +90,25 @@
 		<deliverable>Zipped folder containing all documentation, including user manuals</deliverable>
 		<deadline>Feb 21, 2012</deadline>
 		<peopleassigned>
-			<id>3</id>
-			<id>4</id>
+
 		</peopleassigned>
 		<completion>0</completion>
     </task>
 
     <task>
 		<identifier>6</identifier>
-		<title>Integration</title>
-		<description>Integration of all features from all tasks</description>
-		<startdate>Feb 18, 2012</startdate>
+		<title>a</title>
+		<description></description>
+		<startdate></startdate>
 		<duration>250</duration>
-		<deliverable>Finalized game executable</deliverable>
-		<deadline>Feb 30, 2012</deadline>
-		<personassigned>Tom, Jeff, Willie, Jonathon, Kai, Alain</personassigned>
+		<deliverable></deliverable>
+		<deadline></deadline>
 		<peopleassigned>
-			<id>5</id>
-			<id>6</id>
-			<id>7</id>
-			<id>0</id>
+			<id></id>
+			<id></id>
+			<id></id>
+			<id></id>
 		</peopleassigned>
-		<completion>0</completion>
+		<completion></completion>
     </task>
 </tasks>

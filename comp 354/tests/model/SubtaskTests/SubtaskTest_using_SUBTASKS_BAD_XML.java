@@ -10,7 +10,7 @@ import java.util.List;
 import junit.framework.Assert;
 
 import model.Person;
-import model.StaXParser;
+import model.XMLParser;
 import model.Subtask;
 
 import org.junit.AfterClass;
@@ -22,7 +22,7 @@ import org.junit.runners.Parameterized;
 @RunWith(Parameterized.class)
 public class SubtaskTest_using_SUBTASKS_BAD_XML {
 
-	private static StaXParser __StaXParser__;
+	private static XMLParser __StaXParser__;
 	
 	private static String dataFile = "tests/resources/SUBTASKS_BAD.xml";
 					
@@ -52,7 +52,7 @@ public class SubtaskTest_using_SUBTASKS_BAD_XML {
  		System.out.println("Testing using file: "+ dataFile );   	
 		System.out.println("___________________________________________________________________________________________________________" );   	
  		
- 		__StaXParser__= new StaXParser();    	 
+ 		__StaXParser__= new XMLParser();    	 
     	List<Subtask> ___subtasks_list_object___=__StaXParser__.readSubtasks(dataFile);
     	 
     	 /*

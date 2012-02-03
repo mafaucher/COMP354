@@ -8,7 +8,7 @@ import java.util.List;
 
 import junit.framework.Assert;
 
-import model.StaXParser;
+import model.XMLParser;
 import model.Person;
 
 import org.junit.AfterClass;
@@ -20,7 +20,7 @@ import org.junit.runners.Parameterized;
 @RunWith(Parameterized.class)
 public class PersonTest_using_PEOPLE_GOOD_XML {
 
-	private static StaXParser __StaXParser__;
+	private static XMLParser __StaXParser__;
 	
 	private static String dataFile = "tests/resources/PEOPLE_GOOD.xml";
 				
@@ -52,7 +52,7 @@ public class PersonTest_using_PEOPLE_GOOD_XML {
  		System.out.println("Testing using file: "+ dataFile );   	
 		System.out.println("___________________________________________________________________________________________________________" );   	
  		
- 		__StaXParser__= new StaXParser();    	 
+ 		__StaXParser__= new XMLParser();    	 
     	List<Person> ___persons_list_object___=__StaXParser__.readPeople(dataFile);
     	 
     	 /*

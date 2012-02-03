@@ -13,26 +13,28 @@ import model.Person;
 
 public class TestRead {
 	private static List<Task> taskList;
-	private static List<Subtask> subtaskList;
 	private static List<Person> peopleList;
+	// private static List<Subtask> subtaskList;  // For Increment 2
+	
 	
 	static int longestnamelen = 0;
+	static int longesttotalhourslen = 0;
 	static int longestprojectlistlen = 0;
 	
 	public static void main(String args[]) {
 
 		// Create StaXparser objects, used to read the XML files
-		StaXParser readTasks = new StaXParser();
-		StaXParser readSubtasks = new StaXParser();
-		StaXParser readPeople = new StaXParser();
+		XMLParser readTasks = new XMLParser();
+		// XMLParser readSubtasks = new XMLParser();  // For Increment 2
+		XMLParser readPeople = new XMLParser();
 		
 		System.out.println("Reading Input File...");
 		
 		// Read in the XML File containing the task details
 		taskList = readTasks.readTasks("tasks.xml");
 		
-		// Read in the XML File containing the subtask details
-		subtaskList = readSubtasks.readSubtasks("subtasks.xml");
+		// Read in the XML File containing the subtask details. This is for Increment 2.
+		// subtaskList = readSubtasks.readSubtasks("subtasks.xml");
 		
 		// Read in the XML File containing the subtask details
 		peopleList = readPeople.readPeople("people.xml");
@@ -53,23 +55,47 @@ public class TestRead {
 	public static void processTasks(){
 			String fullname = "";
 			String projstr = "";
+			String hoursstr = "";
 			
 			int templen = 0;
 			
 			for (Task task : taskList) {
 				
+<<<<<<< .mine
 				ArrayList<String> assignees= new ArrayList<String>(task.getPeopleassigned());		
 				Iterator<String> iterator = assignees.iterator();
+				Iterator<Person> piterator = peopleList.iterator();
+=======
+				ArrayList<String> assignees= new ArrayList<String>(task.getPeopleassigned());		
+				Iterator<String> iterator = assignees.iterator();
+>>>>>>> .r23
 				
-				int curraid;
+				String curraid;
 				int onproj = assignees.size(); // determine how many people are assigned to the task
 				double timedistro = (Double.parseDouble(task.getDuration()) / onproj); // determine the even distribution of time based on number of assignees				
 
+
+				Person currentPerson = new Person();
 				
 				while(iterator.hasNext()) // cycle through the assignees, and update field where necessary
 				{
-					curraid = Integer.parseInt((String) iterator.next());
-					Person currentPerson = peopleList.get(curraid);
+					curraid = iterator.next();
+					while(piterator.hasNext()){
+						currentPerson = piterator.next();
+								
+						if(currentPerson.getIdentifier().matches(curraid)){
+							
+							break;
+						}
+						if(!piterator.hasNext()){
+							currentPerson = null;
+						}
+					}
+					
+					if(currentPerson == null){
+						continue;
+					}
+					
 					currentPerson.setTotalHours(timedistro);
 					currentPerson.setProjects(task.getIdentifier());
 					
@@ -107,8 +133,16 @@ public class TestRead {
 						
 						projstr = "";
 					}
-					// Debug output:
-					// System.out.println("Assignee: " + currentPerson.getFName() + " " + currentPerson.getLName() + ". Hours: " + currentPerson.getTotalHours() + ". Projects: " + currentPerson.getProjects());
+					
+					
+					hoursstr = Double.toString(currentPerson.getTotalHours());
+					templen = hoursstr.length();
+					
+					if(templen > longesttotalhourslen)
+					{
+						longesttotalhourslen = templen;  // store the longest project list length for formatting later
+					}
+
 				}
 			}
 	}
@@ -124,7 +158,11 @@ public class TestRead {
 		int templen = 0;
 		int currheaderlen = 0;
 		int currprojlistlen = 0;
-		int thlen = 4; // total hours max size, hardcoded for now.
+		int thlen = 4; // total hours min size, hardcoded for now.
+		
+		if(longesttotalhourslen < thlen){
+			longesttotalhourslen = thlen;
+		}
 		
 		for (Person person : peopleList) { // Build the rows of people
 			fullname = person.getLName() + ", " + person.getFName();
@@ -134,11 +172,16 @@ public class TestRead {
 			for(int c = 0; c <= (longestnamelen - templen); c++){ // Add dynamic whitespace
 				output += " ";
 			}
-			output += "| " + person.getTotalHours();
-		
-			for(int c = 0; c < (headers[1].length()-thlen); c++){ // Add dynamic whitespace
+			output += "| ";
+			
+			templen = Double.toString(person.getTotalHours()).length();
+	
+			output += person.getTotalHours();
+			for(int c = 0; c <= (longesttotalhourslen - templen); c++){ // Add dynamic whitespace
 				output += " ";
-			}
+			}			
+		
+
 			output += "| ";
 			
 			projstr = "";
@@ -178,7 +221,9 @@ public class TestRead {
 				headerline += "| ";
 			}
 			else if(i == 1){ // Column heading for the total hours
-				
+				for(int c = 0; c < (longesttotalhourslen - currheaderlen); c++){ // Add dynamic whitespace
+					headerline += " ";
+				}
 				headerline += " | ";
 			}
 			else{ // Column heading for the project list
