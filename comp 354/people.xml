@@ -7,7 +7,7 @@
 		 <lname>Wang</lname>
 		 <jobtitle>Developer</jobtitle>
 		 <jobdescription>Responsible for development of applications</jobdescription>
-		 <clearance>1</clearance>
+		 <clearance>0</clearance>
     </person>
     <person>
 		 <identifier>1</identifier>
@@ -23,7 +23,7 @@
 		 <lname>Ling</lname>
 		 <jobtitle>Documenter</jobtitle>
 		 <jobdescription>Manager of documentation</jobdescription>
-		 <clearance>10</clearance>
+		 <clearance>0</clearance>
     </person>
     <person>
 		 <identifier>3</identifier>
@@ -31,55 +31,55 @@
 		 <lname>How</lname>
 		 <jobtitle>Lead Tester</jobtitle>
 		 <jobdescription>Testing lead responsible for management of testers</jobdescription>
-		 <clearance>8</clearance>
+		 <clearance>1</clearance>
     </person>
     <person>
 		 <identifier>4</identifier>
-		 <fname>Jonathan</fname>
+		 <fname>Jonathon</fname>
 		 <lname>Bergeron</lname>
-		 <jobtitle>Test Title</jobtitle>
-		 <jobdescription>Test Job Description</jobdescription>
+		 <jobtitle>Documentation</jobtitle>
+		 <jobdescription>Responsible for compilation of documents</jobdescription>
 		 <clearance>1</clearance>
     </person>
     <person>
 		 <identifier>5</identifier>
 		 <fname>Alain</fname>
 		 <lname>Sakha</lname>
-		 <jobtitle>Test Title</jobtitle>
-		 <jobdescription>Test Job Description</jobdescription>
+		 <jobtitle>Assistant</jobtitle>
+		 <jobdescription>Providing Assistance to the development team</jobdescription>
 		 <clearance>2</clearance>
     </person>
     <person>
 		 <identifier>6</identifier>
 		 <fname>Marc-Andre</fname>
 		 <lname>Faucher</lname>
-		 <jobtitle>Test Title</jobtitle>
-		 <jobdescription>Test Job Description</jobdescription>
+		 <jobtitle>User Manuals</jobtitle>
+		 <jobdescription>Responsible for the production of user manuals</jobdescription>
 		 <clearance>0</clearance>
     </person>
     <person>
 		 <identifier>7</identifier>
 		 <fname>Daniel</fname>
 		 <lname>Harris</lname>
-		 <jobtitle>Test Title</jobtitle>
-		 <jobdescription>Test Job Description</jobdescription>
-		 <clearance>5</clearance>
+		 <jobtitle>Administrator</jobtitle>
+		 <jobdescription>main system administrator</jobdescription>
+		 <clearance>2</clearance>
     </person>
     <person>
 		 <identifier>8</identifier>
 		 <fname>Alexander</fname>
 		 <lname>Smart</lname>
-		 <jobtitle>Test Title</jobtitle>
-		 <jobdescription>Test Job Description</jobdescription>
-		 <clearance>0</clearance>
+		 <jobtitle>Office Manager</jobtitle>
+		 <jobdescription>responsible for coordination of people</jobdescription>
+		 <clearance>1</clearance>
     </person>
     <person>
 		 <identifier>9</identifier>
-		 <fname>Alain</fname>
-		 <lname>Sakha</lname>
-		 <jobtitle>Test Title</jobtitle>
-		 <jobdescription>Test Job Description</jobdescription>
-		 <clearance>4</clearance>
+		 <fname>Steven</fname>
+		 <lname>Downey</lname>
+		 <jobtitle>Artist</jobtitle>
+		 <jobdescription>Responsible for artwork</jobdescription>
+		 <clearance>0</clearance>
     </person>
     <person>
 		 <identifier>10</identifier>
@@ -87,7 +87,7 @@
 		 <lname>Morrow</lname>
 		 <jobtitle>Manager</jobtitle>
 		 <jobdescription>Manages Developers</jobdescription>
-		 <clearance>3</clearance>
+		 <clearance>1</clearance>
     </person>
     <person>
 		 <identifier>11</identifier>
@@ -95,7 +95,7 @@
 		 <lname>Paulin</lname>
 		 <jobtitle>Developer</jobtitle>
 		 <jobdescription>Responsible for the development of application</jobdescription>
-		 <clearance>7</clearance>
+		 <clearance>0</clearance>
     </person>
     <person>
 		 <identifier>12</identifier>
@@ -103,7 +103,7 @@
 		 <lname>Gagne</lname>
 		 <jobtitle>Test Lead</jobtitle>
 		 <jobdescription>In charge of organizing testing</jobdescription>
-		 <clearance>2</clearance>
+		 <clearance>0</clearance>
     </person>
 
 </people>
