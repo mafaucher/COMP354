@@ -15,8 +15,8 @@ import javax.xml.stream.events.EndElement;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
 
-
 public class StaXParser {
+	// Possible XML Tags
 	static final String TASK="task";
 	static final String PERSON="person";
 	static final String SUBTASK="subtask";
@@ -38,6 +38,12 @@ public class StaXParser {
 	static final String JOBTITLE = "jobtitle";
 	static final String JOBDESCRIPTION = "jobdescription";
 	static final String CLEARANCE = "clearance";
+	
+	// Pattern identifiers, for validation purposes
+	static final String PATTERN_IDENTIFIER = "^[0-9]+$";
+	static final String PATTERN_TITLE = "^[a-zA-Z -]+$";
+	static final String PATTERN_DESCRIPTION = "^(?:\\p{L}\\p{M}*|[\\ ,.-])*$";
+	static final String PATTERN_DURATION = "^[0-9]+$";
 
 	public List<Task> readTasks(String configFile) {
 		List<Task> tasks = new ArrayList<Task>();
@@ -75,6 +81,13 @@ public class StaXParser {
 						if (event.asStartElement().getName().getLocalPart()
 								.equals(IDENTIFIER)) {
 							event = eventReader.nextEvent();
+							
+							// Make sure the field is valid
+							if(!event.asCharacters().getData().matches(PATTERN_IDENTIFIER)){
+								System.out.println("Does not match");
+								
+							}
+							
 							task.setIdentifier(event.asCharacters().getData());
 							continue;
 						}
@@ -82,6 +95,13 @@ public class StaXParser {
 					if (event.asStartElement().getName().getLocalPart()
 							.equals(TITLE)) {
 						event = eventReader.nextEvent();
+						
+						// Make sure the field is valid
+						if(!event.asCharacters().getData().matches(PATTERN_TITLE)){
+							System.out.println("Does not match");
+							
+						}
+						
 						task.setTitle(event.asCharacters().getData());
 						continue;
 					}
@@ -89,6 +109,13 @@ public class StaXParser {
 					if (event.asStartElement().getName().getLocalPart()
 							.equals(DESCRIPTION)) {
 						event = eventReader.nextEvent();
+						
+						// Make sure the field is valid
+						if(!event.asCharacters().getData().matches(PATTERN_DESCRIPTION)){
+							System.out.println("Does not match");
+							
+						}
+						
 						task.setDescription(event.asCharacters().getData());
 						continue;
 					}
@@ -96,12 +123,26 @@ public class StaXParser {
 					if (event.asStartElement().getName().getLocalPart()
 							.equals(DURATION)) {
 						event = eventReader.nextEvent();
+						
+						// Make sure the field is valid
+						if(!event.asCharacters().getData().matches(PATTERN_DURATION)){
+							System.out.println("Does not match");
+							
+						}
+						
 						task.setDuration(event.asCharacters().getData());
 						continue;
 					}
 					if (event.asStartElement().getName().getLocalPart()
 							.equals(DELIVERABLE)) {
 						event = eventReader.nextEvent();
+						
+						// Make sure the field is valid
+						if(!event.asCharacters().getData().matches(PATTERN_DESCRIPTION)){
+							System.out.println("Does not match");
+							
+						}
+						
 						task.setDelivarable(event.asCharacters().getData());
 						continue;
 					}
@@ -185,6 +226,13 @@ public class StaXParser {
 						if (event.asStartElement().getName().getLocalPart()
 								.equals(IDENTIFIER)) {
 							event = eventReader.nextEvent();
+							
+							// Make sure the field is valid
+							if(!event.asCharacters().getData().matches(PATTERN_IDENTIFIER)){
+								System.out.println("Does not match");
+								
+							}
+							
 							subtask.setIdentifier(event.asCharacters().getData());
 							continue;
 						}
@@ -193,6 +241,13 @@ public class StaXParser {
 						if (event.asStartElement().getName().getLocalPart()
 								.equals(PARENTID)) {
 							event = eventReader.nextEvent();
+							
+							// Make sure the field is valid
+							if(!event.asCharacters().getData().matches(PATTERN_IDENTIFIER)){
+								System.out.println("Does not match");
+								
+							}
+							
 							subtask.setParentID(event.asCharacters().getData());
 							continue;
 						}
@@ -200,6 +255,13 @@ public class StaXParser {
 					if (event.asStartElement().getName().getLocalPart()
 							.equals(TITLE)) {
 						event = eventReader.nextEvent();
+						
+						// Make sure the field is valid
+						if(!event.asCharacters().getData().matches(PATTERN_TITLE)){
+							System.out.println("Does not match");
+							
+						}
+						
 						subtask.setTitle(event.asCharacters().getData());
 						continue;
 					}
@@ -207,6 +269,13 @@ public class StaXParser {
 					if (event.asStartElement().getName().getLocalPart()
 							.equals(DESCRIPTION)) {
 						event = eventReader.nextEvent();
+						
+						// Make sure the field is valid
+						if(!event.asCharacters().getData().matches(PATTERN_DESCRIPTION)){
+							System.out.println("Does not match");
+							
+						}
+						
 						subtask.setDescription(event.asCharacters().getData());
 						continue;
 					}
@@ -214,6 +283,13 @@ public class StaXParser {
 					if (event.asStartElement().getName().getLocalPart()
 							.equals(DURATION)) {
 						event = eventReader.nextEvent();
+						
+						// Make sure the field is valid
+						if(!event.asCharacters().getData().matches(PATTERN_DURATION)){
+							System.out.println("Does not match");
+							
+						}
+						
 						subtask.setDuration(event.asCharacters().getData());
 						continue;
 					}
@@ -278,7 +354,15 @@ public class StaXParser {
 					if (event.isStartElement()) {
 						if (event.asStartElement().getName().getLocalPart()
 								.equals(IDENTIFIER)) {
+							
 							event = eventReader.nextEvent();
+							
+							// Make sure the field is valid
+							if(!event.asCharacters().getData().matches(PATTERN_IDENTIFIER)){
+								System.out.println("Does not match");
+								
+							}
+							
 							person.setIdentifier(event.asCharacters().getData());
 							continue;
 						}
@@ -286,6 +370,13 @@ public class StaXParser {
 					if (event.asStartElement().getName().getLocalPart()
 							.equals(FNAME)) {
 						event = eventReader.nextEvent();
+						
+						// Make sure the field is valid
+						if(!event.asCharacters().getData().matches(PATTERN_TITLE)){
+							System.out.println("Does not match");
+							
+						}
+						
 						person.setFName(event.asCharacters().getData());
 						continue;
 					}
@@ -293,12 +384,26 @@ public class StaXParser {
 					if (event.asStartElement().getName().getLocalPart()
 							.equals(LNAME)) {
 						event = eventReader.nextEvent();
+						
+						// Make sure the field is valid
+						if(!event.asCharacters().getData().matches(PATTERN_TITLE)){
+							System.out.println("Does not match");
+							
+						}
+						
 						person.setLName(event.asCharacters().getData());
 						continue;
 					}
 					if (event.asStartElement().getName().getLocalPart()
 							.equals(JOBTITLE)) {
 						event = eventReader.nextEvent();
+						
+						// Make sure the field is valid
+						if(!event.asCharacters().getData().matches(PATTERN_TITLE)){
+							System.out.println("Does not match");
+							
+						}
+						
 						person.setJobTitle(event.asCharacters().getData());
 						continue;
 					}
@@ -306,6 +411,13 @@ public class StaXParser {
 					if (event.asStartElement().getName().getLocalPart()
 							.equals(JOBDESCRIPTION)) {
 						event = eventReader.nextEvent();
+						
+						// Make sure the field is valid
+						if(!event.asCharacters().getData().matches(PATTERN_DESCRIPTION)){
+							System.out.println("Does not match");
+							
+						}
+						
 						person.setJobDescription(event.asCharacters().getData());
 						continue;
 					}
@@ -313,6 +425,13 @@ public class StaXParser {
 					if (event.asStartElement().getName().getLocalPart()
 							.equals(CLEARANCE)) {
 						event = eventReader.nextEvent();
+						
+						// Make sure the field is valid
+						if(!event.asCharacters().getData().matches(PATTERN_DURATION)){
+							System.out.println("Does not match");
+							
+						}
+						
 						person.setClearance(event.asCharacters().getData());
 						continue;
 					}
