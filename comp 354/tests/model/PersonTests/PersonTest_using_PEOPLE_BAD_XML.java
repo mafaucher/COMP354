@@ -27,7 +27,7 @@ public class PersonTest_using_PEOPLE_BAD_XML {
 	
 	
 	private static double TOTALHOURS = 0;
-	private static ArrayList PROJECTS = new ArrayList();	
+	private static ArrayList<String> PROJECTS = new ArrayList<String>();	
 	private static  String IDENTIFIER;
 	private static  String FNAME;
 	private static  String LNAME;

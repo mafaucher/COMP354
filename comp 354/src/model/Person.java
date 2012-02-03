@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Person {
 	double TOTALHOURS = 0;
-	ArrayList PROJECTS = new ArrayList();
+	ArrayList<String> PROJECTS = new ArrayList<String>();
 	
 	private String identifier;
 	private String fname;
@@ -55,7 +55,7 @@ public class Person {
 	public void setTotalHours(double duration) {
 		this.TOTALHOURS += duration;
 	}
-	public ArrayList getProjects() {
+	public ArrayList<String> getProjects() {
 		return PROJECTS;
 	}
 	public void setProjects(String project){

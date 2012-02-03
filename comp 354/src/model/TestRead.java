@@ -3,7 +3,6 @@ package model;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Collections;
 import java.util.List;
 import java.util.Iterator;
 import java.util.ArrayList;
@@ -41,7 +40,7 @@ public class TestRead {
 		System.out.println("Input File Successfully Read.");
 		
 		// Process the subtasks, updating information on the people
-		processSubtasks();
+		processTasks();
 
 		// Build the output string based on the people
 		String output = buildOutput();
@@ -51,20 +50,20 @@ public class TestRead {
 
 	}
 	
-	public static void processSubtasks(){
+	public static void processTasks(){
 			String fullname = "";
 			String projstr = "";
 			
 			int templen = 0;
 			
-			for (Subtask subtask : subtaskList) {
+			for (Task task : taskList) {
 				
-				ArrayList<String> assignees= new ArrayList(subtask.getPeopleassigned());		
-				Iterator iterator = assignees.iterator();
+				ArrayList<String> assignees= new ArrayList<String>(task.getPeopleassigned());		
+				Iterator<String> iterator = assignees.iterator();
 				
 				int curraid;
 				int onproj = assignees.size(); // determine how many people are assigned to the task
-				double timedistro = (Double.parseDouble(subtask.getDuration()) / onproj); // determine the even distribution of time based on number of assignees				
+				double timedistro = (Double.parseDouble(task.getDuration()) / onproj); // determine the even distribution of time based on number of assignees				
 
 				
 				while(iterator.hasNext()) // cycle through the assignees, and update field where necessary
@@ -72,7 +71,7 @@ public class TestRead {
 					curraid = Integer.parseInt((String) iterator.next());
 					Person currentPerson = peopleList.get(curraid);
 					currentPerson.setTotalHours(timedistro);
-					currentPerson.setProjects(subtask.getParentID()+"."+subtask.getIdentifier());
+					currentPerson.setProjects(task.getIdentifier());
 					
 					fullname = currentPerson.getLName() + ", " + currentPerson.getFName();	
 					templen = fullname.length();
@@ -88,8 +87,8 @@ public class TestRead {
 					}
 					
 					
-					ArrayList<String> projects = new ArrayList(currentPerson.getProjects());		
-					Iterator projIterator = projects.iterator();
+					ArrayList<String> projects = new ArrayList<String>(currentPerson.getProjects());		
+					Iterator<String> projIterator = projects.iterator();
 								
 					while(projIterator.hasNext()) // cycle through the assignees, and update field where necessary
 					{	
@@ -118,7 +117,6 @@ public class TestRead {
 		String output = "";
 		String fullname = "";
 		String projstr = "";
-		String temp = "";
 		String headerline = "";
 		String separator = "";
 		String[] headers = {"Name","Total Hours","Project List"};
@@ -145,8 +143,8 @@ public class TestRead {
 			
 			projstr = "";
 			
-			ArrayList<String> projects = new ArrayList(person.getProjects());		
-			Iterator iterator = projects.iterator();
+			ArrayList<String> projects = new ArrayList<String>(person.getProjects());		
+			Iterator<String> iterator = projects.iterator();
 						
 			while(iterator.hasNext()) // cycle through the assignees, and update field where necessary
 			{	
@@ -164,7 +162,7 @@ public class TestRead {
 				longestprojectlistlen = templen;
 			}
 			
-			output += projstr + "\n";
+			output += projstr + System.getProperty("line.separator");
 		}
 		
 		// Build the output file header
@@ -190,80 +188,17 @@ public class TestRead {
 			}
 		}
 		
-		headerline += "\n";
+		headerline += System.getProperty("line.separator");
 		
 		for(int i = 0;i< headerline.length(); i++){ // Build the line to separate headers from data
 			separator += "-";
 		}
 		
-		separator += "\n";
+		separator += System.getProperty("line.separator");
 		
 		// Put it all together and return
 		output = headerline + separator + output; 
 	
-		
-		/*	
-		
-		// Write out the file header
-		String content = "Name";
-		
-		int i = 0;
-		int currnamelen = 0;
-		int currhourslen = 0;
-		int headerlen = 0;
-		int projlistlen = 0;
-		
-		for (i=0; i<(longestnamelen-3); i++){
-			  content += " ";
-		}
-		
-		content += "| Total Hours | Projects" + "\r\n" + "--------------------------------------" + "\r\n";  // <=== The "\r\n" is for newline
-																											 // so that in a text file every record
-																											 // appears under. row after row.
-		
-		System.out.println(content.substring(0,content.length()-2));	// <=== WRITE HEADER TO CONSOLE WINDOW
-																		// .substring(0,content.length()-2) is to remove extra linefeed
-																		// so that it writes to console window exactly as seen in the file 
-		
-		String _temp_Person_output_row_ = ""; 	// <=== Temporary string to hold all the data to be written to console
-												// window in a row by row manner.
-		
-    	for ( Person temp : people ){
-    		currnamelen = temp.getName().length();
-    			
-    		content += temp.getName();
-    		
-    		
-    		_temp_Person_output_row_ += temp.getName(); 
-    		
-     		for (i=0; i<((longestnamelen-currnamelen)+1); i++){
-    			  content += " ";
-    			  _temp_Person_output_row_ += " ";
-    		}
-    		
-     		String roundedHours = String.format("%.2f", temp.getTotalHours());
-    		content +="| ";
-    		_temp_Person_output_row_ += "| ";
-    		
-    		
-			    		
-     		content += roundedHours;
-     		_temp_Person_output_row_ += roundedHours;
-     		
-    		currhourslen = Double.toString(temp.getTotalHours()).length();
-
-    		currhourslen = headers[1].length();
-    		
-    		
-     		for (i=0; i<((longesthourslen-currhourslen)-1); i++){
-    			  content += " ";
-    			  _temp_Person_output_row_ += " ";
-    		}
-     		content += "| " + temp.getProjects() + "\r\n";
-     		_temp_Person_output_row_ += "| " + temp.getProjects() + "\r\n";
-    	}
-    	
- 		System.out.println(_temp_Person_output_row_);*/
 		return output;
 	}
 	

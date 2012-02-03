@@ -1,10 +1,10 @@
-Name                | Total Hours | Project List                              
--------------------------------------------------------------------------------
-Wang, Kai           | 157.5       | 0.0, 2.5, 3.7, 6.13
-Kuznetsov, Dmitry   | 112.5       | 2.5, 4.10, 6.13
-Ling, William       | 157.5       | 0.0, 2.4, 4.9, 6.13
-How, Jeffrey        | 112.5       | 0.1, 4.10, 6.13
-Bergeron, Jonathan  | 187.5       | 0.1, 2.6, 4.9, 5.12, 6.14
-Sakha, Alain        | 157.5       | 1.2, 3.8, 5.11, 6.14
-Faucher, Marc-Andre | 232.5       | 1.2, 2.4, 2.6, 3.8, 5.12, 6.14
-Paulin, Thomas      | 232.5       | 1.3, 2.6, 3.7, 5.11, 6.14
+Name                | Total Hours | Project List    
+------------------------------------------------------
+Wang, Kai           | 150.0       | 0, 6
+Kuznetsov, Dmitry   | 132.5       | 0, 4
+Ling, William       | 102.0       | 1, 4
+How, Jeffrey        | 107.0       | 1, 5
+Bergeron, Jonathan  | 233.0       | 2, 5
+Sakha, Alain        | 245.5       | 2, 6
+Faucher, Marc-Andre | 162.5       | 3, 6
+Paulin, Thomas      | 162.5       | 3, 6

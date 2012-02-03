@@ -1,13 +1,16 @@
 package model;
+
+import java.util.ArrayList;
+
 public class Task {
         private String identifier;
         private String title;
         private String description;
-        private String startdate;
         private String duration;
         private String deliverable;
         private String deadline;
         private String completion;
+    	private ArrayList<String> peopleassigned = new ArrayList<String>();
         
         public String getIdentifier() {
                 return identifier;
@@ -52,12 +55,18 @@ public class Task {
         public void setCompletion(String completion){
                 this.completion=completion;
         }
+    	public ArrayList<String> getPeopleassigned(){
+    		return peopleassigned;
+    	}
+    	public void setPeopleassigned(String peopleassigned) {
+    		this.peopleassigned.add(peopleassigned);
+    	}
 
 
 
         @Override
         public String toString() {
                 return "task [identifier=" + identifier + ", title=" + title + ", description="
-                                + description + ", duration=" + duration + ", deliverable=" + deliverable + ", deadline=" + deadline + ", completion=" + completion + "]";
+                                + description + ", duration=" + duration + ", deliverable=" + deliverable + ", people assigned=" + peopleassigned + ", deadline=" + deadline + ", completion=" + completion + "]";
         }
 }

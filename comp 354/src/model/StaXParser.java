@@ -1,21 +1,16 @@
 package model;
 
-import java.io.File;
 
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
-
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStream;
+
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.events.Attribute;
 import javax.xml.stream.events.EndElement;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
@@ -44,7 +39,6 @@ public class StaXParser {
 	static final String JOBDESCRIPTION = "jobdescription";
 	static final String CLEARANCE = "clearance";
 
-	@SuppressWarnings({ "unchecked", "null" })
 	public List<Task> readTasks(String configFile) {
 		List<Task> tasks = new ArrayList<Task>();
 		try {
@@ -128,6 +122,14 @@ public class StaXParser {
 						event = eventReader.nextEvent();
 						task.setCompletion(event.asCharacters().getData());
 						continue;
+					}
+					if (event.asStartElement().getName().getLocalPart().equals(ID)) {					
+						
+						event = eventReader.nextEvent();
+
+						task.setPeopleassigned(event.asCharacters().getData());
+						continue;
+		
 					}
 				}
 				// If we reach the end of an item element we add it to the list
@@ -220,15 +222,6 @@ public class StaXParser {
 						event = eventReader.nextEvent();
 						subtask.setPriority(event.asCharacters().getData());
 						continue;
-					}
-
-					if (event.asStartElement().getName().getLocalPart().equals(ID)) {					
-					
-						event = eventReader.nextEvent();
-
-						subtask.setPeopleassigned(event.asCharacters().getData());
-						continue;
-		
 					}
 
 				}
