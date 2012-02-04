@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!-- COMP 354 Project - Group 1 - XML People File-->
+<people>
+    <person>
+		 <identifier>0</identifier>
+		 <fname>Kai%</fname>
+		 <lname>Wang</lname>
+		 <jobtitle>Developer</jobtitle>
+		 <jobdescription>Responsible for development of applications</jobdescription>
+		 <clearance>0</clearance>
+    </person>
+    <person>
+		 <identifier>1</identifier>
+		 <fname>Dmitry</fname>
+		 <lname>Kuznetsov</lname>
+		 <jobtitle>Tester</jobtitle>
+		 <jobdescription>QA Tester</jobdescription>
+		 <clearance>0</clearance>
+    </person>
+    <person>
+		 <identifier>2</identifier>
+		 <fname>William</fname>
+		 <lname>Ling</lname>
+		 <jobtitle>Documenter</jobtitle>
+		 <jobdescription>Manager of documentation</jobdescription>
+		 <clearance>1</clearance>
+    </person>
+    <person>
+		 <identifier>3</identifier>
+		 <fname>Jeffrey</fname>
+		 <lname>How</lname>
+		 <jobtitle>Lead Tester</jobtitle>
+		 <jobdescription>Testing lead responsible for management of testers</jobdescription>
+		 <clearance>2</clearance>
+    </person>
+    <person>
+		 <identifier>4</identifier>
+		 <fname>Jonathan</fname>
+		 <lname>Bergeron</lname>
+		 <jobtitle>Test Title</jobtitle>
+		 <jobdescription>Test Job Description</jobdescription>
+		 <clearance>1</clearance>
+    </person>
+    <person>
+		 <identifier>5</identifier>
+		 <fname>Alain</fname>
+		 <lname>Sakha</lname>
+		 <jobtitle>Test Title</jobtitle>
+		 <jobdescription>Test Job Description</jobdescription>
+		 <clearance>2</clearance>
+    </person>
+    <person>
+		 <identifier>6</identifier>
+		 <fname>Marc-Andre</fname>
+		 <lname>Faucher</lname>
+		 <jobtitle>Test Title</jobtitle>
+		 <jobdescription>Test Job Description</jobdescription>
+		 <clearance>0</clearance>
+    </person>
+    <person>
+		 <identifier>7</identifier>
+		 <fname>Daniel</fname>
+		 <lname>Harris</lname>
+		 <jobtitle>Test Title</jobtitle>
+		 <jobdescription>Test Job Description</jobdescription>
+		 <clearance>0</clearance>
+    </person>
+    <person>
+		 <identifier>8</identifier>
+		 <fname>Alexander</fname>
+		 <lname>Smart</lname>
+		 <jobtitle>Test Title</jobtitle>
+		 <jobdescription>Test Job Description</jobdescription>
+		 <clearance>0</clearance>
+    </person>
+    <person>
+		 <identifier>9</identifier>
+		 <fname>Brendan</fname>
+		 <lname>Morrow</lname>
+		 <jobtitle>Manager</jobtitle>
+		 <jobdescription>Manages Developers</jobdescription>
+		 <clearance>1</clearance>
+    </person>
+    <person>
+		 <identifier>11</identifier>
+		 <fname>Thomas</fname>
+		 <lname>Paulin</lname>
+		 <jobtitle>Developer</jobtitle>
+		 <jobdescription>Responsible for the development of application</jobdescription>
+		 <clearance>1</clearance>
+    </person>
+    <person>
+		 <identifier>12</identifier>
+		 <fname>Simon</fname>
+		 <lname>Gagne</lname>
+		 <jobtitle>Test Lead</jobtitle>
+		 <jobdescription>In charge of organizing testing</jobdescription>
+		 <clearance>2</clearance>
+    </person>
+
+</people>
+
