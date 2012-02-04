@@ -14,8 +14,6 @@ import model.Person;
 public class TestRead {
 	private static List<Task> taskList;
 	private static List<Person> peopleList;
-	// private static List<Subtask> subtaskList;  // For Increment 2
-	
 	
 	static int longestnamelen = 0;
 	static int longesttotalhourslen = 0;
@@ -61,14 +59,9 @@ public class TestRead {
 			
 			for (Task task : taskList) {
 				
-<<<<<<< .mine
 				ArrayList<String> assignees= new ArrayList<String>(task.getPeopleassigned());		
 				Iterator<String> iterator = assignees.iterator();
 				Iterator<Person> piterator = peopleList.iterator();
-=======
-				ArrayList<String> assignees= new ArrayList<String>(task.getPeopleassigned());		
-				Iterator<String> iterator = assignees.iterator();
->>>>>>> .r23
 				
 				String curraid;
 				int onproj = assignees.size(); // determine how many people are assigned to the task

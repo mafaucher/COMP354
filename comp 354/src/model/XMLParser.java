@@ -76,11 +76,13 @@ public class XMLParser {
 							
 							// Make sure the field is valid
 							if(!event.isCharacters() || !event.asCharacters().getData().matches(PATTERN_IDENTIFIER)){
+								//checks empty and pattern
 								System.out.println("Error: Task encountered with an invalid identifier. This entry will be skipped.");
 								validtask = false;
 								continue;
 							}
 							else if(taskidentifiers.contains(event.asCharacters().getData())){
+								//check for duplicates
 								System.out.println("Error: Task identifier '" + event.asCharacters().getData() + "' already exists. This entry will be skipped.");
 								validtask = false;
 								continue;
@@ -197,14 +199,16 @@ public class XMLParser {
 					EndElement endElement = event.asEndElement();
 					if (endElement.getName().getLocalPart() == (TASK) && validtask == true) {
 						if(task.getIdentifier() == null || task.getDuration() == null || task.getPeopleassigned().isEmpty()){
+							//CHECKS ELEMENT EXISTS --> OTHERWISE, ERROR --> GO TO NEXT NODE/TASK
 							System.out.println("Error: Task has undefined identifier or duration, or has nobody assigned to it. This entry will be skipped.");
 						}
 						else{
+							//TEMP OF GOOD TASKS
 							tasks.add(task);
 						}
 					}
 					else if(endElement.getName().getLocalPart() == (TASK)){
-						validtask = true;
+						validtask = true;//reset valid task
 					}
 				}
 
@@ -222,123 +226,7 @@ public class XMLParser {
 		} 
 		return tasks;
 	}
-	
-	/* The following method parses the subtask XML, and should be used only for increment 2 and beyond.
-	 * 
-	public List<Subtask> readSubtasks(String configFile) {
-		List<Subtask> subtasks = new ArrayList<Subtask>();
-		try {
-			// First create a new XMLInputFactory
-			XMLInputFactory inputFactory = XMLInputFactory.newInstance();
-			// Setup a new eventReader
-			InputStream in = new FileInputStream(configFile);
-			XMLEventReader eventReader = inputFactory.createXMLEventReader(in);
-			// Read the XML document
-			Subtask subtask = null;
-
-			while (eventReader.hasNext()) {
-				XMLEvent event = eventReader.nextEvent();
-
-				if (event.isStartElement()) {
-					StartElement startElement = event.asStartElement();
-					// If we have a item element we create a new item
-					if (startElement.getName().getLocalPart() == (SUBTASK)) {
-						subtask = new Subtask();
-					}
-
-					if (event.isStartElement()) {
-						if (event.asStartElement().getName().getLocalPart().equals(IDENTIFIER)) {
-							event = eventReader.nextEvent();
-							
-							// Make sure the field is valid
-							if(!event.asCharacters().getData().matches(PATTERN_IDENTIFIER)){
-								System.out.println("Does not match");
-								
-							}
-							
-							subtask.setIdentifier(event.asCharacters().getData());
-							continue;
-						}
-					}
-					if (event.isStartElement()) {
-						if (event.asStartElement().getName().getLocalPart().equals(PARENTID)) {
-							event = eventReader.nextEvent();
-							
-							// Make sure the field is valid
-							if(!event.asCharacters().getData().matches(PATTERN_IDENTIFIER)){
-								System.out.println("Does not match");
-								
-							}
-							
-							subtask.setParentID(event.asCharacters().getData());
-							continue;
-						}
-					}
-					if (event.asStartElement().getName().getLocalPart().equals(TITLE)) {
-						event = eventReader.nextEvent();
-						
-						// Make sure the field is valid
-						if(!event.asCharacters().getData().matches(PATTERN_TITLE)){
-							System.out.println("Does not match");
-							
-						}
-						
-						subtask.setTitle(event.asCharacters().getData());
-						continue;
-					}
-
-					if (event.asStartElement().getName().getLocalPart().equals(DESCRIPTION)) {
-						event = eventReader.nextEvent();
-						
-						// Make sure the field is valid
-						if(!event.asCharacters().getData().matches(PATTERN_DESCRIPTION)){
-							System.out.println("Does not match");
-							
-						}
-						
-						subtask.setDescription(event.asCharacters().getData());
-						continue;
-					}
-
-					if (event.asStartElement().getName().getLocalPart().equals(DURATION)) {
-						event = eventReader.nextEvent();
-						
-						// Make sure the field is valid
-						if(!event.asCharacters().getData().matches(PATTERN_DURATION)){
-							System.out.println("Does not match");
-							
-						}
-						
-						subtask.setDuration(event.asCharacters().getData());
-						continue;
-					}
-					if (event.asStartElement().getName().getLocalPart().equals(PRIORITY)) {
-						event = eventReader.nextEvent();
-						subtask.setPriority(event.asCharacters().getData());
-						continue;
-					}
-
-				}
-				// If we reach the end of an item element we add it to the list
-				if (event.isEndElement()) {
-					EndElement endElement = event.asEndElement();
-					if (endElement.getName().getLocalPart() == (SUBTASK)) {
-						subtasks.add(subtask);
-					}
-				}
-
-			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (XMLStreamException e) {
-			e.printStackTrace();
-		}
 		
-		return subtasks;
-	} 
-	
-	*/
-	
 	public List<Person> readPeople(String configFile) {
 		List<Person> people = new ArrayList<Person>();
 		try {
