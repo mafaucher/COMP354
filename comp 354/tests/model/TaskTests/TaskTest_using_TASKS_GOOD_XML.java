@@ -5,9 +5,11 @@ import static org.junit.Assert.*;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import junit.framework.Assert;
 
@@ -33,7 +35,7 @@ public class TaskTest_using_TASKS_GOOD_XML {
 	private static String DURATION;
 	private static String DELIVERABLE;
 	private static String DEADLINE;
-	//private static String PERSONASSIGNED;
+	private static ArrayList<String> PEOPLEASSIGNED;
 	private static String COMPLETION;
 	
 	
@@ -44,7 +46,7 @@ public class TaskTest_using_TASKS_GOOD_XML {
 		DURATION = _param1_.getDuration();
 		DELIVERABLE = _param1_.getDelivarable();
 		DEADLINE = _param1_.getDeadline();
-		//PERSONASSIGNED = _param1_.getPersonassigned();
+		PEOPLEASSIGNED = _param1_.getPeopleassigned();
 		COMPLETION = _param1_.getCompletion();				
 	}
 	
@@ -65,7 +67,7 @@ public class TaskTest_using_TASKS_GOOD_XML {
     		 System.out.println("duration:	"+ task_object.getDuration());
     		 System.out.println("deliverable:	"+ task_object.getDelivarable());
     		 System.out.println("deadline: 	"+ task_object.getDeadline());
-    		 System.out.println("personassigned:"+ task_object.getPersonassigned());
+    		 System.out.println("People assigned:"+ task_object.getPersonassigned());
     		 System.out.println("completion: 	"+ task_object.getCompletion());
         	 System.out.println("_____________________________________________________________________________________________");
     	 }
@@ -76,6 +78,7 @@ public class TaskTest_using_TASKS_GOOD_XML {
     	 Task tempObject4 = ___task_list_object___.get(3);
     	 Task tempObject5 = ___task_list_object___.get(4);
     	 Task tempObject6 = ___task_list_object___.get(5);
+    	 Task tempObject7 = ___task_list_object___.get(6);
     	 
     	 
 
@@ -85,7 +88,8 @@ public class TaskTest_using_TASKS_GOOD_XML {
                  { tempObject3, true },
                  { tempObject4, true },
                  { tempObject5, true },
-                 { tempObject6, true }
+                 { tempObject6, true },
+                 { tempObject7, true }
                  
                  
          });    	 
@@ -142,7 +146,7 @@ public class TaskTest_using_TASKS_GOOD_XML {
 	public void testSetDeadline() {
 		//fail("Not yet implemented");
 		System.out.println("Testing Deadline: 		" + DEADLINE);
-		DateFormat formatter = new SimpleDateFormat("MMM dd, yyyy");;
+		DateFormat formatter = new SimpleDateFormat("MMM dd, yyyy", Locale.ENGLISH);;
 		 Date date;
 		 try {
 			date = (Date) formatter.parse(this.DEADLINE);
@@ -153,16 +157,19 @@ public class TaskTest_using_TASKS_GOOD_XML {
 			Assert.assertTrue(!true);
 		}
 	}
-	/*
+	
 	@Test
 	public void testSetPersonassigned() {
 		//fail("Not yet implemented");
-		System.out.println("Testing Person assigned:	" + PERSONASSIGNED);
-		String  PATTERN_PERSONASSIGNED = "^(?:\\p{L}\\p{M}*|[\\ ,.-])*$";
-		Assert.assertTrue(PERSONASSIGNED.matches(PATTERN_PERSONASSIGNED));
+		for (int i=0;i<PEOPLEASSIGNED.size();i++)
+		{
+			System.out.println("Testing Person assigned:	" + PEOPLEASSIGNED.get(i));
+			String  PATTERN_PERSONASSIGNED = "^[0-9]+$";
+			Assert.assertTrue(PEOPLEASSIGNED.get(i).matches(PATTERN_PERSONASSIGNED));
+		}
 
 	}
-	*/
+	
 	@Test
 	public void testSetCompletion() {
 		//fail("Not yet implemented");

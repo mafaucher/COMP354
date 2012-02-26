@@ -8,7 +8,7 @@
    	 <duration>175</duration>
    	 <deliverable>Zipped Folder Containing all Models and Documentation</deliverable>
    	 <deadline>Feb 18, 2012</deadline>
-   	 <personassigned>Kai, Tom</personassigned>
+   	 <peopleassigned><id>1</id> <id>2</id></peopleassigned>
    	 <completion>0</completion>
    	 <subtask></subtask>
     </task>
@@ -20,7 +20,7 @@
    	 <duration>114</duration>
    	 <deliverable>Zipped Folder Containing all Interface files and Documentation</deliverable>
    	 <deadline>Feb 15, 2012</deadline>
-   	 <personassigned>Jonathon, Jeff</personassigned>
+   	 <peopleassigned><id>3</id><id>4</id></peopleassigned>
    	 <completion>0</completion>
    	 <subtask></subtask>
     </task>
@@ -32,7 +32,7 @@
    	 <duration>366</duration>
    	 <deliverable>Completed Testing checklist with bug reports.</deliverable>
    	 <deadline>Feb 10, 2012</deadline>
-   	 <personassigned>Willie, Dmitry, Alain</personassigned>
+   	 <peopleassigned><id>5</id><id>6</id><id>7</id></peopleassigned>
    	 <completion>0</completion>
    	 <subtask></subtask>
     </task>
@@ -44,7 +44,7 @@
    	 <duration>200</duration>
    	 <deliverable>Zipped folder containing all main game files</deliverable>
    	 <deadline>Feb 9, 2012</deadline>
-   	 <personassigned>Tom, Jeff, Willie, Dmitry</personassigned>
+   	 <peopleassigned><id>3</id><id>5</id><id>6</id><id>7</id></peopleassigned>
    	 <completion>0</completion>
    	 <subtask></subtask>
     </task>
@@ -56,7 +56,7 @@
    	 <duration>90</duration>
    	 <deliverable>Zipped folder containing algorithms and AI code</deliverable>
    	 <deadline>Feb 15, 2012</deadline>
-   	 <personassigned>Kai, Jonathon, Alain</personassigned>
+   	 <peopleassigned><id>1</id><id>4</id><id>6</id></peopleassigned>
    	 <completion>0</completion>
    	 <subtask></subtask>
     </task>
@@ -68,7 +68,7 @@
    	 <duration>100</duration>
    	 <deliverable>Zipped folder containing all documentation, including user manuals</deliverable>
    	 <deadline>Feb 21, 2012</deadline>
-   	 <personassigned>Alain, Dmitry</personassigned>
+   	 <peopleassigned><id>2</id><id>4</id></peopleassigned>
    	 <completion>0</completion>
    	 <subtask></subtask>
     </task>
@@ -80,7 +80,7 @@
    	 <duration>250</duration>
    	 <deliverable>Finalized game executable</deliverable>
    	 <deadline>Feb 30, 2012</deadline>
-   	 <personassigned>Tom, Jeff, Willie, Jonathon, Kai, Alain</personassigned>
+   	 <peopleassigned><id>1</id><id>2</id><id>3</id><id>4</id><id>5</id><id>6</id></peopleassigned>
    	 <completion>0</completion>
    	 <subtask></subtask>
     </task>
