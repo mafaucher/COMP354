@@ -1,9 +1,15 @@
-Name                | Total Hours        | Project List    
--------------------------------------------------------------
-Wang, Kai           | 58.333333333333336 | 0
-Kuznetsov, Dmitry   | 175.83333333333334 | 0, 4
-Ling, William       | 117.5              | 4
-How, Jeffrey        | 0.0                | 
-Bergeron, Jonathan  | 122.0              | 2
-Sakha, Alain        | 122.0              | 2
-Faucher, Marc-Andre | 58.333333333333336 | 0
+Name                | Total Hours        | Project List              
+-----------------------------------------------------------------------
+Wang, Kai           | 110.38461538461539 | 0, 7, 10
+Kuznetsov, Dmitry   | 142.8846153846154  | 0, 4, 5, 10
+Ling, William       | 217.3846153846154  | 1, 4, 7, 8, 10
+How, Jeffrey        | 132.3846153846154  | 1, 5, 8, 10
+Bergeron, Jonathon  | 310.63461538461536 | 2, 7, 9, 10
+Sakha, Alain        | 284.38461538461536 | 2, 5, 9, 10
+Faucher, Marc-Andre | 134.1346153846154  | 3, 7, 10
+Harris, Daniel      | 321.88461538461536 | 2, 6, 9, 10
+Smart, Alexander    | 145.3846153846154  | 3, 6, 10
+Downey, Steven      | 136.6346153846154  | 4, 6, 10
+Morrow, Brendan     | 74.13461538461539  | 4, 10
+Paulin, Thomas      | 75.38461538461539  | 1, 5, 10
+Gagne, Simon        | 165.3846153846154  | 0, 0, 6, 10

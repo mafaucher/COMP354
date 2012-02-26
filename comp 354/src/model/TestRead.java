@@ -19,37 +19,6 @@ public class TestRead {
 	static int longesttotalhourslen = 0;
 	static int longestprojectlistlen = 0;
 	
-	public static void main(String args[]) {
-
-		// Create StaXparser objects, used to read the XML files
-		XMLParser readTasks = new XMLParser();
-		// XMLParser readSubtasks = new XMLParser();  // For Increment 2
-		XMLParser readPeople = new XMLParser();
-		
-		System.out.println("Reading Input File...");
-		
-		// Read in the XML File containing the task details
-		taskList = readTasks.readTasks("tasks.xml");
-		
-		// Read in the XML File containing the subtask details. This is for Increment 2.
-		// subtaskList = readSubtasks.readSubtasks("subtasks.xml");
-		
-		// Read in the XML File containing the subtask details
-		peopleList = readPeople.readPeople("people.xml");
-		
-		System.out.println("Input File Successfully Read.");
-		
-		// Process the subtasks, updating information on the people
-		processTasks();
-
-		// Build the output string based on the people
-		String output = buildOutput();
-		
-		// Output the file detailing the people
-		writeFile(output);
-
-	}
-	
 	public static void processTasks(){
 			String fullname = "";
 			String projstr = "";
