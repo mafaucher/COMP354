@@ -1,25 +1,10 @@
 package taskmanager.model;
 
+import java.io.*;
+import java.util.*;
+import javax.xml.stream.*;
+import javax.xml.stream.events.*;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
-
-import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.xml.stream.XMLEventReader;
-import javax.xml.stream.XMLInputFactory;
-import javax.xml.stream.XMLOutputFactory;
-import javax.xml.stream.XMLStreamException;
-import javax.xml.stream.XMLStreamWriter;
-import javax.xml.stream.events.EndElement;
-import javax.xml.stream.events.StartElement;
-import javax.xml.stream.events.XMLEvent;
 
 public class XMLParser {
 	// Possible XML Tags, defined across all XML documents
@@ -51,13 +36,18 @@ public class XMLParser {
 	static final String PATTERN_DESCRIPTION = "^(?:\\p{L}\\p{M}*|[\\ ,.-])*$";
 	static final String PATTERN_DURATION = "^[0-9]+$";
 	
+        static final String XML_PEOPLE = "people.xml";
+        static final String XML_TASKS = "tasks.xml";
+        
 	ArrayList<String> taskidentifiers = new ArrayList<String>();
 	ArrayList<String> peopleidentifiers = new ArrayList<String>();
 
 
         
-        public void writeTasks(String configFile, ArrayList<Task> alTasks) throws FileNotFoundException, IOException
+        public void writeTasks(ArrayList<Task> alTasks) throws FileNotFoundException, IOException
         {
+            String configFile = XML_TASKS;
+            
             XMLOutputFactory factory = XMLOutputFactory.newInstance();
 
              try {
@@ -127,8 +117,10 @@ public class XMLParser {
         }
         
            
-        public void writePeople(String configFile, ArrayList<Person> alPerson) throws FileNotFoundException, IOException
+        public void writePeople(ArrayList<Person> alPerson) throws FileNotFoundException, IOException
         {
+            String configFile = XML_PEOPLE;
+                    
             XMLOutputFactory factory = XMLOutputFactory.newInstance();
 
              try {
@@ -183,7 +175,8 @@ public class XMLParser {
  
         }
 
-	public List<Task> readTasks(String configFile) {
+	public List<Task> readTasks() {
+                String configFile = XML_TASKS;
 		List<Task> tasks = new ArrayList<Task>();
 		try {
 			// First create a new XMLInputFactory
@@ -362,7 +355,8 @@ public class XMLParser {
 		return tasks;
 	}
 		
-	public List<Person> readPeople(String configFile) {
+	public List<Person> readPeople() {
+                String configFile = XML_PEOPLE;
 		List<Person> people = new ArrayList<Person>();
 		try {
 			// First create a new XMLInputFactory

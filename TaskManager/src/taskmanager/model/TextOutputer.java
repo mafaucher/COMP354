@@ -1,11 +1,7 @@
 package taskmanager.model;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.List;
-import java.util.Iterator;
-import java.util.ArrayList;
+import java.io.*;
+import java.util.*;
 
 public class TextOutputer {
 	private static List<Task> taskList;
@@ -16,93 +12,92 @@ public class TextOutputer {
 	static int longestprojectlistlen = 0;
 	
 	public static void processTasks(){
-                        String fullname = "";
-			String projstr = "";
-			String hoursstr = "";
-			
-			int templen = 0;
-			
-			for (Task task : taskList) {
-				
-				ArrayList<String> assignees= new ArrayList<String>(task.getPeopleassigned());		
-				Iterator<String> iterator = assignees.iterator();
-				Iterator<Person> piterator = peopleList.iterator();
-				
-				String curraid;
-				int onproj = assignees.size(); // determine how many people are assigned to the task
-				double timedistro = (Double.parseDouble(task.getDuration()) / onproj); // determine the even distribution of time based on number of assignees				
+            String fullname = "";
+            String projstr = "";
+            String hoursstr = "";
+
+            int templen = 0;
+
+            for (Task task : taskList) {
+
+                ArrayList<String> assignees= new ArrayList<String>(task.getPeopleassigned());		
+                Iterator<String> iterator = assignees.iterator();
+                Iterator<Person> piterator = peopleList.iterator();
+
+                String curraid;
+                int onproj = assignees.size(); // determine how many people are assigned to the task
+                double timedistro = (Double.parseDouble(task.getDuration()) / onproj); // determine the even distribution of time based on number of assignees				
 
 
-				Person currentPerson = new Person();
-				
-				while(iterator.hasNext()) // cycle through the assignees, and update field where necessary
-				{
-					curraid = iterator.next();
-					while(piterator.hasNext()){
-						currentPerson = piterator.next();
-								
-						if(currentPerson.getIdentifier().matches(curraid)){
-							
-							break;
-						}
-						if(!piterator.hasNext()){
-							currentPerson = null;
-						}
-					}
-					
-					if(currentPerson == null){
-						continue;
-					}
-					
-					currentPerson.setTotalHours(timedistro);
-					currentPerson.setProjects(task.getIdentifier());
-					
-					fullname = currentPerson.getLName() + ", " + currentPerson.getFName();	
-					templen = fullname.length();
-					
-					if(templen > longestnamelen)
-					{
-						longestnamelen = templen; // store the longest name length for formatting later
-					}
-					
-					
-					if(projstr != ""){
-						projstr += ", ";
-					}
-					
-					
-					ArrayList<String> projects = new ArrayList<String>(currentPerson.getProjects());		
-					Iterator<String> projIterator = projects.iterator();
-								
-					while(projIterator.hasNext()) // cycle through the assignees, and update field where necessary
-					{	
-						if(projstr != ""){
-							projstr += ", ";
-						}
-						
-						projstr += projIterator.next();
-					
-					
-						templen = projstr.length();
-						if(templen > longestprojectlistlen)
-						{
-							longestprojectlistlen = templen;  // store the longest project list length for formatting later
-						}
-						
-						projstr = "";
-					}
-					
-					
-					hoursstr = Double.toString(currentPerson.getTotalHours());
-					templen = hoursstr.length();
-					
-					if(templen > longesttotalhourslen)
-					{
-						longesttotalhourslen = templen;  // store the longest project list length for formatting later
-					}
+                Person currentPerson = new Person();
 
-				}
-			}
+                while(iterator.hasNext()) // cycle through the assignees, and update field where necessary
+                {
+                    curraid = iterator.next();
+                    while(piterator.hasNext()){
+                            currentPerson = piterator.next();
+
+                            if(currentPerson.getIdentifier().matches(curraid)){
+
+                                    break;
+                            }
+                            if(!piterator.hasNext()){
+                                    currentPerson = null;
+                            }
+                    }
+
+                    if(currentPerson == null){
+                            continue;
+                    }
+
+                    currentPerson.setTotalHours(timedistro);
+                    currentPerson.setProjects(task.getIdentifier());
+
+                    fullname = currentPerson.getLName() + ", " + currentPerson.getFName();	
+                    templen = fullname.length();
+
+                    if(templen > longestnamelen)
+                    {
+                            longestnamelen = templen; // store the longest name length for formatting later
+                    }
+
+
+                    if(projstr != ""){
+                            projstr += ", ";
+                    }
+
+
+                    ArrayList<String> projects = new ArrayList<String>(currentPerson.getProjects());		
+                    Iterator<String> projIterator = projects.iterator();
+
+                    while(projIterator.hasNext()) // cycle through the assignees, and update field where necessary
+                    {	
+                            if(projstr != ""){
+                                    projstr += ", ";
+                            }
+
+                            projstr += projIterator.next();
+
+
+                            templen = projstr.length();
+                            if(templen > longestprojectlistlen)
+                            {
+                                    longestprojectlistlen = templen;  // store the longest project list length for formatting later
+                            }
+
+                            projstr = "";
+                    }
+
+
+                    hoursstr = Double.toString(currentPerson.getTotalHours());
+                    templen = hoursstr.length();
+
+                    if(templen > longesttotalhourslen)
+                    {
+                            longesttotalhourslen = templen;  // store the longest project list length for formatting later
+                    }
+                }
+            }
 	}
 	
 	public static String buildOutput(){
