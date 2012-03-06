@@ -3,14 +3,20 @@ package taskmanager.model;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStream;
 
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamWriter;
 import javax.xml.stream.events.EndElement;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
@@ -47,6 +53,135 @@ public class XMLParser {
 	
 	ArrayList<String> taskidentifiers = new ArrayList<String>();
 	ArrayList<String> peopleidentifiers = new ArrayList<String>();
+
+
+        
+        public void writeTasks(String configFile, ArrayList<Task> alTasks) throws FileNotFoundException, IOException
+        {
+            XMLOutputFactory factory = XMLOutputFactory.newInstance();
+
+             try {
+                 XMLStreamWriter writer = factory.createXMLStreamWriter(new FileWriter(configFile));
+                 writer.writeStartDocument();
+                 writer.writeStartElement("tasks");
+                 
+                 
+                 for (int i = 0; i < alTasks.size(); i++)
+                 {
+                     writer.writeStartElement("task");
+                     
+                     writer.writeStartElement("identifier");
+                     writer.writeCharacters(alTasks.get(i).getIdentifier());
+                     writer.writeEndElement();
+                     
+                     writer.writeStartElement("title");
+                     writer.writeCharacters(alTasks.get(i).getTitle());
+                     writer.writeEndElement();
+                     
+                     writer.writeStartElement("description");
+                     writer.writeCharacters(alTasks.get(i).getDescription());
+                     writer.writeEndElement();
+                     
+                     writer.writeStartElement("duration");
+                     writer.writeCharacters(alTasks.get(i).getDuration());
+                     writer.writeEndElement();
+                     
+                     writer.writeStartElement("deliverable");
+                     writer.writeCharacters(alTasks.get(i).getDelivarable());
+                     writer.writeEndElement();
+                     
+                     writer.writeStartElement("deadline");
+                     writer.writeCharacters(alTasks.get(i).getDeadline());
+                     writer.writeEndElement();
+                     
+                     writer.writeStartElement("peopleassigned");
+                     
+                     for (int j = 0; j < alTasks.get(i).getPeopleassigned().size(); j++)
+                     {
+                         writer.writeStartElement("id");
+                         writer.writeCharacters(alTasks.get(i).getPeopleassigned().get(j));
+                         writer.writeEndElement();
+                     }
+                     
+                     writer.writeEndElement();
+                     
+                     
+                     writer.writeStartElement("completion");
+                     writer.writeCharacters(alTasks.get(i).getCompletion());
+                     writer.writeEndElement();
+                 }
+                 
+                 
+                 writer.writeEndElement();
+                 writer.writeEndDocument();
+
+                 writer.flush();
+                 writer.close();
+
+             } catch (XMLStreamException e) {
+                 e.printStackTrace();
+             } catch (IOException e) {
+                 e.printStackTrace();
+            }
+ 
+        }
+        
+           
+        public void writePeople(String configFile, ArrayList<Person> alPerson) throws FileNotFoundException, IOException
+        {
+            XMLOutputFactory factory = XMLOutputFactory.newInstance();
+
+             try {
+                 XMLStreamWriter writer = factory.createXMLStreamWriter(new FileWriter(configFile));
+                 writer.writeStartDocument();
+                 writer.writeStartElement("people");
+                 
+                 
+                 for (int i = 0; i < alPerson.size(); i++)
+                 {
+                     writer.writeStartElement("person");
+                     
+                     writer.writeStartElement("identifier");
+                     writer.writeCharacters(alPerson.get(i).getIdentifier());
+                     writer.writeEndElement();
+                     
+                     writer.writeStartElement("fname");
+                     writer.writeCharacters(alPerson.get(i).getFName());
+                     writer.writeEndElement();
+                     
+                     writer.writeStartElement("lname");
+                     writer.writeCharacters(alPerson.get(i).getLName());
+                     writer.writeEndElement();
+                     
+                     writer.writeStartElement("jobtitle");
+                     writer.writeCharacters(alPerson.get(i).getJobTitle());
+                     writer.writeEndElement();
+                     
+                     writer.writeStartElement("jobdescription");
+                     writer.writeCharacters(alPerson.get(i).getJobDescription());
+                     writer.writeEndElement();
+                     
+                     writer.writeStartElement("clearance");
+                     writer.writeCharacters(alPerson.get(i).getClearance());
+                     writer.writeEndElement();
+                     
+                     writer.writeEndElement();
+                 }
+                 
+                 
+                 writer.writeEndElement();
+                 writer.writeEndDocument();
+
+                 writer.flush();
+                 writer.close();
+
+             } catch (XMLStreamException e) {
+                 e.printStackTrace();
+             } catch (IOException e) {
+                 e.printStackTrace();
+            }
+ 
+        }
 
 	public List<Task> readTasks(String configFile) {
 		List<Task> tasks = new ArrayList<Task>();
@@ -367,6 +502,7 @@ public class XMLParser {
 		} 
 		return people;
 	}
-
+        
+     
 }
 

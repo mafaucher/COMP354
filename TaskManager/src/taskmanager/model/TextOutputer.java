@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Iterator;
 import java.util.ArrayList;
 
-public class Model {
+public class TextOutputer {
 	private static List<Task> taskList;
 	private static List<Person> peopleList;
 	
@@ -16,7 +16,7 @@ public class Model {
 	static int longestprojectlistlen = 0;
 	
 	public static void processTasks(){
-			String fullname = "";
+                        String fullname = "";
 			String projstr = "";
 			String hoursstr = "";
 			
