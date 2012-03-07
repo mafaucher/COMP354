@@ -65,6 +65,9 @@ public class PersonView extends JPanel
         
         //add the table to the panel
         this.add(scrollPane);
+        
+        //make it read-only
+        tablePerson.setEnabled(false);
     }
             
 }
