@@ -1,4 +1,3 @@
-
 package taskmanager.controller;
 
 import java.awt.event.ActionEvent;
@@ -10,18 +9,31 @@ public class Controller
 {
     MainWindow mw;
     
-    
-    public void initialize()
+    public void go()
     {
         mw = new MainWindow();
+        
+        mw.btPrintTasks.addActionListener(new PrintTaskListener());
+        mw.btPrintPeople.addActionListener(new PrintPeopleListener());
+        
+        
         mw.setVisible(true);
     }
     
-    class TaskListener implements ActionListener
+    
+    class PrintPeopleListener implements ActionListener
     {
-        public void actionPerformed(ActionEvent e) {
-            
-            
+        public void actionPerformed(ActionEvent e) 
+        {
+            System.out.println("Should print people");
+        }
+    }
+    
+    class PrintTaskListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            System.out.println("Should print tasks");
         }
     }
 }

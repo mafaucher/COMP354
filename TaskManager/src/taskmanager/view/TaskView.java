@@ -1,9 +1,12 @@
 package taskmanager.view;
 
-import java.awt.*;
+import java.awt.GridLayout;
 import java.util.ArrayList;
-import javax.swing.*;
-import taskmanager.model.*;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import taskmanager.model.Task;
+import taskmanager.model.XMLParser;
 
 public class TaskView  extends JPanel 
 {
@@ -13,8 +16,10 @@ public class TaskView  extends JPanel
     
     TaskView()
     {
+        //table will be the only other visual within this panel
         this.setLayout(new GridLayout(1, 1));
         
+        //here be column names
         columnNames = new String[8];
         columnNames[0] = "identifier";
         columnNames[1] = "title";
@@ -28,10 +33,16 @@ public class TaskView  extends JPanel
         loadTable();
     }
     
+    
+    //this should also be called when tabs are changed 
+    //in order to refresh changes
     public void loadTable()
     {
+        //parser to read tasks.xml
         XMLParser xmlP = new XMLParser();
         java.util.List<Task> taskData = xmlP.readTasks();
+        
+        //initialize the data array for the table
         rowData = new String[taskData.size()][];
         
         for (int i = 0; i < rowData.length; i++)
@@ -45,10 +56,12 @@ public class TaskView  extends JPanel
             rowData[i][4] = taskData.get(i).getDelivarable();
             rowData[i][5] = taskData.get(i).getDeadline();
             
-            StringBuilder peopleAssigned = new StringBuilder();
             
+            //Use a string builder to be efficient with Memory
+            StringBuilder peopleAssigned = new StringBuilder();
             ArrayList<String> alPID = taskData.get(i).getPeopleassigned();
             
+            //work here to gather people assigned to a project
             for (int j = 0; j < alPID.size(); j++)
             {
                 peopleAssigned.append(alPID.get(j));
@@ -62,11 +75,14 @@ public class TaskView  extends JPanel
         }
         taskData = null; //to avoid security related probs
        
-        
+        //create the table here with the data
         tablePerson = new JTable(rowData, columnNames);
+        
+        //the following makes the table nicer
         JScrollPane scrollPane = new JScrollPane(tablePerson);
         tablePerson.setFillsViewportHeight(true);
         
+        //add the table to the panel
         this.add(scrollPane);
     }
 }

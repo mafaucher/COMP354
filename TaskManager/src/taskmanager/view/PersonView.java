@@ -1,21 +1,24 @@
 package taskmanager.view;
 
-import java.awt.*;
-import java.util.*;
-import javax.swing.*;
-import javax.swing.plaf.TableHeaderUI;
-import taskmanager.model.*;
+import java.awt.GridLayout;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import taskmanager.model.Person;
+import taskmanager.model.XMLParser;
 
 public class PersonView extends JPanel
 {
     JTable tablePerson;
     String columnNames[];
-    String rowData[][];
+    Object rowData[][];
     
     PersonView()
     {
+        //table will be the only other visual within this panel
         this.setLayout(new GridLayout(1, 1));
         
+        //here be column names
         columnNames = new String[6];
         columnNames[0] = "identifier";
         columnNames[1] = "First Name";
@@ -27,10 +30,16 @@ public class PersonView extends JPanel
         loadTable();
     }
     
+    
+    //this should also be called when tabs are changed 
+    //in order to refresh changes
     public void loadTable()
     {
+        //we need a parser to read people.xml
         XMLParser xmlP = new XMLParser();
         java.util.List<Person> peopleData = xmlP.readPeople();
+        
+        //initialize the data array for the table
         rowData = new String[peopleData.size()][];
         
         for (int i = 0; i < rowData.length; i++)
@@ -47,10 +56,14 @@ public class PersonView extends JPanel
         peopleData = null; //to avoid security related probs
        
         
+        //create the table here with the data
         tablePerson = new JTable(rowData, columnNames);
+        
+        //the following makes the table nicer
         JScrollPane scrollPane = new JScrollPane(tablePerson);
         tablePerson.setFillsViewportHeight(true);
         
+        //add the table to the panel
         this.add(scrollPane);
     }
             
