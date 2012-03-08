@@ -1,11 +1,11 @@
 package taskmanager.view;
 
 import java.awt.GridLayout;
+import java.util.List;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import taskmanager.model.Person;
-import taskmanager.model.XMLParser;
 
 public class PersonView extends JPanel
 {
@@ -13,7 +13,7 @@ public class PersonView extends JPanel
     String columnNames[];
     Object rowData[][];
     
-    PersonView()
+    PersonView(List<Person> peopleData)
     {
         //table will be the only other visual within this panel
         this.setLayout(new GridLayout(1, 1));
@@ -27,18 +27,14 @@ public class PersonView extends JPanel
         columnNames[4] = "Job Description";
         columnNames[5] = "Clearance";
         
-        loadTable();
+        loadTable(peopleData);
     }
     
     
     //this should also be called when tabs are changed 
     //in order to refresh changes
-    public void loadTable()
+    public void loadTable(List<Person> peopleData)
     {
-        //we need a parser to read people.xml
-        XMLParser xmlP = new XMLParser();
-        java.util.List<Person> peopleData = xmlP.readPeople();
-        
         //initialize the data array for the table
         rowData = new String[peopleData.size()][];
         

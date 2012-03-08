@@ -44,7 +44,7 @@ public class XMLParser
     static final String XML_PEOPLE = "people.xml";
     static final String XML_TASKS = "tasks.xml";
     
-    public void writeTasks(ArrayList<Task> alTasks) throws FileNotFoundException, IOException
+    public void writeTasks(List<Task> alTasks)
     {
         String configFile = XML_TASKS;
         XMLOutputFactory factory = XMLOutputFactory.newInstance();
@@ -97,6 +97,8 @@ public class XMLParser
                 writer.writeStartElement(COMPLETION);
                 writer.writeCharacters(alTasks.get(i).getCompletion());
                 writer.writeEndElement();
+
+                writer.writeEndElement();
             }
 
             writer.writeEndElement();
@@ -107,10 +109,9 @@ public class XMLParser
         }
         catch (XMLStreamException e) {System.out.println(e.getMessage());}
         catch (IOException e) {System.out.println(e.getMessage());}
-
     }
 
-    public void writePeople(ArrayList<Person> alPerson) throws FileNotFoundException, IOException
+    public void writePeople(List<Person> alPerson)
     {
         String configFile = XML_PEOPLE;
         XMLOutputFactory factory = XMLOutputFactory.newInstance();
@@ -267,7 +268,7 @@ public class XMLParser
                                             continue;
                                     }
 
-                                    task.setDelivarable(event.asCharacters().getData());
+                                    task.setDeliverable(event.asCharacters().getData());
                                     continue;
                             }
                             if (event.asStartElement().getName().getLocalPart().equals(STARTDATE)) {

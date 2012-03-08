@@ -8,20 +8,21 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+import taskmanager.model.MainModel;
 
 public class MainWindow extends JFrame 
 {
     public static final int INI_WIDTH = 800;
     public static final int INI_HEIGHT = 600;
     
-    public JPanel panelTasks;
-    public JPanel panelPeople;
+    public TaskView panelTasks;
+    public PersonView panelPeople;
     public JTabbedPane jTabbedPane1;
     public JPanel panelSouth;
     public JButton btPrintTasks;
     public JButton btPrintPeople;
     
-    public MainWindow() 
+    public MainWindow(MainModel mm)
     {
         setSize(INI_WIDTH, INI_HEIGHT);
         setLayout(new BorderLayout());
@@ -35,8 +36,8 @@ public class MainWindow extends JFrame
         
         jTabbedPane1 = new JTabbedPane();
         
-        panelTasks = new TaskView();
-        panelPeople = new PersonView();
+        panelTasks = new TaskView(mm.getTaskData());
+        panelPeople = new PersonView(mm.getPeopleData());
 
         prepSouthPanel();
                

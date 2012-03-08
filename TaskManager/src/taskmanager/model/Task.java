@@ -11,7 +11,7 @@ public class Task {
         private String deadline;
         private String completion;
     	private ArrayList<String> peopleassigned = new ArrayList<String>();
-        
+
         public String getIdentifier() {
                 return identifier;
         }
@@ -40,7 +40,7 @@ public class Task {
         public String getDelivarable(){
                 return deliverable;
         }
-        public void setDelivarable(String deliverable){
+        public void setDeliverable(String deliverable){
                 this.deliverable=deliverable;
         }
         public String getDeadline() {
@@ -57,14 +57,29 @@ public class Task {
         }
     	public ArrayList<String> getPeopleassigned(){
     		return peopleassigned;
-    	}
+        }
+
     	public void setPeopleassigned(String peopleassigned) {
     		if(!this.peopleassigned.contains(peopleassigned)){
     			this.peopleassigned.add(peopleassigned);
     		}
     	}
+        public String getPeopleassignedAsString() {
 
+            //Use a string builder to be efficient with Memory
+            StringBuilder peopleAssigned = new StringBuilder();
+            ArrayList<String> alPID = getPeopleassigned();
 
+            //work here to gather people assigned to a project
+            for (int j = 0; j < alPID.size(); j++)
+            {
+                peopleAssigned.append(alPID.get(j));
+
+                if (j != alPID.size() - 1)
+                    peopleAssigned.append(", ");
+            }
+            return peopleAssigned.toString();
+        }
 
         @Override
         public String toString() {
