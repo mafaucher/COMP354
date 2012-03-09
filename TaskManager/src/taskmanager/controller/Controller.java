@@ -29,7 +29,6 @@ public class Controller
         mw.setVisible(true);
     }
 
-    // TODO: check for valid input; accept employee list
     class TaskTableListener implements TableModelListener
     {
         public void tableChanged(TableModelEvent e) {
@@ -46,38 +45,38 @@ public class Controller
             switch (column) {
                 case 0:
                     // Don't accept any change
-                    oldData = task.getIdentifier();
-                    revert = (!data.equals(oldData));
-                    break;
+                    mw.updateTaskTable(mm.getTaskData());
+                    mw.repaint();
+                    return;
                 case 1:
                     oldData = task.getTitle();
-                    revert = (!task.setTitle(data));
+                    revert = !task.setTitle(data);
                     break;
                 case 2:
                     oldData = task.getDescription();
-                    revert = (!task.setDescription(data));
+                    revert = !task.setDescription(data);
                     break;
                 case 3:
                     oldData = task.getDuration();
-                    revert = (!task.setDuration(data));
+                    revert = !task.setDuration(data);
                     break;
                 case 4:
                     oldData = task.getDeliverable();
-                    revert = task.setDeliverable(data);
+                    revert = !task.setDeliverable(data);
                     break;
                 case 5:
                     oldData = task.getDeadline();
-                    revert = task.setDeadline(data.toString());
+                    revert = !task.setDeadline(data.toString());
                     break;
                 case 6:
-                    // Get valid input
+                    // Modify People assigned & cell data to a properly formated string
                     mm.assignStringOfID(task, data);
                     oldData = task.getPeopleassignedAsString();
                     revert = !data.equals(oldData);
                     break;
                 case 7:
                     oldData = task.getCompletion();
-                    revert = task.setCompletion(data.toString());
+                    revert = !task.setCompletion(data.toString());
                     break;
             }
             mm.updateXML();

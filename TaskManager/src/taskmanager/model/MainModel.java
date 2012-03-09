@@ -136,6 +136,9 @@ public class MainModel
             String id = st.nextToken();
             id = id.trim();
 
+            // Don't add duplicates
+            if (findTask(id) == null) continue;
+
             // Only add IDs that correspond to a person
             for (Person p : peopleData)
             {

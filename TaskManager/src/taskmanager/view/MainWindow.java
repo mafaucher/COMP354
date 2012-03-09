@@ -9,8 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
-import taskmanager.model.MainModel;
-import taskmanager.model.Person;
+import taskmanager.model.*;
 
 public class MainWindow extends JFrame 
 {
@@ -44,7 +43,6 @@ public class MainWindow extends JFrame
         btPrintPeople.setText("Print people.txt");
         add(btPrintPeople, BorderLayout.SOUTH);
         
-               
         jTabbedPane1.addTab("Tasks", panelTasks);
         jTabbedPane1.addTab("People", panelPeople);
  
@@ -54,5 +52,10 @@ public class MainWindow extends JFrame
     public void updatePeopleTable(List<Person> pList)
     {
         panelPeople.loadTable(pList);
+    }
+
+    public void updateTaskTable(List<Task> tList)
+    {
+        panelTasks.loadTable(tList);
     }
 }
