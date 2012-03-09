@@ -16,6 +16,8 @@ public class TextOutputer
     static int longesttotalhourslen = 0;
     static int longestprojectlistlen = 0;
 
+    
+       
     public static void processTasks()
     {
         String fullname = "";

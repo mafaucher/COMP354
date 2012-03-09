@@ -38,6 +38,55 @@ public class MainModel
     {
         return peopleData;
     }
+    
+    public int getTotalHoursOnProjects(String personID)
+    {
+        int hours = 0;
+        
+        List<Task> tasksList = xmlP.readTasks();
+        
+        for (Task t : tasksList)
+        {
+            for (String personAssigned : t.getPeopleassigned())
+            {
+                if (personID.equals(personAssigned))
+                {
+                    hours += Integer.parseInt(t.getDuration()) / t.getPeopleassigned().size();
+                    break;
+                }
+            }
+        }
+        
+        return hours;
+    }
+    
+    
+    public String getListOfProjects(String personID)
+    {
+        StringBuilder list = new StringBuilder();
+        
+        List<Task> tasksList = xmlP.readTasks();
+        
+        for (Task t : tasksList)
+        {
+            for (String personAssigned : t.getPeopleassigned())
+            {
+                if (personID.equals(personAssigned))
+                {
+                    list.append(t.getIdentifier());
+                    list.append(", ");
+                    break;
+                }
+            }
+        }
+        
+        String returnString = list.toString();
+        
+        returnString = returnString.substring(0, returnString.lastIndexOf(','));
+        
+        return returnString;
+    }
+        
     /*
     public String nextAvailableId()
     {

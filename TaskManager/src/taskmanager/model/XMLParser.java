@@ -1,5 +1,6 @@
 package taskmanager.model;
 
+import com.sun.xml.internal.txw2.output.IndentingXMLStreamWriter;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +9,7 @@ import javax.xml.stream.events.EndElement;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
 
-public class XMLParser 
+public class XMLParser
 {
     // Possible XML Tags, defined across all XML documents
     static final String TASK="task";
@@ -48,17 +49,17 @@ public class XMLParser
     {
         String configFile = XML_TASKS;
         XMLOutputFactory factory = XMLOutputFactory.newInstance();
-
+        
         try 
         {
-            XMLStreamWriter writer = factory.createXMLStreamWriter(new FileWriter(configFile));
+            XMLStreamWriter writer = new IndentingXMLStreamWriter(factory.createXMLStreamWriter(new FileWriter(configFile)));
             writer.writeStartDocument();
             writer.writeStartElement(TASKS);
 
             for (int i = 0; i < alTasks.size(); i++)
             {
                 writer.writeStartElement(TASK);
-
+                
                 writer.writeStartElement(IDENTIFIER);
                 writer.writeCharacters(alTasks.get(i).getIdentifier());
                 writer.writeEndElement();
@@ -118,7 +119,7 @@ public class XMLParser
 
         try 
         {
-            XMLStreamWriter writer = factory.createXMLStreamWriter(new FileWriter(configFile));
+            XMLStreamWriter writer = new IndentingXMLStreamWriter(factory.createXMLStreamWriter(new FileWriter(configFile)));
             writer.writeStartDocument();
             writer.writeStartElement(PEOPLE);
 

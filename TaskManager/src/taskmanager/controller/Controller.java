@@ -7,7 +7,6 @@ import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
 import taskmanager.model.MainModel;
 import taskmanager.view.MainWindow;
-import taskmanager.view.TaskView;
 
 
 public class Controller 
@@ -77,7 +76,9 @@ public class Controller
                     break;
             }
             mm.updateXML();
-
+            //reload people table
+            mw.updatePeopleTable(mm.getPeopleData());
+            
             // Revert invalid changes
             if (revert)
             {
@@ -100,6 +101,22 @@ public class Controller
         public void actionPerformed(ActionEvent e)
         {
             System.out.println("Should print tasks");
+        }
+    }
+    
+    class RemoveTaskListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            int selectedRows[] = mw.panelTasks.tableTasks.getSelectedRows();
+        }
+    }
+    
+    class AddTaskListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            System.out.println("Should add a task");
         }
     }
 }

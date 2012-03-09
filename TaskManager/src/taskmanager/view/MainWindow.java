@@ -4,11 +4,13 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
+import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import taskmanager.model.MainModel;
+import taskmanager.model.Person;
 
 public class MainWindow extends JFrame 
 {
@@ -17,6 +19,7 @@ public class MainWindow extends JFrame
     
     public TaskView panelTasks;
     public PersonView panelPeople;
+    
     public JTabbedPane jTabbedPane1;
     public JPanel panelSouth;
     public JButton btPrintTasks;
@@ -37,7 +40,7 @@ public class MainWindow extends JFrame
         jTabbedPane1 = new JTabbedPane();
         
         panelTasks = new TaskView(mm.getTaskData());
-        panelPeople = new PersonView(mm.getPeopleData());
+        panelPeople = new PersonView(mm);
 
         prepSouthPanel();
                
@@ -62,5 +65,10 @@ public class MainWindow extends JFrame
         panelSouth.add(btPrintTasks);
         
         add(panelSouth, BorderLayout.SOUTH);
+    }
+    
+    public void updatePeopleTable(List<Person> pList)
+    {
+        panelPeople.loadTable(pList);
     }
 }

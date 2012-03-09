@@ -1,23 +1,41 @@
 package taskmanager.view;
 
+import java.awt.BorderLayout;
 import java.awt.GridLayout;
-import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableModel;
 import taskmanager.model.Task;
 
 public class TaskView extends JPanel 
 {
     public JTable tableTasks;
+    public JButton btAdd;
+    public JButton btRemove;
+    public JPanel southPanel;
     String columnNames[];
     String rowData[][];
     
     TaskView(List<Task> taskData)
     {
         //table will be the only other visual within this panel
-        this.setLayout(new GridLayout(1, 1));
+        this.setLayout(new BorderLayout());
+        
+        btAdd = new JButton();
+        btRemove = new JButton();
+        btAdd.setText("Add Task");
+        btRemove.setText("Remove Task");
+        
+        southPanel = new JPanel();
+        southPanel.setLayout(new GridLayout(1, 2));
+        
+        southPanel.add(btAdd);
+        southPanel.add(btRemove);
         
         //here be column names
         columnNames = new String[8];
@@ -33,12 +51,13 @@ public class TaskView extends JPanel
         loadTable(taskData);
     }
     
-    //this should also be called when tabs are changed 
-    //in order to refresh changes
+    
     public void loadTable(List<Task> taskData)
-    {   
+    {
+        this.removeAll();
+        
         //initialize the data array for the table
-        rowData = new String[taskData.size()+1][];
+        rowData = new String[taskData.size()][];
         
         for (int i = 0; i < rowData.length; i++)
         {
@@ -53,7 +72,6 @@ public class TaskView extends JPanel
             rowData[i][6] = taskData.get(i).getPeopleassignedAsString();
             rowData[i][7] = taskData.get(i).getCompletion();
         }
-        
        
         //create the table here with the data
         tableTasks = new JTable(rowData, columnNames);
@@ -63,6 +81,9 @@ public class TaskView extends JPanel
         tableTasks.setFillsViewportHeight(true);
         
         //add the table to the panel
-        this.add(scrollPane);
+        this.add(scrollPane, BorderLayout.CENTER);
+        this.add(southPanel, BorderLayout.SOUTH);
+        
     }
+
 }
