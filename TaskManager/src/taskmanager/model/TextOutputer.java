@@ -15,14 +15,24 @@ public class TextOutputer
     static int longestnamelen = 0;
     static int longesttotalhourslen = 0;
     static int longestprojectlistlen = 0;
-
     
+    public static void printPeopleTXT(XMLParser xmlP)
+    {
+        taskList = xmlP.readTasks();
+        peopleList = xmlP.readPeople();
+        
+        TextOutputer.processTasks();
+        String output = TextOutputer.buildOutput();
+        TextOutputer.writeFile(output);
+    }
        
-    public static void processTasks()
+    private static void processTasks()
     {
         String fullname = "";
         String projstr = "";
         String hoursstr = "";
+        
+        
 
         int templen = 0;
 
@@ -98,7 +108,7 @@ public class TextOutputer
         }
     }
 
-    public static String buildOutput()
+    private static String buildOutput()
     {
             String output = "";
             String fullname = "";
@@ -196,7 +206,7 @@ public class TextOutputer
             return output;
     }
 
-    public static void writeFile(String output)
+    private static void writeFile(String output)
     {
         try
         {

@@ -21,8 +21,6 @@ public class MainWindow extends JFrame
     public PersonView panelPeople;
     
     public JTabbedPane jTabbedPane1;
-    public JPanel panelSouth;
-    public JButton btPrintTasks;
     public JButton btPrintPeople;
     
     public MainWindow(MainModel mm)
@@ -42,29 +40,15 @@ public class MainWindow extends JFrame
         panelTasks = new TaskView(mm.getTaskData());
         panelPeople = new PersonView(mm);
 
-        prepSouthPanel();
+        btPrintPeople = new JButton();
+        btPrintPeople.setText("Print people.txt");
+        add(btPrintPeople, BorderLayout.SOUTH);
+        
                
         jTabbedPane1.addTab("Tasks", panelTasks);
         jTabbedPane1.addTab("People", panelPeople);
  
         add(jTabbedPane1, BorderLayout.NORTH);
-    }
-    
-    private void prepSouthPanel()
-    {
-        panelSouth = new JPanel();
-        panelSouth.setLayout(new GridLayout(1, 1));
-        
-        btPrintPeople = new JButton();
-        btPrintPeople.setText("Print people.txt");
-        
-        btPrintTasks = new JButton();
-        btPrintTasks.setText("Print tasks.txt");
-        
-        panelSouth.add(btPrintPeople);
-        panelSouth.add(btPrintTasks);
-        
-        add(panelSouth, BorderLayout.SOUTH);
     }
     
     public void updatePeopleTable(List<Person> pList)

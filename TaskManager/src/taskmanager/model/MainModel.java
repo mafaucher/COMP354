@@ -82,9 +82,15 @@ public class MainModel
         
         String returnString = list.toString();
         
-        returnString = returnString.substring(0, returnString.lastIndexOf(','));
+        if (returnString.contains(","))
+            returnString = returnString.substring(0, returnString.lastIndexOf(','));
         
         return returnString;
+    }
+    
+    public void writePeopleTxt()
+    {
+        TextOutputer.printPeopleTXT(xmlP);
     }
         
     /*

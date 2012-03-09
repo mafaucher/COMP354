@@ -6,6 +6,7 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
 import taskmanager.model.MainModel;
+import taskmanager.model.TextOutputer;
 import taskmanager.view.MainWindow;
 
 
@@ -19,11 +20,9 @@ public class Controller
         mm = new MainModel();
         mw = new MainWindow(mm);
         
-        mw.btPrintTasks.addActionListener(new PrintTaskListener());
         mw.btPrintPeople.addActionListener(new PrintPeopleListener());
-
+        mw.panelTasks.btRemove.addActionListener(new RemoveTaskListener());
         mw.panelTasks.tableTasks.getModel().addTableModelListener(new TaskTableListener());
-
 
         mw.setVisible(true);
     }
@@ -92,15 +91,7 @@ public class Controller
     {
         public void actionPerformed(ActionEvent e) 
         {
-            System.out.println("Should print people");
-        }
-    }
-    
-    class PrintTaskListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            System.out.println("Should print tasks");
+            mm.writePeopleTxt();
         }
     }
     
@@ -109,6 +100,21 @@ public class Controller
         public void actionPerformed(ActionEvent e)
         {
             int selectedRows[] = mw.panelTasks.tableTasks.getSelectedRows();
+            
+            for (int i = 0; i < selectedRows.length; i++)
+                for (int j = 0; j < mm.getTaskData().size(); j++)
+                {
+                    String tableId = (String)mw.panelTasks.tableTasks.getValueAt(selectedRows[i], 0);
+                    if (tableId.equals(mm.getTaskData().get(j).getIdentifier()))
+                    {
+                        mm.getTaskData().remove(j);
+                        break;
+                    }
+                }
+            
+            mw.panelTasks.loadTable(mm.getTaskData());
+            mm.updateXML();
+            mw.panelPeople.loadTable(mm.getPeopleData());
         }
     }
     
@@ -116,7 +122,7 @@ public class Controller
     {
         public void actionPerformed(ActionEvent e)
         {
-            System.out.println("Should add a task");
+            
         }
     }
 }
