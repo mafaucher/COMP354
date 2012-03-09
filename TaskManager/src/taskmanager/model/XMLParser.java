@@ -77,7 +77,7 @@ public class XMLParser
                 writer.writeEndElement();
 
                 writer.writeStartElement(DELIVERABLE);
-                writer.writeCharacters(alTasks.get(i).getDelivarable());
+                writer.writeCharacters(alTasks.get(i).getDeliverable());
                 writer.writeEndElement();
 
                 writer.writeStartElement(DEADLINE);

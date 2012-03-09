@@ -4,7 +4,9 @@
  */
 package taskmanager.model;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
 
 /**
  *
@@ -93,11 +95,58 @@ public class MainModel
         TextOutputer.printPeopleTXT(xmlP);
     }
         
-    /*
     public String nextAvailableId()
     {
         int id = 0;
-        for (int i=0; i<taskData.size())
+        boolean unique = false;
+
+        while(!unique)
+        {
+            unique = true;
+            for (Task t : taskData)
+            {
+                // ID already exists, try next one
+                if (Integer.parseInt(t.getIdentifier()) == id)
+                {
+                    id++;
+                    unique = false;
+                    break;
+                }
+            }
+        }
+        return String.valueOf(id);
     }
-    */
+
+    public Task findTask(String taskID)
+    {
+        // Find the right task
+        for (Task t : taskData)
+        {
+            if (t.getIdentifier().equals(taskID))
+                return t;
+        }
+        return null;
+    }
+    
+    public void assignStringOfID(Task task, String data)
+    {
+        StringTokenizer st = new StringTokenizer(data, ",");
+        ArrayList<String> peopleassigned = new ArrayList<String>();
+        while (st.hasMoreTokens()) {
+            String id = st.nextToken();
+            id = id.trim();
+
+            // Only add IDs that correspond to a person
+            for (Person p : peopleData)
+            {
+                if (p.getIdentifier().equals(id))
+                {
+                    peopleassigned.add(id);
+                    break;
+                }
+            }
+        }
+        task.setPeopleassigned(peopleassigned);
+    }
+     
 }

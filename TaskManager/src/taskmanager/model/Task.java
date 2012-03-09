@@ -16,44 +16,55 @@ public class Task {
                 return identifier;
         }
         
-        public void setIdentifier(String identifier) {
+        public boolean setIdentifier(String identifier) {
+                if (!identifier.matches(XMLParser.PATTERN_IDENTIFIER)) return false;
                 this.identifier = identifier;
+                return true;
         }
         public String getTitle() {
                 return title;
         }
-        public void setTitle(String title) {
+        public boolean setTitle(String title) {
+                if (!title.matches(XMLParser.PATTERN_TITLE)) return false;
                 this.title = title;
+                return true;
         }
         public String getDescription() {
                 return description;
         }
-        public void setDescription(String description) {
+        public boolean setDescription(String description) {
+                if (!description.matches(XMLParser.PATTERN_DESCRIPTION)) return false;
                 this.description = description;
+                return true;
         }
         public String getDuration(){
                 return duration;
         }
-        public void setDuration(String duration) {
+        public boolean setDuration(String duration) {
+                if (!duration.matches(XMLParser.PATTERN_DURATION)) return false;
                 this.duration = duration;
+                return true;
         }
-        public String getDelivarable(){
+        public String getDeliverable(){
                 return deliverable;
         }
-        public void setDeliverable(String deliverable){
+        public boolean setDeliverable(String deliverable){
                 this.deliverable=deliverable;
+                return true;
         }
         public String getDeadline() {
                 return deadline;
         }
-        public void setDeadline(String deadline){
+        public boolean setDeadline(String deadline){
                 this.deadline=deadline;
+                return true;
         }
         public String getCompletion(){
                 return completion;
         }
-        public void setCompletion(String completion){
+        public boolean setCompletion(String completion){
                 this.completion=completion;
+                return true;
         }
     	public ArrayList<String> getPeopleassigned(){
     		return peopleassigned;
@@ -64,6 +75,12 @@ public class Task {
     			this.peopleassigned.add(peopleassigned);
     		}
     	}
+
+        public void setPeopleassigned(ArrayList<String> peopleassigned)
+        {
+            this.peopleassigned = peopleassigned;
+        }
+
         public String getPeopleassignedAsString() {
 
             //Use a string builder to be efficient with Memory

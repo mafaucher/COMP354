@@ -5,10 +5,11 @@ import java.awt.event.ActionListener;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
+import javax.swing.table.DefaultTableModel;
 import taskmanager.model.MainModel;
+import taskmanager.model.Task;
 import taskmanager.model.TextOutputer;
 import taskmanager.view.MainWindow;
-
 
 public class Controller 
 {
@@ -21,6 +22,7 @@ public class Controller
         mw = new MainWindow(mm);
         
         mw.btPrintPeople.addActionListener(new PrintPeopleListener());
+        mw.panelTasks.btAdd.addActionListener(new AddTaskListener());
         mw.panelTasks.btRemove.addActionListener(new RemoveTaskListener());
         mw.panelTasks.tableTasks.getModel().addTableModelListener(new TaskTableListener());
 
@@ -35,43 +37,47 @@ public class Controller
             int row = e.getFirstRow();
             TableModel model = (TableModel)e.getSource();
             String data = model.getValueAt(row, column).toString();
-            String oldData;
+            String oldData = "";
+
+            // Get task that corresponds to this row
+            Task task = mm.findTask(String.valueOf(model.getValueAt(row, 0)));
 
             boolean revert = false;
             switch (column) {
                 case 0:
-                    oldData = mm.getTaskData().get(row).getIdentifier();
-                    if (!data.equals(oldData))
-                    {
-                        data = oldData;
-                        revert = true;
-                    }
+                    // Don't accept any change
+                    oldData = task.getIdentifier();
+                    revert = (!data.equals(oldData));
                     break;
                 case 1:
-                    mm.getTaskData().get(row).setTitle(data);
+                    oldData = task.getTitle();
+                    revert = (!task.setTitle(data));
                     break;
                 case 2:
-                    mm.getTaskData().get(row).setDescription(data);
+                    oldData = task.getDescription();
+                    revert = (!task.setDescription(data));
                     break;
                 case 3:
-                    mm.getTaskData().get(row).setDuration(data);
+                    oldData = task.getDuration();
+                    revert = (!task.setDuration(data));
                     break;
                 case 4:
-                    mm.getTaskData().get(row).setDeliverable(data);
+                    oldData = task.getDeliverable();
+                    revert = task.setDeliverable(data);
                     break;
                 case 5:
-                    mm.getTaskData().get(row).setDeadline(data.toString());
+                    oldData = task.getDeadline();
+                    revert = task.setDeadline(data.toString());
                     break;
                 case 6:
-                    oldData = mm.getTaskData().get(row).getPeopleassignedAsString();
-                    if (!data.equals(oldData))
-                    {
-                        data = oldData;
-                        revert = true;
-                    }
+                    // Get valid input
+                    mm.assignStringOfID(task, data);
+                    oldData = task.getPeopleassignedAsString();
+                    revert = !data.equals(oldData);
                     break;
                 case 7:
-                    mm.getTaskData().get(row).setCompletion(data.toString());
+                    oldData = task.getCompletion();
+                    revert = task.setCompletion(data.toString());
                     break;
             }
             mm.updateXML();
@@ -81,7 +87,7 @@ public class Controller
             // Revert invalid changes
             if (revert)
             {
-                model.setValueAt(data, row, column);
+                model.setValueAt(oldData, row, column);
                 mw.panelTasks.tableTasks.setModel(model);
             }
         }
@@ -115,6 +121,7 @@ public class Controller
             mw.panelTasks.loadTable(mm.getTaskData());
             mm.updateXML();
             mw.panelPeople.loadTable(mm.getPeopleData());
+            mw.repaint();
         }
     }
     
@@ -122,7 +129,12 @@ public class Controller
     {
         public void actionPerformed(ActionEvent e)
         {
+            Task t = new Task();
+            t.setIdentifier(mm.nextAvailableId());
+            mm.getTaskData().add(t);
             
+            mw.panelTasks.loadTable(mm.getTaskData());
+            mw.repaint();
         }
     }
 }

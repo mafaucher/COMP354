@@ -67,7 +67,7 @@ public class TaskView extends JPanel
             rowData[i][1] = taskData.get(i).getTitle();
             rowData[i][2] = taskData.get(i).getDescription();
             rowData[i][3] = taskData.get(i).getDuration();
-            rowData[i][4] = taskData.get(i).getDelivarable();
+            rowData[i][4] = taskData.get(i).getDeliverable();
             rowData[i][5] = taskData.get(i).getDeadline();
             rowData[i][6] = taskData.get(i).getPeopleassignedAsString();
             rowData[i][7] = taskData.get(i).getCompletion();
@@ -85,5 +85,13 @@ public class TaskView extends JPanel
         this.add(southPanel, BorderLayout.SOUTH);
         
     }
-
+/*
+    public void updateID()
+    {
+        for (int i=0; i<tableTasks.getRowCount(); i++)
+        {
+            tableTasks.getValueAt(0, i)
+        }
+    }
+ */
 }
