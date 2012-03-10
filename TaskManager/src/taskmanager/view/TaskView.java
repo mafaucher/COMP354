@@ -85,13 +85,4 @@ public class TaskView extends JPanel
         this.add(southPanel, BorderLayout.SOUTH);
         
     }
-/*
-    public void updateID()
-    {
-        for (int i=0; i<tableTasks.getRowCount(); i++)
-        {
-            tableTasks.getValueAt(0, i)
-        }
-    }
- */
 }

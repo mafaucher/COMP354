@@ -118,8 +118,8 @@ public class Controller
                 }
             
             mw.panelTasks.loadTable(mm.getTaskData());
-            mm.updateXML();
             mw.panelPeople.loadTable(mm.getPeopleData());
+            mm.updateXML();
             mw.repaint();
         }
     }
@@ -128,11 +128,12 @@ public class Controller
     {
         public void actionPerformed(ActionEvent e)
         {
-            Task t = new Task();
-            t.setIdentifier(mm.nextAvailableId());
+            Task t = new Task(mm.nextAvailableId());
             mm.getTaskData().add(t);
-            
-            mw.panelTasks.loadTable(mm.getTaskData());
+
+            mw.updatePeopleTable(mm.getPeopleData());
+            mw.updateTaskTable(mm.getTaskData());
+            mm.updateXML();
             mw.repaint();
         }
     }

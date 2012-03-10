@@ -242,9 +242,11 @@ public class XMLParser
                                             System.out.println("Warning: Task " + task.getIdentifier() + " has an invalid description.");
                                             continue;
                                     }
-
-                                    task.setDescription(event.asCharacters().getData());
-                                    continue;
+                                    if(event.isCharacters())
+                                    {
+                                        task.setDescription(event.asCharacters().getData());
+                                        continue;
+                                    }
                             }
 
                             if (event.asStartElement().getName().getLocalPart().equals(DURATION)) {
@@ -327,9 +329,9 @@ public class XMLParser
                     {
                         EndElement endElement = event.asEndElement();
                         if (endElement.getName().getLocalPart().equals(TASK) && validtask == true) {
-                            if(task.getIdentifier() == null || task.getDuration() == null || task.getPeopleassigned().isEmpty()){
+                            if(task.getIdentifier() == null || task.getDuration() == null){
                                 //CHECKS ELEMENT EXISTS --> OTHERWISE, ERROR --> GO TO NEXT NODE/TASK
-                                System.out.println("Error: Task has undefined identifier or duration, or has nobody assigned to it. This entry will be skipped.");
+                                System.out.println("Error: Task has undefined identifier or duration. This entry will be skipped.");
                             }
                             else //TEMP OF GOOD TASKS
                                 tasks.add(task);

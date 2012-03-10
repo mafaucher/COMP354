@@ -154,4 +154,15 @@
     </peopleassigned>
     <completion>0</completion>
   </task>
+  <task>
+    <identifier>2</identifier>
+    <title>-</title>
+    <description>-</description>
+    <duration>0</duration>
+    <deliverable>-</deliverable>
+    <deadline>-</deadline>
+    <peopleassigned>
+    </peopleassigned>
+    <completion>0</completion>
+  </task>
 </tasks>

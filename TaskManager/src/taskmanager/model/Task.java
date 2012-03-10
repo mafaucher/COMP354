@@ -12,6 +12,27 @@ public class Task {
         private String completion;
     	private ArrayList<String> peopleassigned = new ArrayList<String>();
 
+        public Task() {
+            identifier = "";
+            title = "-";
+            description = "-";
+            duration = "0";
+            deliverable = "-";
+            deadline = "-";
+            completion = "0";
+            peopleassigned = new ArrayList<String>();
+        }
+        public Task(String id) {
+            identifier = id;
+            title = "-";
+            description = "-";
+            duration = "0";
+            deliverable = "-";
+            deadline = "-";
+            completion = "0";
+            peopleassigned = new ArrayList<String>();
+        }
+
         public String getIdentifier() {
                 return identifier;
         }
