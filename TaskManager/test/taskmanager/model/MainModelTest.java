@@ -13,10 +13,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author t_pauli
- */
 public class MainModelTest {
 
     public MainModelTest() {
