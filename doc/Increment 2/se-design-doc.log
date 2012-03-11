@@ -1,0 +1,343 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2012.3.10)  10 MAR 2012 21:31
+entering extended mode
+**se-design-doc.tex
+(G:\COMP354\Documentation\se-design-doc.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, german-x-2009-06-19, ngerman-x-2009-06-19, french, loaded.
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\size12.clo"
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2009/08/25 v0.04m Graphics/color for pdfTeX
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\listings\listings.sty"
+\lst@mode=\count88
+\lst@gtempboxa=\box26
+\lst@token=\toks15
+\lst@length=\count89
+\lst@currlwidth=\dimen105
+\lst@column=\count90
+\lst@pos=\count91
+\lst@lostspace=\dimen106
+\lst@width=\dimen107
+\lst@newlines=\count92
+\lst@lineno=\count93
+\lst@maxwidth=\dimen108
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count94
+\lst@skipnumbers=\count95
+\lst@framebox=\box27
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\listings\listings.cfg"
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\tools\verbatim.sty"
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks16
+\verbatim@line=\toks17
+\verbatim@in@stream=\read1
+)
+(G:\COMP354\Documentation\se-design-doc.aux
+
+LaTeX Warning: Label `fig:model-diagram' multiply defined.
+
+
+LaTeX Warning: Label `fig:model-diagram' multiply defined.
+
+)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+ ("C:\Program Files\MiKTeX 2.8\tex\context\base\supp-pdf.tex"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count96
+\scratchdimen=\dimen109
+\scratchbox=\box28
+\nofMPsegments=\count97
+\nofMParguments=\count98
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count99
+\MPscratchDim=\dimen110
+\MPnumerator=\count100
+\everyMPtoPDFconversion=\toks19
+)
+\c@lstlisting=\count101
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 39.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 39.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 39.
+ [1
+
+{C:/ProgramData/MiKTeX/2.8/pdftex/config/pdftex.map}]
+<Diagrams/archDiagram.png, id=7, 537.50812pt x 623.32875pt>
+File: Diagrams/archDiagram.png Graphic file (type png)
+
+<use Diagrams/archDiagram.png> [2
+
+ <G:/COMP354/Documentation/Diagrams/archDiagram.png (PNG copy)>]
+<Diagrams/subsystem_flowchart.png, id=11, 767.11594pt x 438.8897pt>
+File: Diagrams/subsystem_flowchart.png Graphic file (type png)
+
+<use Diagrams/subsystem_flowchart.png>
+Overfull \hbox (5.02904pt too wide) in paragraph at lines 86--86
+ [] 
+ []
+
+<Diagrams/legend.png, id=12, 711.4078pt x 371.88937pt>
+File: Diagrams/legend.png Graphic file (type png)
+
+<use Diagrams/legend.png>
+Overfull \hbox (7.16551pt too wide) in paragraph at lines 92--92
+ [] 
+ []
+
+[3 <G:/COMP354/Documentation/Diagrams/subsystem_flowchart.png (PNG copy)>]
+<Diagrams/model_diagram.png, id=16, 734.745pt x 649.67719pt>
+File: Diagrams/model_diagram.png Graphic file (type png)
+
+<use Diagrams/model_diagram.png>
+Overfull \hbox (59.07391pt too wide) in paragraph at lines 107--107
+ [] 
+ []
+
+
+Overfull \hbox (11.7873pt too wide) in paragraph at lines 116--134
+\OT1/cmr/m/n/12 MainModel con-tains the XML-Parser class (part of our I/O Sub-s
+ys-tem), TextOut-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--134
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--134
+
+ []
+
+
+Overfull \hbox (5.40384pt too wide) in paragraph at lines 116--134
+\OT1/cmtt/m/n/12 void writePeopleTxt()\OT1/cmr/m/n/12 : \OT1/cmr/m/it/12 calls 
+TextOut-puter's print-Peo-pleTXT(xmlP) method 
+ []
+
+[4 <G:/COMP354/Documentation/Diagrams/legend.png (PNG copy)>] [5 <G:/COMP354/Do
+cumentation/Diagrams/model_diagram.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 138--175
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--175
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 179--192
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--192
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 196--225
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 196--225
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--262
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--262
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
+
+ []
+
+<Diagrams/view_diagram.png, id=35, 402.75468pt x 357.58594pt>
+File: Diagrams/view_diagram.png Graphic file (type png)
+
+<use Diagrams/view_diagram.png> [9]
+Underfull \hbox (badness 10000) in paragraph at lines 280--292
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 280--292
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 296--306
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 296--306
+
+ []
+
+[10 <G:/COMP354/Documentation/Diagrams/view_diagram.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 310--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--323
+
+ []
+
+<Diagrams/controller_diagram.png, id=42, 589.4522pt x 347.04657pt>
+File: Diagrams/controller_diagram.png Graphic file (type png)
+
+<use Diagrams/controller_diagram.png> [11]
+Underfull \hbox (badness 10000) in paragraph at lines 341--352
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 341--352
+
+ []
+
+
+Overfull \hbox (4.48723pt too wide) in paragraph at lines 341--352
+\OT1/cmr/m/it/12 new model $\OML/cmm/m/it/12 MainModel$ \OT1/cmr/m/it/12 and cr
+e-ates and ini-tial-izes a new win-dow $\OML/cmm/m/it/12 MainWindow$
+ []
+
+[12 <G:/COMP354/Documentation/Diagrams/controller_diagram.png (PNG copy)>]
+<Diagrams/add_task_diagram.png, id=50, 874.01532pt x 541.27219pt>
+File: Diagrams/add_task_diagram.png Graphic file (type png)
+
+<use Diagrams/add_task_diagram.png>
+Overfull \hbox (25.46584pt too wide) in paragraph at lines 359--359
+ [] 
+ []
+
+<Diagrams/change_cell_diagram.png, id=51, 845.40843pt x 328.97906pt>
+File: Diagrams/change_cell_diagram.png Graphic file (type png)
+
+<use Diagrams/change_cell_diagram.png>
+Overfull \hbox (9.732pt too wide) in paragraph at lines 365--365
+ [] 
+ []
+
+File: Diagrams/change_cell_diagram.png Graphic file (type png)
+<use Diagrams/change_cell_diagram.png>
+Overfull \hbox (9.732pt too wide) in paragraph at lines 371--371
+ [] 
+ []
+
+[13 <G:/COMP354/Documentation/Diagrams/add_task_diagram.png (PNG copy)>]
+[14 <G:/COMP354/Documentation/Diagrams/change_cell_diagram.png (PNG copy)>]
+(G:\COMP354\Documentation\se-design-doc.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2178 strings out of 495285
+ 30868 string characters out of 3180391
+ 84957 words of memory out of 3000000
+ 5401 multiletter control sequences out of 15000+200000
+ 8410 words of font info for 30 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 26i,8n,32p,514b,244s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
+ogram Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Fi
+les/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTe
+X 2.8/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.8/fo
+nts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on se-design-doc.pdf (14 pages, 532691 bytes).
+PDF statistics:
+ 76 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+
