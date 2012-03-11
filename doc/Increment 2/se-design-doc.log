@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.7.6)  11 MAR 2012 16:45
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.7.6)  11 MAR 2012 17:10
 entering extended mode
  %&-line parsing enabled.
 **se-design-doc.tex
@@ -337,10 +337,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2182 strings out of 495061
- 30718 string characters out of 1182622
+ 2187 strings out of 495061
+ 30820 string characters out of 1182622
  85260 words of memory out of 3000000
- 5381 multiletter control sequences out of 15000+50000
+ 5386 multiletter control sequences out of 15000+50000
  8578 words of font info for 31 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  26i,8n,32p,513b,244s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -349,7 +349,7 @@ re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texmf-t
 exlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts
 /type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-texlive/fonts/type1/publ
 ic/amsfonts/cm/cmtt12.pfb>
-Output written on se-design-doc.pdf (15 pages, 533611 bytes).
+Output written on se-design-doc.pdf (15 pages, 533605 bytes).
 PDF statistics:
  79 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
