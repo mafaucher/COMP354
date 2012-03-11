@@ -114,29 +114,29 @@ Please refer to Figure 4.
 {\bf MainModel}
 \begin{quote}
 {\bf Description}\\
-MainModel contains the XMLParser class (part of our I/O Subsystem), TextOutputer class (also part of I/O subsystem, responsible for writing to an XML file). MainModel also contains Person and Task classes. The purpose of this class is to group Person and Tasks data into same class and add functionality for writing that data to a file (I/O subsystem).\\\\
+This class contains the XMLParser class (part of our I/O Subsystem), TextOutputer class (also part of I/O subsysem, responsible for wrtiting to an XML file). It also contains Person and Task classes. The purpose of this class is to group Person and Tasks data into same class and add functionality for writing that data to a file (I/O subsystem).\\\\
 {\bf Attributes:}\\
-\texttt{XMLParser xmlP}: The XML Parser\\
-\texttt{List<Person> peopleData}: List of persons in the XML file\\
-\texttt{List<Task> taskData}: List of task in the XML file\\\\
+\texttt{XMLParser xmlP}: \emph{The XML Parser}\\
+\texttt{List<Person> peopleData}: \emph{List of persons in the XML file}\\
+\texttt{List<Task> taskData}: \emph{List of tasks in the XML file}\\\\
 {\bf Methods:}\\
 \texttt{MainModel()}: \emph{Constructor}\\
-\texttt{void updateXML()}: \emph{writes to XML file using XMLParser's writePeople and writeTasks methods}\\
-\texttt{void writePeopleTxt()}: \emph{calls TextOutputer's printPeopleTXT(xmlP) method}\\
-\texttt{Task findTask(String)}: \emph{Find a tastk by id from taskData List}\\
+\texttt{void updateXML()}: \emph{writes to XML file using XMLParser's \texttt{writePeople} and \texttt{writeTasks} methods}\\
+\texttt{void writePeopleTxt()}: \emph{calls TextOutputer's \texttt{printPeopleTXT(xmlP)} method}\\
+\texttt{Task findTask(String)}: \emph{Find a task by id from the \texttt{taskData} List}\\
 \texttt{List<Task> getTaskData()}: \emph{getter}\\
 \texttt{List<Person> getPeopleData()}: \emph{getter}\\
 \texttt{int getTotalHoursOnProjects(String)}: \emph{gets Person's total hours}\\
 \texttt{void writePeopleTxt()}: \emph{writes xmlParser to file using TextOutputer's static function}\\
 \texttt{String nextAvailableId()}: \emph{Gets the next available ID (from the list of Tasks) when creating a new Task}\\
-\texttt{String getListOfProjects(String)}: \emph{Gets the list of Tasks in a string, separated by a comma ','.}\\
+\texttt{String getListOfProjects(String)}: \emph{Gets the list of Tasks in a string, separated by a comma `,'.}\\
 \texttt{void assignStringOfID(Task task, String data)}: \emph{When assigning new people to a Task, it validates the format of string ids and assigns new People to a Task}
 \end{quote}
  
 {\bf XMLParser}
 \begin{quote}
 {\bf Description}\\
-The purpose of this class is to parse people.xml and tasks.xml files and extract appropriate data. It also writes to XML files.\\\\
+This class parses people.xml and tasks.xml files and extracts appropriate data. It also writes to XML files.\\\\
 {\bf Attributes:(Tags used to extract information when parsing)}\\
 \texttt{String TASK}\\
 \texttt{String TASKS}\\
@@ -177,15 +177,18 @@ The purpose of this class is to parse people.xml and tasks.xml files and extract
 {\bf TextOutputer}
 \begin{quote}
 {\bf Description}\\
-The purpose of this class is to format and write data (People) to people.txt\\\\
+This class formats and writes data (People) to people.txt\\\\
 {\bf Attributes:}\\
 \texttt{List<Task> taskList}\\
 \texttt{List<Person> peopleList}\\
 \texttt{int longestnamelen}\\
 \texttt{int longesttotalhourslen}\\
 \texttt{int longestprojectlistlen }\\\\
+
+\pagebreak
+
 {\bf Methods:}\\
-\texttt{void printPeopleTXT(XMLParser)}: \emph{Writes new data to file using ``writeFile" by first reading it from XMLParser, building output then calling ``writeFile".}\\
+\texttt{void printPeopleTXT(XMLParser)}: \emph{Writes new data to file using \texttt{writeFile} by first reading it from XMLParser, building output then calling \texttt{writeFile}.}\\
 \texttt{void processTasks() }\\
 \texttt{String buildOutput()}: \emph{Builds output string from list of Tasks and Persons and returns the string} \\
 \texttt{void writeFile(String output)}: \emph{Gets the string and writes it to people.txt}
@@ -194,8 +197,8 @@ The purpose of this class is to format and write data (People) to people.txt\\\\
 {\bf Person}
 \begin{quote}
 {\bf Description}\\
-The purpose of this class is to abstract and encapsulate People data.\\\\
-{\bf Attributes:}\\
+This class abstracts and encapsulates People data.\\\\
+{\bf Attributes: (Setters and getters)}\\
 \texttt{double TOTALHOURS}\\
 \texttt{ArrayList<String> PROJECTS}\\
 \texttt{String identifier}\\
@@ -221,14 +224,16 @@ The purpose of this class is to abstract and encapsulate People data.\\\\
 \texttt{void setTotalHours(double)  }\\
 \texttt{ArrayList<String> getProjects()  }\\
 \texttt{void setProjects(String) }\\
-\texttt{String toString()}: \emph{Overrides toString method and returns a list of attributes and their values, separated by `,' comma}
+\texttt{String toString()}: \emph{Overrides \texttt{toString()} method and returns a list of attributes and their values, separated by `,' comma}
 \end{quote}
+
+\pagebreak
  
 {\bf Task}
 \begin{quote}
 {\bf Description}\\
-The purpose of this class is to abstract and encapsulate Task data.\\\\
-{\bf Attributes:}\\
+This class abstracts and encapsulates Task data.\\\\
+{\bf Attributes: (Setters and getters)}\\
 \texttt{String identifier}\\
 \texttt{String title}\\
 \texttt{String description}\\
@@ -258,7 +263,7 @@ The purpose of this class is to abstract and encapsulate Task data.\\\\
 \texttt{void setPeopleassigned(String)  }\\
 \texttt{void setPeopleassigned(ArrayList<String>) }\\
 \texttt{String getPeopleassignedAsString()  }\\
-\texttt{String toString()}: \emph{Overrides toString method and returns a list of attributes and their values, separated by `,' comma}
+\texttt{String toString()}: \emph{Overrides \texttt{toString()} method and returns a list of attributes and their values, separated by `,' comma}
 \end{quote}
 
 \subsection{View Subsystem}
@@ -278,7 +283,7 @@ Please refer to Figure 5.\\\\\\\\\\
 {\bf TaskView}
 \begin{quote}
 {\bf Description}\\
-This class is responsible for displaying the list of tasks in a table format. It gets the data in the constructor, which uses its loadTable method to populate the table.\\\\
+This class is responsible for displaying the list of tasks in a table format. It is initially called by MainWindow and is passed an object, of type MainModel, from which it reads all the tasks using the \texttt{LoadTable()} method.\\\\
 {\bf Attributes:}\\
 \texttt{JButton btAdd}\\
 \texttt{JButton btRemove}\\
@@ -294,7 +299,7 @@ This class is responsible for displaying the list of tasks in a table format. It
 {\bf PersonView}
 \begin{quote}
 {\bf Description}\\
-This class is responsible for displaying the list of people in a table format. It gets the data in the constructor, which uses its loadTable method to populate the table.\\\\
+This class is responsible for displaying the list of people in a table format. It is initially called by MainWindow and is passed a list of people from which it reads all the datausing the \texttt{loadTable()} method.\\\\
 {\bf Attributes:}\\
 \texttt{String[] columnNames}\\
 \texttt{MainModel mm}\\
@@ -318,8 +323,8 @@ This class creates the window that contains the Tasks and People tabs.  It sets 
 \texttt{TaskView panelTasks}\\\\
 {\bf Methods:}\\
 \texttt{MainWindow(MainModel mm)}:  \emph{Constructor}\\
-\texttt{updatePeopleTable(List<Person>)}:  \emph{Calls Person's view loadTable method, which gets the data from the model and loads into the table}\\
-\texttt{updateTaskTable(List<Task>)}: \emph{Calls task's view loadTable method, which gets the data from the model and loads into the table}
+\texttt{updatePeopleTable(List<Person>)}:  \emph{Calls Person's view \texttt{loadTable()} method, which gets the data from the model and loads into the table}\\
+\texttt{updateTaskTable(List<Task>)}: \emph{Calls task's view \texttt{loadTable()} method, which gets the data from the model and loads it into the table}
 \end{quote}
 
 \subsection{Controller Subsystem}
@@ -339,16 +344,16 @@ Please refer to Figure 6.
 {\bf Controller}
 \begin{quote}
 {\bf Description}\\
-Controller class contains MainModel and MainWindow variables. And it also contains 4 listeners. MainModel is a model attribute which has underlying data and methods to manipulate the data (read, update, write to files). The MainWindow is the main application window class, which contains 2 view: PersonView and TaskView.\\\\
+This class contains MainModel varaible, MainWindow variable and 4 listeners. MainModel is a model attribute which has underlying data and methods to manipulate the data (read, update, write to files). The MainWindow is the main application window class, which contains 2 views: PersonView and TaskView.\\\\
 {\bf Attributes:}\\
 \texttt{MainModel mm}\\
-\texttt{Mainwindow mw}\\
-\texttt{class TaskTableListener}\\
-\texttt{class PrintPeopleListener}\\
-\texttt{class RemoveTaskListener}\\
-\texttt{class AddTaskListener}\\\\
+\texttt{Mainwindow mw}\\ 
+\texttt{class TaskTableListener}: \emph{The object of this class is attached to TableModelListener of the \texttt{jTable}.  When the table is edited the listener\\ \texttt{tableChanged(TableModelEvent e)} catches the event, which first updates the model, writes new changes to XML by calling \texttt{mm.updateXML()} in the MainModel and then reloads the table with new data by calling\\ \texttt{mw.updatePeopleTable(mm.getPeopleData())} in the MainWindow.  }\\
+\texttt{class PrintPeopleListener}: \emph{The object of this class is attached to Action Listener of the \texttt{btPrintPeople} button in the MainWindow \texttt{mw}. When user presses on the button ``Print People Table", the event is caught and this class calls the method \texttt{mm.writePeopleTxt()} in the MainModel.}\\
+\texttt{class RemoveTaskListener} \emph{The object of this class is attached to the action listener of the \texttt{btRemove} button in the MainWindow \texttt{mw}.  When users presses on the button ``Remove Task", this event is caught and this class calls finds the Task which is about to be removed in the model,  removes it, then updates both Tables, and also writes new changes to XML file by calling \texttt{mm.updateXML()}.}\\
+\texttt{class AddTaskListener}\emph{The object of this class is attached to the action listener of the \texttt{btAdd} button in the MainWindow \texttt{mw}. When user presses on the button ``Add Task", this event is caught and this class creates a new Task, adds it to the model, updates both People and Tasks tables, and also writes new data to XML file by calling \texttt{mm.updateXML()}.}\\\\
 {\bf Methods:}\\
-\texttt{void updatePeopleTable(List<Person> pList)}: \emph{Creates and initializes a new model \(MainModel\) and creates and initializes a new window \(MainWindow\) which contains 2 views: PersonView and TaskView.}
+\texttt{void updatePeopleTable(List<Person> pList)}: \emph{Creates and initializes a new \texttt{MainModel} and creates and initializes a new MainWindow which contains two panels: PersonView and TaskView.}
 \end{quote}
 
 \section{Dynamic Design Scenarios}
