@@ -17,7 +17,7 @@ public class PersonView extends JPanel
     
     PersonView(MainModel mm)
     {
-        //table will be the only other visual within this panel
+        //table will be the only visual within this panel
         this.setLayout(new GridLayout(1, 1));
         
         //here be column names

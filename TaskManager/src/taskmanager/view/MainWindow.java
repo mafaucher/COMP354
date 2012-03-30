@@ -2,14 +2,14 @@ package taskmanager.view;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.GridLayout;
 import java.awt.Toolkit;
 import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
-import taskmanager.model.*;
+import taskmanager.model.MainModel;
+import taskmanager.model.Person;
+import taskmanager.model.Task;
 
 public class MainWindow extends JFrame 
 {
@@ -18,6 +18,7 @@ public class MainWindow extends JFrame
     
     public TaskView panelTasks;
     public PersonView panelPeople;
+    public GanttChartView panelGanttChart;
     
     public JTabbedPane jTabbedPane1;
     public JButton btPrintPeople;
@@ -38,6 +39,7 @@ public class MainWindow extends JFrame
         
         panelTasks = new TaskView(mm.getTaskData());
         panelPeople = new PersonView(mm);
+        panelGanttChart = new GanttChartView();
 
         btPrintPeople = new JButton();
         btPrintPeople.setText("Print people.txt");
@@ -45,6 +47,7 @@ public class MainWindow extends JFrame
         
         jTabbedPane1.addTab("Tasks", panelTasks);
         jTabbedPane1.addTab("People", panelPeople);
+        jTabbedPane1.addTab("Gantt Chart", panelGanttChart);
  
         add(jTabbedPane1, BorderLayout.NORTH);
     }
