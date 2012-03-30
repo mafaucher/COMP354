@@ -79,7 +79,11 @@ public class XMLParser
                 writer.writeStartElement(DELIVERABLE);
                 writer.writeCharacters(alTasks.get(i).getDeliverable());
                 writer.writeEndElement();
-
+                
+                writer.writeStartElement(STARTDATE);
+                writer.writeCharacters(alTasks.get(i).getStartDate());
+                writer.writeEndElement();
+                
                 writer.writeStartElement(DEADLINE);
                 writer.writeCharacters(alTasks.get(i).getDeadline());
                 writer.writeEndElement();
@@ -283,7 +287,7 @@ public class XMLParser
                                             continue;
                                     }
 
-                                    task.setDeadline(event.asCharacters().getData());
+                                    task.setStartDate(event.asCharacters().getData());
                                     continue;
                             }
                             if (event.asStartElement().getName().getLocalPart().equals(DEADLINE)) {

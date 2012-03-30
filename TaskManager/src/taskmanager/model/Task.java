@@ -8,6 +8,7 @@ public class Task {
         private String description;
         private String duration;
         private String deliverable;
+        private String startDate;
         private String deadline;
         private String completion;
     	private ArrayList<String> peopleassigned = new ArrayList<String>();
@@ -18,6 +19,7 @@ public class Task {
             description = "-";
             duration = "0";
             deliverable = "-";
+            startDate = "-";
             deadline = "-";
             completion = "0";
             peopleassigned = new ArrayList<String>();
@@ -28,6 +30,7 @@ public class Task {
             description = "-";
             duration = "0";
             deliverable = "-";
+            startDate = "-";
             deadline = "-";
             completion = "0";
             peopleassigned = new ArrayList<String>();
@@ -73,6 +76,18 @@ public class Task {
                 this.deliverable=deliverable;
                 return true;
         }
+        
+        public String getStartDate()
+        {
+            return startDate;
+        }
+        
+        public boolean setStartDate(String startDate)
+        {
+            this.startDate = startDate;
+            return true;
+        }
+        
         public String getDeadline() {
                 return deadline;
         }

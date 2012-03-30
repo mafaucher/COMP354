@@ -65,16 +65,20 @@ public class Controller
                     revert = !task.setDeliverable(data);
                     break;
                 case 5:
+                    oldData = task.getStartDate();
+                    revert = !task.setStartDate(data);
+                    break;
+                case 6:
                     oldData = task.getDeadline();
                     revert = !task.setDeadline(data.toString());
                     break;
-                case 6:
+                case 7:
                     // Modify People assigned & cell data to a properly formated string
                     mm.assignStringOfID(task, data);
                     oldData = task.getPeopleassignedAsString();
                     revert = !data.equals(oldData);
                     break;
-                case 7:
+                case 8:
                     oldData = task.getCompletion();
                     revert = !task.setCompletion(data.toString());
                     break;

@@ -6,6 +6,7 @@
     <description>Modelling for the game. Includes Character and Environment Modelling</description>
     <duration>175</duration>
     <deliverable>Zipped Folder Containing all Models and Documentation</deliverable>
+    <startdate>Feb 11, 2012</startdate>
     <deadline>Feb 18, 2012</deadline>
     <peopleassigned>
       <id>0</id>
@@ -21,6 +22,7 @@
     <description>Design and creation of the user interface for the game. Includes the in-game HUD and front-end menus.</description>
     <duration>140</duration>
     <deliverable>Zipped Folder Containing all Interface files and Documentation</deliverable>
+    <startdate>Feb 8, 2012</startdate>
     <deadline>Feb 15, 2012</deadline>
     <peopleassigned>
       <id>2</id>
@@ -36,6 +38,7 @@
     <description>Development of source code for the game. Includes elements of gameplay, level design, etc.</description>
     <duration>135</duration>
     <deliverable>Zipped folder containing all main game files</deliverable>
+    <startdate>Feb 17, 2012</startdate>
     <deadline>Feb 19, 2012</deadline>
     <peopleassigned>
       <id>6</id>
@@ -49,7 +52,8 @@
     <description>Artificial Intelligence</description>
     <duration>235</duration>
     <deliverable>Zipped folder containing algorithms and AI code</deliverable>
-    <deadline>Feb 25, 2012</deadline>
+    <startdate>Feb 17, 2012</startdate>
+    <deadline>Feb 26, 2012</deadline>
     <peopleassigned>
       <id>1</id>
       <id>2</id>
@@ -64,6 +68,7 @@
     <description>All internal and external documentation for the game</description>
     <duration>100</duration>
     <deliverable>Zipped folder containing all documentation, including user manuals</deliverable>
+    <startdate>Feb 22, 2012</startdate>
     <deadline>Feb 29, 2012</deadline>
     <peopleassigned>
       <id>1</id>
@@ -79,6 +84,7 @@
     <description>Prepare all artwork for the title</description>
     <duration>250</duration>
     <deliverable>Finalized artwork zip file</deliverable>
+    <startdate>Feb 26, 2012</startdate>
     <deadline>Feb 29, 2012</deadline>
     <peopleassigned>
       <id>7</id>
@@ -94,6 +100,7 @@
     <description>Completion of all textures for the game</description>
     <duration>205</duration>
     <deliverable>Zipped Folder Containing all textures</deliverable>
+    <startdate>Feb 20, 2012</startdate>
     <deadline>Feb 28, 2012</deadline>
     <peopleassigned>
       <id>0</id>
@@ -109,6 +116,7 @@
     <description>Design and creation of the user interface for the game. Includes the in-game HUD and front-end menus.</description>
     <duration>114</duration>
     <deliverable>Zipped Folder Containing all Interface files and Documentation</deliverable>
+    <startdate>Feb 8, 2012</startdate>
     <deadline>Feb 15, 2012</deadline>
     <peopleassigned>
       <id>2</id>
@@ -122,6 +130,7 @@
     <description>Testing for the game. Included QA and Compliance testing</description>
     <duration>366</duration>
     <deliverable>Completed Testing checklist with bug reports.</deliverable>
+    <startdate>Feb 2, 2012</startdate>
     <deadline>Feb 10, 2012</deadline>
     <peopleassigned>
       <id>4</id>
@@ -136,6 +145,7 @@
     <description>Production of finalized game</description>
     <duration>200</duration>
     <deliverable>Final executable project</deliverable>
+    <startdate>Feb 22, 2012</startdate>
     <deadline>Feb 29, 2012</deadline>
     <peopleassigned>
       <id>0</id>
@@ -151,17 +161,6 @@
       <id>10</id>
       <id>11</id>
       <id>12</id>
-    </peopleassigned>
-    <completion>0</completion>
-  </task>
-  <task>
-    <identifier>2</identifier>
-    <title>-</title>
-    <description>-</description>
-    <duration>0</duration>
-    <deliverable>-</deliverable>
-    <deadline>-</deadline>
-    <peopleassigned>
     </peopleassigned>
     <completion>0</completion>
   </task>

@@ -39,9 +39,8 @@ public class GanttChartView extends JPanel
         //25 august 1986
         Date dat = new Date(2000, 1, 1);
 
-        
          //12 september 1986
-        Date dat2 = new Date(2001, 8, 1);
+        Date dat2 = new Date(2000, 1, 8);
         
         
         seriesOne.add(new Task("asd", dat, dat2));

@@ -23,7 +23,7 @@ public class TaskView extends JPanel
     
     TaskView(List<Task> taskData)
     {
-        //table will be the only other visual within this panel
+        //table will be the only visual within this panel
         this.setLayout(new BorderLayout());
         
         btAdd = new JButton();
@@ -38,15 +38,16 @@ public class TaskView extends JPanel
         southPanel.add(btRemove);
         
         //here be column names
-        columnNames = new String[8];
+        columnNames = new String[9];
         columnNames[0] = "identifier";
         columnNames[1] = "title";
         columnNames[2] = "description";
         columnNames[3] = "duration";
         columnNames[4] = "deliverable";
-        columnNames[5] = "deadline";
-        columnNames[6] = "people assigned";
-        columnNames[7] = "completion";
+        columnNames[5] = "start date";
+        columnNames[6] = "deadline";
+        columnNames[7] = "people assigned";
+        columnNames[8] = "completion";
         
         loadTable(taskData);
     }
@@ -61,16 +62,17 @@ public class TaskView extends JPanel
         
         for (int i = 0; i < rowData.length; i++)
         {
-            rowData[i] = new String[8];
+            rowData[i] = new String[9];
             
             rowData[i][0] = taskData.get(i).getIdentifier();
             rowData[i][1] = taskData.get(i).getTitle();
             rowData[i][2] = taskData.get(i).getDescription();
             rowData[i][3] = taskData.get(i).getDuration();
             rowData[i][4] = taskData.get(i).getDeliverable();
-            rowData[i][5] = taskData.get(i).getDeadline();
-            rowData[i][6] = taskData.get(i).getPeopleassignedAsString();
-            rowData[i][7] = taskData.get(i).getCompletion();
+            rowData[i][5] = taskData.get(i).getStartDate();
+            rowData[i][6] = taskData.get(i).getDeadline();
+            rowData[i][7] = taskData.get(i).getPeopleassignedAsString();
+            rowData[i][8] = taskData.get(i).getCompletion();
         }
        
         //create the table here with the data
