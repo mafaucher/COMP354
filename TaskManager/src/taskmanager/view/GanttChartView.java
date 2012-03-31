@@ -8,11 +8,12 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.GridLayout;
 import java.awt.Rectangle;
+import java.awt.Color;
 import java.util.Calendar;
 import java.util.Date;
 import javax.swing.JPanel;
 import org.jfree.chart.ChartFactory;
-import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.*;
 import org.jfree.chart.renderer.category.*;
 
 
@@ -49,7 +50,7 @@ public class GanttChartView extends JPanel
         
         this.setLayout(new GridLayout(1, 1));
         TaskSeries seriesOne = new TaskSeries("Planned Implementation");
-        TaskSeries listtwo = new TaskSeries("color test");
+        TaskSeries listTwo = new TaskSeries("color test");
         
         loadList(mm.getTaskData());
         
@@ -59,6 +60,11 @@ public class GanttChartView extends JPanel
             seriesOne.add(new Task(rowData[i][0], sDate, eDate));
         }
         
+        Date dat1 = new Date(105,3,3);
+        Date dat2 = new Date();
+        
+        listTwo.add(new Task("test1", dat1, dat2));
+        
         final TaskSeriesCollection collection = new TaskSeriesCollection();
  
         /**
@@ -66,6 +72,7 @@ public class GanttChartView extends JPanel
         * Holds actual Dates.
         */
         collection.add(seriesOne);
+        collection.add(listTwo);
         
         chart = ChartFactory.createGanttChart(
             "Gantt Chart of Tasks", // chart title
@@ -77,9 +84,10 @@ public class GanttChartView extends JPanel
             false // urls
             );
         
-        /*final CategoryPlot plot = chart.getCategoryPlot();
-        CategoryItemRenderer renderer = new CustomRenderer();
-        plot.setRenderer(renderer);*/
+        final CategoryPlot plot = chart.getCategoryPlot();
+        CategoryItemRenderer renderer = plot.getRenderer();
+        renderer.setSeriesPaint(0,Color.green);
+        renderer.setSeriesPaint(1,Color.magenta);
     }
     
     @Override
