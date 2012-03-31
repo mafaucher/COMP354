@@ -39,7 +39,7 @@
     <duration>135</duration>
     <deliverable>Zipped folder containing all main game files</deliverable>
     <startdate>Feb 17, 2012</startdate>
-    <deadline>Feb 19, 2012</deadline>
+    <deadline>Mar 19, 2012</deadline>
     <peopleassigned>
       <id>6</id>
       <id>8</id>
@@ -69,7 +69,7 @@
     <duration>100</duration>
     <deliverable>Zipped folder containing all documentation, including user manuals</deliverable>
     <startdate>Feb 22, 2012</startdate>
-    <deadline>Feb 29, 2012</deadline>
+    <deadline>Jan 29, 2013</deadline>
     <peopleassigned>
       <id>1</id>
       <id>3</id>
@@ -162,6 +162,19 @@
       <id>11</id>
       <id>12</id>
     </peopleassigned>
+    <completion>0</completion>
+  </task>
+  <task>
+    <identifier>11</identifier>
+    <title>Test Task</title>
+    <description>Sample task</description>
+    <duration>2</duration>
+    <deliverable>meh</deliverable>
+    <startdate>Jul 6, 2008</startdate>
+    <deadline>Aug 8, 2009</deadline>
+    <peopleassigned>
+		<id>0</id>
+	</peopleassigned>
     <completion>0</completion>
   </task>
 </tasks>

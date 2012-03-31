@@ -39,7 +39,7 @@ public class MainWindow extends JFrame
         
         panelTasks = new TaskView(mm.getTaskData());
         panelPeople = new PersonView(mm);
-        panelGanttChart = new GanttChartView();
+        panelGanttChart = new GanttChartView(mm);
 
         btPrintPeople = new JButton();
         btPrintPeople.setText("Print people.txt");
