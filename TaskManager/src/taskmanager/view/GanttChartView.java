@@ -43,7 +43,7 @@ public class GanttChartView extends JPanel
     JFreeChart chart;
     MainModel mm;
     String rowData[][];
-    Date sDate, eDate;
+    Date sDate, eDate, aDate;                                            //start, end date, aDate is a date used with sDate to show the completion of the task (sDate <= aDate <= eDate
     private boolean addToChart;
     
     public GanttChartView(MainModel mm)
@@ -64,6 +64,8 @@ public class GanttChartView extends JPanel
             Rectangle r = new Rectangle(this.getLocation().x, this.getLocation().y,
                     this.getWidth(), this.getHeight());
             
+            r.setSize(this.getWidth(), this.getHeight()-25);
+            
             chart.draw((Graphics2D)g, new Rectangle(r));
         }
     }
@@ -77,22 +79,25 @@ public class GanttChartView extends JPanel
         
         for (int i = 0; i < rowData.length; i++)
         {
-            rowData[i] = new String[3];
+            rowData[i] = new String[4];
             
             rowData[i][0] = taskData.get(i).getTitle();
             rowData[i][1] = taskData.get(i).getStartDate();
             rowData[i][2] = taskData.get(i).getDeadline();
+            rowData[i][3] = taskData.get(i).getCompletion();
         }
         
-        TaskSeries seriesOne = new TaskSeries("Planned Implementation");
-        TaskSeries listTwo = new TaskSeries("color test");
+        TaskSeries PlannedSchedule = new TaskSeries("Planned Implementation");
+        TaskSeries Completion = new TaskSeries("Completion");
         
         for(int i=0; i<rowData.length; i++) {
             addToChart = true;
             sDate = calculateDate(rowData[i][1]);              //start date
             eDate = calculateDate(rowData[i][2]);              //end date
             if(addToChart == true) {
-                seriesOne.add(new Task(rowData[i][0], sDate, eDate));
+                PlannedSchedule.add(new Task(rowData[i][0], sDate, eDate));
+                aDate = calculateCompleteness(sDate,eDate, rowData[i][3]);
+                Completion.add(new Task(rowData[i][0], sDate, aDate));
             }
         }
         
@@ -102,8 +107,8 @@ public class GanttChartView extends JPanel
         * Adding the series to the collection
         * Holds actual Dates.
         */
-        collection.add(seriesOne);
-        //collection.add(listTwo);
+        collection.add(PlannedSchedule);
+        collection.add(Completion);
         
         chart = ChartFactory.createGanttChart(
             "Gantt Chart of Tasks", // chart title
@@ -174,4 +179,42 @@ public class GanttChartView extends JPanel
         
         return date;
     }
+    
+    public Date calculateCompleteness(Date begin, Date end, String sPercentage)
+    {
+        Date date;
+        Float percentage = new Float(sPercentage);
+        percentage /= 100;
+        int day, month, year,
+                iDay, iMonth, iYear;                                            //index of day, month and year value in Calendar c.toString()
+        String sDay, sMonth, sYear;
+        Calendar c = Calendar.getInstance();
+        long timeLength = (end.getTime() - begin.getTime())/(1000*60*60*24),    //milliseconds*seconds*minutes*hours
+                accomplished;
+        char d2;
+        
+        accomplished = Math.round(timeLength*percentage);
+        c.setTime(begin);
+        c.add(Calendar.DATE, (int) accomplished);  // number of days to add
+        
+        iDay = c.toString().indexOf("DAY_OF_MONTH=")+13;                        //find the first occurence of DAY_OF_MONTH and then add 13 to the index to move index past DAY_OF_MONTH
+        sDay = c.toString().substring(iDay,iDay+2);
+        d2 = sDay.charAt(1);
+        if(d2 == ',') {
+            sDay = sDay.substring(0,1);
+        }
+        day = Integer.parseInt(sDay);
+        
+        iMonth = c.toString().indexOf(",MONTH=")+7;
+        sMonth = c.toString().substring(iMonth,iMonth+1);
+        month = Integer.parseInt(sMonth);
+        
+        iYear = c.toString().indexOf(",YEAR=20")+8;
+        sYear = c.toString().substring(iYear,iYear+2);
+        year = Integer.parseInt(sYear)+100;
+        
+        date = new Date(year, month, day);
+        return date;
+    }
 }
+

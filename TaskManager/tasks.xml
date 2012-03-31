@@ -173,8 +173,23 @@
     <startdate>Jul 6, 2008</startdate>
     <deadline>Aug 8, 2009</deadline>
     <peopleassigned>
-		<id>0</id>
-	</peopleassigned>
+      <id>0</id>
+      <id>10</id>
+    </peopleassigned>
     <completion>0</completion>
+  </task>
+  <task>
+    <identifier>2</identifier>
+    <title>testan</title>
+    <description>test</description>
+    <duration>10</duration>
+    <deliverable>dun</deliverable>
+    <startdate>Mar 6, 2014</startdate>
+    <deadline>Mar 6, 2016</deadline>
+    <peopleassigned>
+      <id>2</id>
+      <id>3</id>
+    </peopleassigned>
+    <completion>50</completion>
   </task>
 </tasks>

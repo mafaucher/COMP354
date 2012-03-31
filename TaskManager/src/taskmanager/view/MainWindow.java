@@ -13,8 +13,8 @@ import taskmanager.model.Task;
 
 public class MainWindow extends JFrame 
 {
-    public static final int INI_WIDTH = 800;
-    public static final int INI_HEIGHT = 600;
+    public static final int INI_WIDTH = 1024;
+    public static final int INI_HEIGHT = 768;
     
     public TaskView panelTasks;
     public PersonView panelPeople;
@@ -49,7 +49,7 @@ public class MainWindow extends JFrame
         jTabbedPane1.addTab("People", panelPeople);
         jTabbedPane1.addTab("Gantt Chart", panelGanttChart);
  
-        add(jTabbedPane1, BorderLayout.NORTH);
+        add(jTabbedPane1, BorderLayout.CENTER);
     }
     
     public void updatePeopleTable(List<Person> pList)
