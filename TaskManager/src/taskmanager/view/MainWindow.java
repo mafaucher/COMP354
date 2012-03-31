@@ -61,4 +61,9 @@ public class MainWindow extends JFrame
     {
         panelTasks.loadTable(tList);
     }
+    
+    public void updateGanttList(List<Task> tList)
+    {
+        panelGanttChart.loadList(tList);
+    }
 }

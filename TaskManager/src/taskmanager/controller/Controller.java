@@ -86,6 +86,7 @@ public class Controller
             mm.updateXML();
             //reload people table
             mw.updatePeopleTable(mm.getPeopleData());
+            mw.updateGanttList(mm.getTaskData());
             
             // Revert invalid changes
             if (revert)
@@ -123,6 +124,7 @@ public class Controller
             
             mw.panelTasks.loadTable(mm.getTaskData());
             mw.panelPeople.loadTable(mm.getPeopleData());
+            mw.panelGanttChart.loadList(mm.getTaskData());
             mm.updateXML();
             mw.repaint();
         }
@@ -137,6 +139,7 @@ public class Controller
 
             mw.updatePeopleTable(mm.getPeopleData());
             mw.updateTaskTable(mm.getTaskData());
+            mw.updateGanttList(mm.getTaskData());
             mm.updateXML();
             mw.repaint();
         }

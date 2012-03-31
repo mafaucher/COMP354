@@ -23,7 +23,7 @@ import org.jfree.data.category.IntervalCategoryDataset;
 import org.jfree.data.gantt.Task;
 import org.jfree.data.gantt.TaskSeries;
 import org.jfree.data.gantt.TaskSeriesCollection;
-import org.jfree.data.time.SimpleTimePeriod;
+//import org.jfree.data.time.SimpleTimePeriod;
 import taskmanager.model.MainModel;
 import java.util.List;
 import java.text.DateFormat;
@@ -43,51 +43,17 @@ public class GanttChartView extends JPanel
     JFreeChart chart;
     MainModel mm;
     String rowData[][];
+    Date sDate, eDate;
+    private boolean addToChart;
     
     public GanttChartView(MainModel mm)
     {
         this.mm = mm;
-        
         this.setLayout(new GridLayout(1, 1));
-        TaskSeries seriesOne = new TaskSeries("Planned Implementation");
-        TaskSeries listTwo = new TaskSeries("color test");
+        
+        mm.getTaskData();
         
         loadList(mm.getTaskData());
-        
-        for(int i=0; i<rowData.length; i++) {
-            Date sDate = calculateDate(rowData[i][1]);              //start date
-            Date eDate = calculateDate(rowData[i][2]);              //end date
-            seriesOne.add(new Task(rowData[i][0], sDate, eDate));
-        }
-        
-        Date dat1 = new Date(105,3,3);
-        Date dat2 = new Date();
-        
-        listTwo.add(new Task("test1", dat1, dat2));
-        
-        final TaskSeriesCollection collection = new TaskSeriesCollection();
- 
-        /**
-        * Adding the series to the collection
-        * Holds actual Dates.
-        */
-        collection.add(seriesOne);
-        collection.add(listTwo);
-        
-        chart = ChartFactory.createGanttChart(
-            "Gantt Chart of Tasks", // chart title
-            "Task", // domain axis label
-            "Date", // range axis label
-            collection, // data
-            true, // include legend
-            true, // tooltips
-            false // urls
-            );
-        
-        final CategoryPlot plot = chart.getCategoryPlot();
-        CategoryItemRenderer renderer = plot.getRenderer();
-        renderer.setSeriesPaint(0,Color.green);
-        renderer.setSeriesPaint(1,Color.magenta);
     }
     
     @Override
@@ -117,10 +83,52 @@ public class GanttChartView extends JPanel
             rowData[i][1] = taskData.get(i).getStartDate();
             rowData[i][2] = taskData.get(i).getDeadline();
         }
+        
+        TaskSeries seriesOne = new TaskSeries("Planned Implementation");
+        TaskSeries listTwo = new TaskSeries("color test");
+        
+        for(int i=0; i<rowData.length; i++) {
+            addToChart = true;
+            sDate = calculateDate(rowData[i][1]);              //start date
+            eDate = calculateDate(rowData[i][2]);              //end date
+            if(addToChart == true) {
+                seriesOne.add(new Task(rowData[i][0], sDate, eDate));
+            }
+        }
+        
+        final TaskSeriesCollection collection = new TaskSeriesCollection();
+ 
+        /**
+        * Adding the series to the collection
+        * Holds actual Dates.
+        */
+        collection.add(seriesOne);
+        //collection.add(listTwo);
+        
+        chart = ChartFactory.createGanttChart(
+            "Gantt Chart of Tasks", // chart title
+            "Task", // domain axis label
+            "Date", // range axis label
+            collection, // data
+            true, // include legend
+            true, // tooltips
+            false // urls
+            );
+        
+        final CategoryPlot plot = chart.getCategoryPlot();
+        CategoryItemRenderer renderer = plot.getRenderer();
+        renderer.setSeriesPaint(0,Color.green);
+        renderer.setSeriesPaint(1,Color.magenta);
     }
     
     public Date calculateDate(String xmlDate) {
         Date date;
+        if(xmlDate.compareTo("-") == 0) {               //if date is not set, try set current date
+            addToChart = false;
+            date = new Date();
+            return date;
+        }
+        
         String sDay = xmlDate.substring(4,6),
                 sMonth = xmlDate.substring(0,3),
                 sYear = xmlDate.substring(10);
@@ -163,7 +171,7 @@ public class GanttChartView extends JPanel
         
         year = Integer.parseInt(sYear)+100;                         //+100 is to offset the year starting at 1900
         date = new Date(year, month, day);
-
+        
         return date;
     }
 }
