@@ -1,0 +1,108 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package taskmanager.view;
+
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.GridLayout;
+import java.awt.Rectangle;
+import java.util.Calendar;
+import java.util.Date;
+import javax.swing.JPanel;
+import org.jfree.chart.ChartFactory;
+
+
+import org.jfree.chart.ChartUtilities;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.category.IntervalCategoryDataset;
+import org.jfree.data.gantt.Task;
+import org.jfree.data.gantt.TaskSeries;
+import org.jfree.data.gantt.TaskSeriesCollection;
+import org.jfree.data.time.SimpleTimePeriod;
+import taskmanager.model.MainModel;
+import java.util.List;
+
+/**
+ *
+ * @author Jonathan
+ */
+public class GanttChartView extends JPanel
+{
+    
+    JFreeChart chart;
+    MainModel mm;
+    String rowData[][];
+    
+    public GanttChartView()
+    {
+        this.setLayout(new GridLayout(1, 1));
+        TaskSeries seriesOne = new TaskSeries("Planned Implementation");
+ 
+        //February 1st, 2000
+        Date dat = new Date(2000, 1, 1);
+
+        
+        //January 1st, 2001
+        //Date dat2 = new Date(2001, 8, 1);
+        Date dat2 = new java.util.Date(2001,0,1);
+        
+        
+        seriesOne.add(new Task("asd", dat, dat2));
+        
+        seriesOne.add(new Task("Sanjaal Domain Registration",dat,dat2));
+        
+        final TaskSeriesCollection collection = new TaskSeriesCollection();
+ 
+        /**
+        * Adding the series to the collection
+        * Holds actual Dates.
+        */
+        collection.add(seriesOne);
+        
+        chart = ChartFactory.createGanttChart(
+            "hahaha title", // chart title
+            "Task", // domain axis label
+            "Date", // range axis label
+            collection, // data
+            true, // include legend
+            true, // tooltips
+            false // urls
+            );
+    }
+    
+    @Override
+    public void paintComponent(Graphics g)
+    {
+        if (chart != null)
+        {
+            Rectangle r = new Rectangle(this.getLocation().x, this.getLocation().y,
+                    this.getWidth(), this.getHeight());
+            
+            chart.draw((Graphics2D)g, new Rectangle(r));
+        }
+    }
+    
+    public void loadTable(List<taskmanager.model.Task> taskData)
+    {
+        this.removeAll();
+        
+        //initialize the data array for the table
+        rowData = new String[taskData.size()][];
+        
+        for (int i = 0; i < rowData.length; i++)
+        {
+            rowData[i] = new String[8];
+            
+            rowData[i][0] = taskData.get(i).getIdentifier();
+            rowData[i][1] = taskData.get(i).getTitle();
+            rowData[i][2] = taskData.get(i).getDescription();
+            rowData[i][3] = taskData.get(i).getDuration();
+            rowData[i][4] = taskData.get(i).getDeliverable();
+            rowData[i][5] = taskData.get(i).getDeadline();
+            rowData[i][6] = taskData.get(i).getPeopleassignedAsString();
+            rowData[i][7] = taskData.get(i).getCompletion();
+        }
+    }
+}
