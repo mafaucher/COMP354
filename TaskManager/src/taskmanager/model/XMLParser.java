@@ -41,6 +41,8 @@ public class XMLParser
     static final String PATTERN_TITLE = "^[a-zA-Z -]+$";
     static final String PATTERN_DESCRIPTION = "^(?:\\p{L}\\p{M}*|[\\ ,.-])*$";
     static final String PATTERN_DURATION = "^[0-9]+$";
+    
+    static final String FORMAT_DATE = "MMM dd, yyyy";
 
     static final String XML_PEOPLE = "people.xml";
     static final String XML_TASKS = "tasks.xml";

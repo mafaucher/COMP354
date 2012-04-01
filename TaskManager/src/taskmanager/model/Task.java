@@ -1,6 +1,9 @@
 package taskmanager.model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Task {
         private String identifier;
@@ -84,6 +87,18 @@ public class Task {
         
         public boolean setStartDate(String startDate)
         {
+            SimpleDateFormat sdf = new SimpleDateFormat(XMLParser.FORMAT_DATE);	
+
+	    try
+	    {
+	      sdf.parse(startDate);
+	    }
+	    catch (ParseException e)
+	    {
+	      System.err.println(e.getStackTrace());
+	      return false;
+	    }
+            
             this.startDate = startDate;
             return true;
         }
@@ -92,8 +107,20 @@ public class Task {
                 return deadline;
         }
         public boolean setDeadline(String deadline){
-                this.deadline=deadline;
-                return true;
+            SimpleDateFormat sdf = new SimpleDateFormat(XMLParser.FORMAT_DATE);	
+
+	    try
+	    {
+	      sdf.parse(deadline);
+	    }
+	    catch (ParseException e)
+	    {
+	      System.err.println(e.getStackTrace());
+	      return false;
+	    }
+            
+            this.deadline = deadline;
+            return true;
         }
         public String getCompletion(){
                 return completion;
