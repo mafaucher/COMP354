@@ -45,7 +45,7 @@ public class GanttChartView extends JPanel
     String rowData[][];
     Date start, deadline, pDate, leftDate = new Date(), rightDate = new Date(),//start, end, progress date, left and right dates will store the left and right most dates of the list of tasks
             today = new Date();
-    int xMargin = 156, yMargin = 76, xDateOffset = 863, yDateOffset = 567;      //# of pixels between origin of chart table and the chart itself
+    int xMargin = 157+39, yMargin = 76, xDateOffset = 758, yDateOffset = 567;      //# of pixels between origin of chart table and the chart itself
     float dayDensity;
     
     public GanttChartView(MainModel mm)
@@ -93,7 +93,9 @@ public class GanttChartView extends JPanel
         TaskSeries plannedSchedule = new TaskSeries("Planned Implementation");  //the start date and deadlines
         TaskSeries progress = new TaskSeries("Progress");                       //precentage of the task completed
         TaskSeries completed = new TaskSeries("Completed");                     //which tasks are complete
-        TaskSeries notCompleted = new TaskSeries("Behind Schedule");
+        TaskSeries behindSchedule = new TaskSeries("Behind Schedule");          //show how behind schedule a task is
+        TaskSeries late = new TaskSeries("Late");                               //how late a task is
+        
         
         for(int i=0; i<rowData.length; i++) {
             //addToChart = true;
@@ -108,17 +110,23 @@ public class GanttChartView extends JPanel
                 completed.add(new Task(rowData[i][0], start, deadline));
                 plannedSchedule.add(new Task(rowData[i][0], start, start));
                 progress.add(new Task(rowData[i][0], start, start));
-                notCompleted.add(new Task(rowData[i][0], start, start));
+                behindSchedule.add(new Task(rowData[i][0], start, start));
+                late.add(new Task(rowData[i][0], start, start));
             } else {
                 plannedSchedule.add(new Task(rowData[i][0], start, deadline));
                 pDate = calculateProgress(start,deadline, rowData[i][3]);
                 progress.add(new Task(rowData[i][0], start, pDate));
                 completed.add(new Task(rowData[i][0], start, start));
-                int x = today.compareTo(pDate);
                 if(today.compareTo(pDate) > 0) {
-                    notCompleted.add(new Task(rowData[i][0], pDate, today));
+                    if(today.compareTo(deadline) > 0) {
+                        behindSchedule.add(new Task(rowData[i][0], pDate, deadline));
+                        late.add(new Task(rowData[i][0], deadline, today));
+                    } else {
+                        behindSchedule.add(new Task(rowData[i][0], pDate, today));
+                        late.add(new Task(rowData[i][0], start, start));
+                    }
                 } else {
-                    notCompleted.add(new Task(rowData[i][0], start, start));
+                    behindSchedule.add(new Task(rowData[i][0], start, start));
                 }
             }
             
@@ -138,7 +146,8 @@ public class GanttChartView extends JPanel
         collection.add(plannedSchedule);
         collection.add(progress);
         collection.add(completed);
-        collection.add(notCompleted);
+        collection.add(behindSchedule);
+        collection.add(late);
         
         chart = ChartFactory.createGanttChart(
             "Gantt Chart of Tasks", // chart title
@@ -150,14 +159,14 @@ public class GanttChartView extends JPanel
             false // urls
             );
         
-        final CategoryPlot plot = chart.getCategoryPlot();/*
-        CategoryItemRenderer renderer = new CustomRenderer();
-        renderer.setSeriesPaint(0,Color.green);
-        renderer.setSeriesPaint(1,Color.magenta);
-        renderer.setSeriesItemLabelsVisible(1, false, true);*/
+        final CategoryPlot plot = chart.getCategoryPlot();
         BarRenderer renderer = (BarRenderer) chart.getCategoryPlot().getRenderer();
-        //renderer.setMaximumBarWidth(.9);
-        renderer.setItemMargin(-2.1125);                                         //change item margins (causes them to overlap each other)
+        renderer.setItemMargin(-2.8);                                          //change item margins (causes them to overlap each other)
+        renderer.setSeriesPaint(0,Color.red);
+        renderer.setSeriesPaint(1,Color.blue);
+        renderer.setSeriesPaint(2,Color.green);
+        renderer.setSeriesPaint(3,Color.yellow);
+        renderer.setSeriesPaint(4,Color.magenta);
     }
     
     public Date calculateDate(String xmlDate) {                                 //make a Date() object from (String) xmlDate
@@ -218,7 +227,7 @@ public class GanttChartView extends JPanel
                 iDay, iMonth, iYear;                                            //index of day, month and year value in Calendar c.toString()
         String sDay, sMonth, sYear;
         Calendar c = Calendar.getInstance();
-        long timeLength = getTimeDiff(begin, end),                              //timeLength is in days
+        float timeLength = getTimeDiff(begin, end),                              //timeLength is in days
                 accomplished;
         char d2;
         
@@ -251,33 +260,35 @@ public class GanttChartView extends JPanel
     }
     
     public void markTodaysDate(Graphics g) {
-        daysPerPixel(leftDate,rightDate);
+        pixelsPerDay(leftDate,rightDate);
         
-        long startTillToday = getTimeDiff(leftDate, today),
+        float startTillToday = getTimeDiff(leftDate, today),
                 startTillEnd = getTimeDiff(leftDate, rightDate);
         
-        startTillToday += 39*dayDensity;
-        startTillEnd += (39*dayDensity)*2;
+        //startTillToday += 39*dayDensity;
+        //startTillEnd += (39*dayDensity)*2;
         
-        float percentage = (float) startTillToday/startTillEnd;
+        float percentage = startTillToday/startTillEnd;
         
-        int pxDateOffset = (int) (percentage* (float) xDateOffset);
+        int pxDateOffset = (int) (percentage* (float) (xDateOffset));           //offset in terms of pixels to add to the margin
         
-        /*g.drawRect(xMargin+pxDateOffset-39,yMargin,                                 //draw rectangle as a vertical bar showing today's date
+        g.drawRect(xMargin+pxDateOffset,yMargin,                                 //draw rectangle as a vertical bar showing today's date
                 2,yDateOffset);
         g.setColor(Color.BLACK);                                                //set color fill to black
-        g.fillRect(xMargin+pxDateOffset-39,yMargin,                                 //draw rectangle as a vertical bar showing today's date
-                2,yDateOffset);*/
+        g.fillRect(xMargin+pxDateOffset,yMargin,                                 //draw rectangle as a vertical bar showing today's date
+                2,yDateOffset);
+        
+        g.drawLine(0, 0, xMargin, yMargin);
     }
     
-    public long getTimeDiff(Date begin, Date end) {
-        long difference = (end.getTime() - begin.getTime())/(1000*60*60*24);    //milliseconds*seconds*minutes*hours
+    public float getTimeDiff(Date begin, Date end) {
+        float difference = (end.getTime() - begin.getTime())/(1000*60*60*24);    //milliseconds*seconds*minutes*hours
         return difference;
     }
     
-    public void daysPerPixel(Date begin, Date end) {
-        long timeLength = getTimeDiff(begin, end),                              //calculate the number of days between the first task and the deadline of the last task
-                dayDensity = timeLength/759;                                    //#days per pixel
+    public void pixelsPerDay(Date begin, Date end) {
+        float timeLength = getTimeDiff(begin, end),                             //calculate the number of days between the first task and the deadline of the last task
+                dayDensity = 759/timeLength;                                    //#days per pixel
     }
 }
 
