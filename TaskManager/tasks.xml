@@ -6,15 +6,15 @@
     <description>Modelling for the game. Includes Character and Environment Modelling</description>
     <duration>175</duration>
     <deliverable>Zipped Folder Containing all Models and Documentation</deliverable>
-    <startdate>Feb 11, 2012</startdate>
-    <deadline>Feb 18, 2012</deadline>
+    <startdate>Feb 11, 2011</startdate>
+    <deadline>Dec 18, 2011</deadline>
     <peopleassigned>
       <id>0</id>
       <id>1</id>
       <id>12</id>
       <id>6</id>
     </peopleassigned>
-    <completion>0</completion>
+    <completion>33</completion>
   </task>
   <task>
     <identifier>1</identifier>
@@ -22,93 +22,15 @@
     <description>Design and creation of the user interface for the game. Includes the in-game HUD and front-end menus.</description>
     <duration>140</duration>
     <deliverable>Zipped Folder Containing all Interface files and Documentation</deliverable>
-    <startdate>Feb 8, 2012</startdate>
-    <deadline>Feb 15, 2012</deadline>
+    <startdate>Feb 8, 2013</startdate>
+    <deadline>Feb 15, 2014</deadline>
     <peopleassigned>
       <id>2</id>
       <id>3</id>
       <id>11</id>
       <id>9</id>
     </peopleassigned>
-    <completion>0</completion>
-  </task>
-  <task>
-    <identifier>3</identifier>
-    <title>Development</title>
-    <description>Development of source code for the game. Includes elements of gameplay, level design, etc.</description>
-    <duration>135</duration>
-    <deliverable>Zipped folder containing all main game files</deliverable>
-    <startdate>Feb 17, 2012</startdate>
-    <deadline>Mar 19, 2012</deadline>
-    <peopleassigned>
-      <id>6</id>
-      <id>8</id>
-    </peopleassigned>
-    <completion>0</completion>
-  </task>
-  <task>
-    <identifier>4</identifier>
-    <title>Artificial Intelligence</title>
-    <description>Artificial Intelligence</description>
-    <duration>235</duration>
-    <deliverable>Zipped folder containing algorithms and AI code</deliverable>
-    <startdate>Feb 17, 2012</startdate>
-    <deadline>Feb 26, 2012</deadline>
-    <peopleassigned>
-      <id>1</id>
-      <id>2</id>
-      <id>9</id>
-      <id>10</id>
-    </peopleassigned>
-    <completion>0</completion>
-  </task>
-  <task>
-    <identifier>5</identifier>
-    <title>Documentation</title>
-    <description>All internal and external documentation for the game</description>
-    <duration>100</duration>
-    <deliverable>Zipped folder containing all documentation, including user manuals</deliverable>
-    <startdate>Feb 22, 2012</startdate>
-    <deadline>Jan 29, 2013</deadline>
-    <peopleassigned>
-      <id>1</id>
-      <id>3</id>
-      <id>5</id>
-      <id>11</id>
-    </peopleassigned>
-    <completion>0</completion>
-  </task>
-  <task>
-    <identifier>6</identifier>
-    <title>Artwork</title>
-    <description>Prepare all artwork for the title</description>
-    <duration>250</duration>
-    <deliverable>Finalized artwork zip file</deliverable>
-    <startdate>Feb 26, 2012</startdate>
-    <deadline>Feb 29, 2012</deadline>
-    <peopleassigned>
-      <id>7</id>
-      <id>8</id>
-      <id>9</id>
-      <id>12</id>
-    </peopleassigned>
-    <completion>0</completion>
-  </task>
-  <task>
-    <identifier>7</identifier>
-    <title>Textures</title>
-    <description>Completion of all textures for the game</description>
-    <duration>205</duration>
-    <deliverable>Zipped Folder Containing all textures</deliverable>
-    <startdate>Feb 20, 2012</startdate>
-    <deadline>Feb 28, 2012</deadline>
-    <peopleassigned>
-      <id>0</id>
-      <id>2</id>
-      <id>4</id>
-      <id>6</id>
-    </peopleassigned>
-    <completion>0</completion>
+    <completion>78</completion>
   </task>
   <task>
     <identifier>8</identifier>
@@ -117,66 +39,12 @@
     <duration>114</duration>
     <deliverable>Zipped Folder Containing all Interface files and Documentation</deliverable>
     <startdate>Feb 8, 2012</startdate>
-    <deadline>Feb 15, 2012</deadline>
+    <deadline>Apr 15, 2012</deadline>
     <peopleassigned>
       <id>2</id>
       <id>3</id>
     </peopleassigned>
-    <completion>0</completion>
-  </task>
-  <task>
-    <identifier>9</identifier>
-    <title>Inventory</title>
-    <description>Testing for the game. Included QA and Compliance testing</description>
-    <duration>366</duration>
-    <deliverable>Completed Testing checklist with bug reports.</deliverable>
-    <startdate>Feb 2, 2012</startdate>
-    <deadline>Feb 10, 2012</deadline>
-    <peopleassigned>
-      <id>4</id>
-      <id>5</id>
-      <id>7</id>
-    </peopleassigned>
-    <completion>0</completion>
-  </task>
-  <task>
-    <identifier>10</identifier>
-    <title>Production</title>
-    <description>Production of finalized game</description>
-    <duration>200</duration>
-    <deliverable>Final executable project</deliverable>
-    <startdate>Feb 22, 2012</startdate>
-    <deadline>Feb 29, 2012</deadline>
-    <peopleassigned>
-      <id>0</id>
-      <id>1</id>
-      <id>2</id>
-      <id>3</id>
-      <id>4</id>
-      <id>5</id>
-      <id>6</id>
-      <id>7</id>
-      <id>8</id>
-      <id>9</id>
-      <id>10</id>
-      <id>11</id>
-      <id>12</id>
-    </peopleassigned>
-    <completion>0</completion>
-  </task>
-  <task>
-    <identifier>11</identifier>
-    <title>Test Task</title>
-    <description>Sample task</description>
-    <duration>2</duration>
-    <deliverable>meh</deliverable>
-    <startdate>Jul 6, 2008</startdate>
-    <deadline>Aug 8, 2009</deadline>
-    <peopleassigned>
-      <id>0</id>
-      <id>10</id>
-    </peopleassigned>
-    <completion>0</completion>
+    <completion>50</completion>
   </task>
   <task>
     <identifier>2</identifier>
@@ -184,12 +52,12 @@
     <description>test</description>
     <duration>10</duration>
     <deliverable>dun</deliverable>
-    <startdate>Mar 6, 2014</startdate>
-    <deadline>Mar 6, 2016</deadline>
+    <startdate>Jun 22, 2012</startdate>
+    <deadline>Mar 6, 2015</deadline>
     <peopleassigned>
       <id>2</id>
       <id>3</id>
     </peopleassigned>
-    <completion>50</completion>
+    <completion>100</completion>
   </task>
 </tasks>
