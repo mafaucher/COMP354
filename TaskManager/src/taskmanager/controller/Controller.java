@@ -133,10 +133,12 @@ public class Controller
                     }
                 }
             
+            mm.updateXML();
+            
             mw.panelTasks.loadTable(mm.getTaskData());
             mw.panelPeople.loadTable(mm.getPeopleData());
             mw.panelGanttChart.loadList(mm.getTaskData());
-            mm.updateXML();
+            
             mw.repaint();
         }
     }
@@ -150,11 +152,11 @@ public class Controller
             mm.getTaskData().add(t);
 
             //mw.panelTasks.loadTable(mm.getTaskData());  ?
-
+            mm.updateXML();
+            
             mw.updatePeopleTable(mm.getPeopleData());
             mw.updateTaskTable(mm.getTaskData());
             mw.updateGanttList(mm.getTaskData());
-            mm.updateXML();
             
             mw.panelTasks.tableTasks.getModel().removeTableModelListener(null);
             mw.panelTasks.tableTasks.getModel().addTableModelListener(new TaskTableListener());
