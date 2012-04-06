@@ -150,10 +150,14 @@ public class Task {
         public boolean setStartDate(String startDate)
         {
             SimpleDateFormat sdf = new SimpleDateFormat(XMLParser.FORMAT_DATE);	
-
+            Date dat = null;
+            
 	    try
 	    {
-	      sdf.parse(startDate);
+	      dat = sdf.parse(startDate);
+              
+              if (dat.after(sdf.parse(deadline)))
+                  return false;
 	    }
 	    catch (ParseException e)
 	    {
@@ -161,19 +165,25 @@ public class Task {
 	      return false;
 	    }
             
-            this.startDate = startDate;
+            this.startDate = sdf.format(dat);
             return true;
         }
         
         public String getDeadline() {
                 return deadline;
         }
+        
         public boolean setDeadline(String deadline){
             SimpleDateFormat sdf = new SimpleDateFormat(XMLParser.FORMAT_DATE);	
-
+            Date dat = null;
+            
 	    try
 	    {
-	      sdf.parse(deadline);
+	      dat = sdf.parse(deadline);
+              
+              if (dat.before(sdf.parse(startDate)))
+                return false;
+                
 	    }
 	    catch (ParseException e)
 	    {
@@ -181,7 +191,7 @@ public class Task {
 	      return false;
 	    }
             
-            this.deadline = deadline;
+            this.deadline = sdf.format(dat);
             return true;
         }
         public String getCompletion(){

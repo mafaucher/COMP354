@@ -95,6 +95,7 @@ public class Controller
             //reload people table
             mw.updatePeopleTable(mm.getPeopleData());
             mw.updateGanttList(mm.getTaskData());
+            mw.updateTaskTable(mm.getTaskData());
             
             mw.taskTree.reBuildTree();
             
@@ -146,28 +147,10 @@ public class Controller
         {
             Task t = new Task(mm.nextAvailableId());
             
-            /*
-            Task t = new Task(  mm.nextAvailableId(),
-                                "fake title",
-                                "fake description",
-                                "100",
-                                "fake deliverable",
-                                "Feb 19, 2011",
-                                "Feb 20, 2012",
-                                "0",
-                                "0",
-                                "");
-            */
-            
-            String fdf="";
             mm.getTaskData().add(t);
-//<<<<<<< .mine
-            String fd45f="";
+
             //mw.panelTasks.loadTable(mm.getTaskData());  ?
-            
-//=======
-            
-//>>>>>>> .r71
+
             mw.updatePeopleTable(mm.getPeopleData());
             mw.updateTaskTable(mm.getTaskData());
             mw.updateGanttList(mm.getTaskData());
