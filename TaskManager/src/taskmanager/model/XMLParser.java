@@ -35,12 +35,14 @@ public class XMLParser
     static final String JOBTITLE = "jobtitle";
     static final String JOBDESCRIPTION = "jobdescription";
     static final String CLEARANCE = "clearance";
+    static final String PARENT_DEPENDENDY_ID = "parentDependencyId";
 
     // Pattern identifiers, for validation purposes
     static final String PATTERN_IDENTIFIER = "^[0-9]+$";
     static final String PATTERN_TITLE = "^[a-zA-Z -]+$";
     static final String PATTERN_DESCRIPTION = "^(?:\\p{L}\\p{M}*|[\\ ,.-])*$";
     static final String PATTERN_DURATION = "^[0-9]+$";
+    static final String PATTERN_PARENT_ID = "^[0-9]*$";
     
     static final String FORMAT_DATE = "MMM dd, yyyy";
 
@@ -303,6 +305,13 @@ public class XMLParser
 
                                     task.setDeadline(event.asCharacters().getData());
                                     continue;
+                            }
+                            if (event.asStartElement().getName().getLocalPart().equals(PARENT_DEPENDENDY_ID))
+                            {
+                                event = eventReader.nextEvent();
+
+                                task.setParentDependencyId(event.toString());
+                                continue;
                             }
                             if (event.asStartElement().getName().getLocalPart().equals(COMPLETION)) {
                                     event = eventReader.nextEvent();

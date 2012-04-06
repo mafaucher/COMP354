@@ -14,6 +14,7 @@
       <id>12</id>
       <id>6</id>
     </peopleassigned>
+	<parentDependencyId></parentDependencyId>
     <completion>0</completion>
   </task>
   <task>
@@ -30,6 +31,7 @@
       <id>11</id>
       <id>9</id>
     </peopleassigned>
+	<parentDependencyId>0</parentDependencyId>
     <completion>25</completion>
   </task>
   <task>
@@ -44,6 +46,7 @@
       <id>6</id>
       <id>8</id>
     </peopleassigned>
+	<parentDependencyId>1</parentDependencyId>
     <completion>34</completion>
   </task>
   <task>
@@ -60,6 +63,7 @@
       <id>9</id>
       <id>10</id>
     </peopleassigned>
+	<parentDependencyId>3</parentDependencyId>
     <completion>60</completion>
   </task>
   <task>
@@ -76,6 +80,7 @@
       <id>5</id>
       <id>11</id>
     </peopleassigned>
+	<parentDependencyId>4</parentDependencyId>
     <completion>95</completion>
   </task>
   <task>
@@ -92,6 +97,7 @@
       <id>9</id>
       <id>12</id>
     </peopleassigned>
+	<parentDependencyId>5</parentDependencyId>
     <completion>100</completion>
   </task>
   <task>
@@ -108,6 +114,7 @@
       <id>4</id>
       <id>6</id>
     </peopleassigned>
+	<parentDependencyId>6</parentDependencyId>
     <completion>50</completion>
   </task>
   <task>
@@ -122,6 +129,7 @@
       <id>2</id>
       <id>3</id>
     </peopleassigned>
+	<parentDependencyId>7</parentDependencyId>
     <completion>38</completion>
   </task>
   <task>
@@ -137,6 +145,7 @@
       <id>5</id>
       <id>7</id>
     </peopleassigned>
+	<parentDependencyId>8</parentDependencyId>
     <completion>80</completion>
   </task>
   <task>
@@ -162,6 +171,7 @@
       <id>11</id>
       <id>12</id>
     </peopleassigned>
+	<parentDependencyId>9</parentDependencyId>
     <completion>78</completion>
   </task>
 </tasks>

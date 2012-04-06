@@ -14,6 +14,7 @@ public class Task {
         private String startDate;
         private String deadline;
         private String completion;
+        private String parentDependencyId;
     	private ArrayList<String> peopleassigned = new ArrayList<String>();
 
         public Task() {
@@ -25,6 +26,7 @@ public class Task {
             startDate = "-";
             deadline = "-";
             completion = "0";
+            parentDependencyId = "";
             peopleassigned = new ArrayList<String>();
         }
         public Task(String id) {
@@ -36,6 +38,7 @@ public class Task {
             startDate = "-";
             deadline = "-";
             completion = "0";
+            parentDependencyId = "";
             peopleassigned = new ArrayList<String>();
         }
 
@@ -129,6 +132,22 @@ public class Task {
                 this.completion=completion;
                 return true;
         }
+        
+        public String getParentDependencyId()
+        {
+            return this.parentDependencyId;
+        }
+        
+        public boolean setParentDependencyId(String id)
+        {
+            if (id.matches(XMLParser.PATTERN_PARENT_ID) && !id.equals(this.identifier))
+            {
+                this.parentDependencyId = id;
+                return true;
+            }
+            return false;
+        }
+        
     	public ArrayList<String> getPeopleassigned(){
     		return peopleassigned;
         }
