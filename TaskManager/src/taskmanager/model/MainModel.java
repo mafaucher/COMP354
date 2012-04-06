@@ -130,6 +130,16 @@ public class MainModel
         return String.valueOf(id);
     }
 
+    public Person findPerson(String personID)
+    {
+        for (Person p : peopleData)
+        {
+            if (p.getIdentifier().equals(personID))
+                return p;
+        }
+        return null;
+    }
+
     public Task findTask(String taskID)
     {
         // Find the right task
@@ -150,7 +160,7 @@ public class MainModel
             id = id.trim();
 
             // Don't add duplicates
-            if (findTask(id) == null) continue;
+            if (findPerson(id) == null) continue;
 
             // Only add IDs that correspond to a person
             for (Person p : peopleData)
