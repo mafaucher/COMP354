@@ -96,10 +96,8 @@ public class GanttChartView extends JPanel
         TaskSeries behindSchedule = new TaskSeries("Behind Schedule");          //show how behind schedule a task is
         TaskSeries late = new TaskSeries("Late");                               //how late a task is
         
-        
         for(int i=0; i<rowData.length; i++) {
-            //addToChart = true;
-            if (rowData[i][1].compareTo("-") == 0 || rowData[i][2].compareTo("-") == 0) {
+            if (rowData[i][1].compareTo("-") == 0 || rowData[i][2].compareTo("-") == 0) {   //check if either start or deadline is empty
                 start = new Date();
                 deadline = new Date();
             } else {
@@ -277,8 +275,14 @@ public class GanttChartView extends JPanel
         g.setColor(Color.BLACK);                                                //set color fill to black
         g.fillRect(xMargin+pxDateOffset,yMargin,                                 //draw rectangle as a vertical bar showing today's date
                 2,yDateOffset);
-        
-        g.drawLine(0, 0, xMargin, yMargin);
+    }
+    
+    public void putMarker(Graphics g, int offset) {
+        g.drawRect(xMargin+offset,yMargin,                                 //draw rectangle as a vertical bar showing today's date
+                2,yDateOffset);
+        g.setColor(Color.BLACK);                                                //set color fill to black
+        g.fillRect(xMargin+offset,yMargin,                                 //draw rectangle as a vertical bar showing today's date
+                2,yDateOffset);
     }
     
     public float getTimeDiff(Date begin, Date end) {
