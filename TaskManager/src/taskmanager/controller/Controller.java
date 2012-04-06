@@ -134,11 +134,9 @@ public class Controller
                 }
             
             mm.updateXML();
-            
             mw.panelTasks.loadTable(mm.getTaskData());
             mw.panelPeople.loadTable(mm.getPeopleData());
             mw.panelGanttChart.loadList(mm.getTaskData());
-            
             mw.repaint();
         }
     }
@@ -149,6 +147,20 @@ public class Controller
         {
             Task t = new Task(mm.nextAvailableId());
             
+            /*
+            Task t = new Task(  mm.nextAvailableId(),
+                                "fake title",
+                                "fake description",
+                                "100",
+                                "fake deliverable",
+                                "Feb 19, 2011",
+                                "Feb 20, 2012",
+                                "0",
+                                "0",
+                                "");
+            */
+            
+            String fdf="";
             mm.getTaskData().add(t);
 
             //mw.panelTasks.loadTable(mm.getTaskData());  ?
