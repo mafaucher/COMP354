@@ -29,7 +29,7 @@ public class Controller
         mw.setVisible(true);
     }
 
-    class TaskTableListener implements TableModelListener
+    public class TaskTableListener implements TableModelListener
     {
         public void tableChanged(TableModelEvent e) {
             int column = e.getColumn();
@@ -136,11 +136,15 @@ public class Controller
         {
             Task t = new Task(mm.nextAvailableId());
             mm.getTaskData().add(t);
-
+            
             mw.updatePeopleTable(mm.getPeopleData());
             mw.updateTaskTable(mm.getTaskData());
             mw.updateGanttList(mm.getTaskData());
             mm.updateXML();
+            
+            mw.panelTasks.tableTasks.getModel().removeTableModelListener(null);
+            mw.panelTasks.tableTasks.getModel().addTableModelListener(new TaskTableListener());
+            
             mw.repaint();
         }
     }

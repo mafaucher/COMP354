@@ -3,7 +3,10 @@ package taskmanager.model;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Task {
         private String identifier;
@@ -19,27 +22,50 @@ public class Task {
 
         public Task() {
             identifier = "";
+            initialize();
+        }
+        public Task(String id) {
+            identifier = id;
+            initialize();
+        }
+        
+        private void initialize()
+        {
             title = "-";
             description = "-";
             duration = "0";
             deliverable = "-";
-            startDate = "-";
-            deadline = "-";
+            startDate = getDateToday();
+            deadline = getDateTomorrow();
             completion = "0";
             parentDependencyId = "";
             peopleassigned = new ArrayList<String>();
         }
-        public Task(String id) {
-            identifier = id;
-            title = "-";
-            description = "-";
-            duration = "0";
-            deliverable = "-";
-            startDate = "-";
-            deadline = "-";
-            completion = "0";
-            parentDependencyId = "";
-            peopleassigned = new ArrayList<String>();
+        
+        private String getDateToday()
+        {
+            Calendar cal = Calendar.getInstance();
+            SimpleDateFormat sdf = new SimpleDateFormat(XMLParser.FORMAT_DATE);
+            return sdf.format(cal.getTime());
+        }
+        
+        private String getDateTomorrow()
+        {
+            Calendar c = Calendar.getInstance();
+            SimpleDateFormat sdf = new SimpleDateFormat(XMLParser.FORMAT_DATE);
+            
+            try 
+            {
+                c.setTime(sdf.parse(getDateToday()));
+            } 
+            catch (ParseException ex) 
+            {
+                Logger.getLogger(Task.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            c.add(Calendar.DATE, 1);
+            return sdf.format(c.getTime());
+
         }
 
         public String getIdentifier() {
