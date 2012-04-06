@@ -18,6 +18,7 @@ public class Task {
         private String deadline;
         private String completion;
         private String parentDependencyId;
+        private String parent;
     	private ArrayList<String> peopleassigned = new ArrayList<String>();
 
         public Task() {
@@ -41,6 +42,37 @@ public class Task {
             parentDependencyId = "";
             peopleassigned = new ArrayList<String>();
         }
+//<<<<<<< .mine
+        
+        /////////////////// MY NEW CONSTRUCTOR //////////////////////////
+        
+        public Task(String _id_,
+                    String _title_,
+                    String _description_,
+                    String _duration_,
+                    String _deliverable_,
+                    String _startDate_,
+                    String _deadLine_,
+                    String _completion_,
+                    String _parentDependecyId_,
+                    String _peopleAssignedIds_){
+            
+            identifier = _id_;
+            title = _title_;
+            description = _description_;
+            duration = _duration_;
+            deliverable = _deliverable_;
+            startDate = _startDate_;
+            deadline = _deadLine_;
+            completion = _completion_;
+            parentDependencyId = _parentDependecyId_;
+            peopleassigned = new ArrayList<String>();            
+            
+        }
+        
+        ////////////////////////////////////////////////////////////////
+        
+//=======
         
         private String getDateToday()
         {
@@ -65,6 +97,7 @@ public class Task {
             
             c.add(Calendar.DATE, 1);
             return sdf.format(c.getTime());
+//>>>>>>> .r71
 
         }
 
@@ -205,10 +238,24 @@ public class Task {
             }
             return peopleAssigned.toString();
         }
+        
+        public String getParent(){
+            return parent;
+        }
+        public boolean setParent(String _parent_){
+            if(!_parent_.equals(this.getIdentifier())){
+            
+                this.parent = _parent_;
+            
+                return true;
+            }else{
+                return false;
+            }
+        }        
 
         @Override
         public String toString() {
                 return "task [identifier=" + identifier + ", title=" + title + ", description="
-                                + description + ", duration=" + duration + ", deliverable=" + deliverable + ", people assigned=" + peopleassigned + ", deadline=" + deadline + ", completion=" + completion + "]";
+                                + description + ", duration=" + duration + ", deliverable=" + deliverable + ", people assigned=" + peopleassigned + ", deadline=" + deadline + ", completion=" + completion + ", parent="+ parent+ "]";
         }
 }

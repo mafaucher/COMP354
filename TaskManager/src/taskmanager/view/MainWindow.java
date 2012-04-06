@@ -20,6 +20,8 @@ public class MainWindow extends JFrame
     public PersonView panelPeople;
     public GanttChartView panelGanttChart;
     
+    public TaskTreeView taskTree;
+    
     public JTabbedPane jTabbedPane1;
     public JButton btPrintPeople;
     
@@ -40,6 +42,8 @@ public class MainWindow extends JFrame
         panelTasks = new TaskView(mm.getTaskData());
         panelPeople = new PersonView(mm);
         panelGanttChart = new GanttChartView(mm);
+           taskTree = new TaskTreeView(mm);
+        
 
         btPrintPeople = new JButton();
         btPrintPeople.setText("Print people.txt");
@@ -48,6 +52,7 @@ public class MainWindow extends JFrame
         jTabbedPane1.addTab("Tasks", panelTasks);
         jTabbedPane1.addTab("People", panelPeople);
         jTabbedPane1.addTab("Gantt Chart", panelGanttChart);
+        jTabbedPane1.addTab("Tasks Tree", taskTree);
  
         add(jTabbedPane1, BorderLayout.CENTER);
     }

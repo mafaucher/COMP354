@@ -82,11 +82,21 @@ public class Controller
                     oldData = task.getCompletion();
                     revert = !task.setCompletion(data.toString());
                     break;
+                case 9:
+                    oldData = task.getParentDependencyId();
+                    revert = !task.setParentDependencyId(data);
+                    break;
+                case 10:
+                    oldData = task.getParent();
+                    revert = !task.setParent(data);
+                    break;
             }
             mm.updateXML();
             //reload people table
             mw.updatePeopleTable(mm.getPeopleData());
             mw.updateGanttList(mm.getTaskData());
+            
+            mw.taskTree.reBuildTree();
             
             // Revert invalid changes
             if (revert)
@@ -135,8 +145,29 @@ public class Controller
         public void actionPerformed(ActionEvent e)
         {
             Task t = new Task(mm.nextAvailableId());
-            mm.getTaskData().add(t);
             
+            /*
+            Task t = new Task(  mm.nextAvailableId(),
+                                "fake title",
+                                "fake description",
+                                "100",
+                                "fake deliverable",
+                                "Feb 19, 2011",
+                                "Feb 20, 2012",
+                                "0",
+                                "0",
+                                "");
+            */
+            
+            String fdf="";
+            mm.getTaskData().add(t);
+//<<<<<<< .mine
+            String fd45f="";
+            //mw.panelTasks.loadTable(mm.getTaskData());  ?
+            
+//=======
+            
+//>>>>>>> .r71
             mw.updatePeopleTable(mm.getPeopleData());
             mw.updateTaskTable(mm.getTaskData());
             mw.updateGanttList(mm.getTaskData());
@@ -144,6 +175,8 @@ public class Controller
             
             mw.panelTasks.tableTasks.getModel().removeTableModelListener(null);
             mw.panelTasks.tableTasks.getModel().addTableModelListener(new TaskTableListener());
+            
+            mw.taskTree.reBuildTree();
             
             mw.repaint();
         }

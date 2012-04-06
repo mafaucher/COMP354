@@ -36,6 +36,8 @@ public class XMLParser
     static final String JOBDESCRIPTION = "jobdescription";
     static final String CLEARANCE = "clearance";
     static final String PARENT_DEPENDENDY_ID = "parentDependencyId";
+    
+    static final String PARENT = "parent";
 
     // Pattern identifiers, for validation purposes
     static final String PATTERN_IDENTIFIER = "^[0-9]+$";
@@ -107,6 +109,19 @@ public class XMLParser
                 writer.writeCharacters(alTasks.get(i).getCompletion());
                 writer.writeEndElement();
 
+                
+                ////////////////////////////////////////////////////////////
+                writer.writeStartElement(PARENT);
+                writer.writeCharacters(alTasks.get(i).getParent());
+                writer.writeEndElement();               
+                //////////////////////////////////////////////////////////////   
+                ////////////////////////////////////////////////////////////
+                writer.writeStartElement(PARENT_DEPENDENDY_ID);
+                writer.writeCharacters(alTasks.get(i).getParentDependencyId());
+                writer.writeEndElement();               
+                //////////////////////////////////////////////////////////////                 
+                
+                
                 writer.writeEndElement();
             }
 
@@ -325,6 +340,18 @@ public class XMLParser
                                     task.setCompletion(event.asCharacters().getData());
                                     continue;
                             }
+                            if (event.asStartElement().getName().getLocalPart().equals(PARENT)) {
+                                    event = eventReader.nextEvent();
+
+                                    // Make sure the field is valid
+                                    if(!event.isCharacters()){
+                                            System.out.println("Warning: Task " + task.getIdentifier() + " has a blank parent!.");
+                                            continue;
+                                    }
+
+                                    task.setParent(event.asCharacters().getData());
+                                    continue;
+                            }                            
                             if (event.asStartElement().getName().getLocalPart().equals(ID)) {					
 
                                 event = eventReader.nextEvent();

@@ -38,7 +38,7 @@ public class TaskView extends JPanel
         southPanel.add(btRemove);
         
         //here be column names
-        columnNames = new String[9];
+        columnNames = new String[11];
         columnNames[0] = "identifier";
         columnNames[1] = "title";
         columnNames[2] = "description";
@@ -48,6 +48,9 @@ public class TaskView extends JPanel
         columnNames[6] = "deadline";
         columnNames[7] = "people assigned";
         columnNames[8] = "completion";
+        
+        columnNames[9] = "parentDependencyId";
+        columnNames[10] = "parent";
         
         loadTable(taskData);
     }
@@ -62,7 +65,7 @@ public class TaskView extends JPanel
         
         for (int i = 0; i < rowData.length; i++)
         {
-            rowData[i] = new String[9];
+            rowData[i] = new String[11];
             
             rowData[i][0] = taskData.get(i).getIdentifier();
             rowData[i][1] = taskData.get(i).getTitle();
@@ -73,6 +76,10 @@ public class TaskView extends JPanel
             rowData[i][6] = taskData.get(i).getDeadline();
             rowData[i][7] = taskData.get(i).getPeopleassignedAsString();
             rowData[i][8] = taskData.get(i).getCompletion();
+            
+            rowData[i][9] = taskData.get(i).getParentDependencyId();
+            rowData[i][10] = taskData.get(i).getParent();
+            
         }
        
         //create the table here with the data

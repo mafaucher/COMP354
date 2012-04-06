@@ -35,6 +35,19 @@ public class MainModel
     {
         return taskData;
     }
+    
+    public List<Task> getTaskData(String _id_){
+        ArrayList<Task> tempListTaskData = new ArrayList<Task>();
+        String fdf="";
+        for(Task task : taskData){
+            String dgf344="";
+            if(task.getIdentifier().equals(_id_)){
+                tempListTaskData.add(task);
+                String fdfd3="";
+            }
+        }
+        return tempListTaskData;
+    }    
 
     public List<Person> getPeopleData()
     {
