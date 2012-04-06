@@ -15,6 +15,8 @@
       <id>6</id>
     </peopleassigned>
     <completion>0</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
   </task>
   <task>
     <identifier>1</identifier>
@@ -22,7 +24,7 @@
     <description>Design and creation of the user interface for the game. Includes the in-game HUD and front-end menus.</description>
     <duration>140</duration>
     <deliverable>Zipped Folder Containing all Interface files and Documentation</deliverable>
-    <startdate>Feb 8, 2013</startdate>
+    <startdate>Apr 06, 2012</startdate>
     <deadline>Feb 15, 2014</deadline>
     <peopleassigned>
       <id>2</id>
@@ -31,6 +33,8 @@
       <id>9</id>
     </peopleassigned>
     <completion>25</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
   </task>
   <task>
     <identifier>3</identifier>
@@ -45,6 +49,8 @@
       <id>8</id>
     </peopleassigned>
     <completion>34</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
   </task>
   <task>
     <identifier>4</identifier>
@@ -61,6 +67,8 @@
       <id>10</id>
     </peopleassigned>
     <completion>60</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
   </task>
   <task>
     <identifier>5</identifier>
@@ -77,6 +85,8 @@
       <id>11</id>
     </peopleassigned>
     <completion>95</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
   </task>
   <task>
     <identifier>6</identifier>
@@ -84,8 +94,8 @@
     <description>Prepare all artwork for the title</description>
     <duration>250</duration>
     <deliverable>Finalized artwork zip file</deliverable>
-    <startdate>Feb 26, 2013</startdate>
-    <deadline>Feb 29, 2014</deadline>
+    <startdate>Apr 06, 2012</startdate>
+    <deadline>Mar 01, 2014</deadline>
     <peopleassigned>
       <id>7</id>
       <id>8</id>
@@ -93,6 +103,8 @@
       <id>12</id>
     </peopleassigned>
     <completion>100</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
   </task>
   <task>
     <identifier>7</identifier>
@@ -109,6 +121,8 @@
       <id>6</id>
     </peopleassigned>
     <completion>50</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
   </task>
   <task>
     <identifier>8</identifier>
@@ -116,13 +130,15 @@
     <description>Design and creation of the user interface for the game. Includes the in-game HUD and front-end menus.</description>
     <duration>114</duration>
     <deliverable>Zipped Folder Containing all Interface files and Documentation</deliverable>
-    <startdate>Feb 8, 2012</startdate>
+    <startdate>Feb 08, 2012</startdate>
     <deadline>Apr 15, 2012</deadline>
     <peopleassigned>
       <id>2</id>
       <id>3</id>
     </peopleassigned>
     <completion>38</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
   </task>
   <task>
     <identifier>9</identifier>
@@ -130,7 +146,7 @@
     <description>Testing for the game. Included QA and Compliance testing</description>
     <duration>366</duration>
     <deliverable>Completed Testing checklist with bug reports.</deliverable>
-    <startdate>Feb 2, 2013</startdate>
+    <startdate>Apr 06, 2012</startdate>
     <deadline>Feb 10, 2015</deadline>
     <peopleassigned>
       <id>4</id>
@@ -138,6 +154,8 @@
       <id>7</id>
     </peopleassigned>
     <completion>80</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
   </task>
   <task>
     <identifier>10</identifier>
@@ -145,7 +163,7 @@
     <description>Production of finalized game</description>
     <duration>200</duration>
     <deliverable>Final executable project</deliverable>
-    <startdate>Jan 1, 2011</startdate>
+    <startdate>Jan 01, 2011</startdate>
     <deadline>Aug 29, 2012</deadline>
     <peopleassigned>
       <id>0</id>
@@ -163,5 +181,277 @@
       <id>12</id>
     </peopleassigned>
     <completion>78</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
+  </task>
+  <task>
+    <identifier>2</identifier>
+    <title>Modelling</title>
+    <description>Modelling for the game. Includes Character and Environment Modelling</description>
+    <duration>175</duration>
+    <deliverable>Zipped Folder Containing all Models and Documentation</deliverable>
+    <startdate>Feb 11, 2011</startdate>
+    <deadline>Dec 18, 2014</deadline>
+    <peopleassigned>
+      <id>0</id>
+      <id>1</id>
+      <id>12</id>
+      <id>6</id>
+    </peopleassigned>
+    <completion>0</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
+  </task>
+  <task>
+    <identifier>11</identifier>
+    <title>dfdf</title>
+    <description>Modelling for the game. Includes Character and Environment Modelling</description>
+    <duration>175</duration>
+    <deliverable>Zipped Folder Containing all Models and Documentation</deliverable>
+    <startdate>Feb 11, 2011</startdate>
+    <deadline>Dec 18, 2014</deadline>
+    <peopleassigned>
+      <id>0</id>
+      <id>1</id>
+      <id>12</id>
+      <id>6</id>
+    </peopleassigned>
+    <completion>0</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
+  </task>
+  <task>
+    <identifier>12</identifier>
+    <title>rtyrty</title>
+    <description>Modelling for the game. Includes Character and Environment Modelling</description>
+    <duration>175</duration>
+    <deliverable>Zipped Folder Containing all Models and Documentation</deliverable>
+    <startdate>Feb 11, 2011</startdate>
+    <deadline>Dec 18, 2014</deadline>
+    <peopleassigned>
+      <id>0</id>
+      <id>1</id>
+      <id>12</id>
+      <id>6</id>
+    </peopleassigned>
+    <completion>0</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
+  </task>
+  <task>
+    <identifier>13</identifier>
+    <title>tyutyu</title>
+    <description>Modelling for the game. Includes Character and Environment Modelling</description>
+    <duration>175</duration>
+    <deliverable>Zipped Folder Containing all Models and Documentation</deliverable>
+    <startdate>Feb 11, 2011</startdate>
+    <deadline>Dec 18, 2014</deadline>
+    <peopleassigned>
+      <id>0</id>
+      <id>1</id>
+      <id>12</id>
+      <id>6</id>
+    </peopleassigned>
+    <completion>0</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
+  </task>
+  <task>
+    <identifier>14</identifier>
+    <title>yuiyiu</title>
+    <description>Modelling for the game. Includes Character and Environment Modelling</description>
+    <duration>175</duration>
+    <deliverable>Zipped Folder Containing all Models and Documentation</deliverable>
+    <startdate>Feb 11, 2011</startdate>
+    <deadline>Dec 18, 2014</deadline>
+    <peopleassigned>
+      <id>0</id>
+      <id>1</id>
+      <id>12</id>
+      <id>6</id>
+    </peopleassigned>
+    <completion>0</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
+  </task>
+  <task>
+    <identifier>15</identifier>
+    <title>jkljjlkj</title>
+    <description>Modelling for the game. Includes Character and Environment Modelling</description>
+    <duration>175</duration>
+    <deliverable>Zipped Folder Containing all Models and Documentation</deliverable>
+    <startdate>Feb 11, 2011</startdate>
+    <deadline>Dec 18, 2014</deadline>
+    <peopleassigned>
+      <id>0</id>
+      <id>1</id>
+      <id>12</id>
+      <id>6</id>
+    </peopleassigned>
+    <completion>0</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
+  </task>
+  <task>
+    <identifier>16</identifier>
+    <title>hkhjjk</title>
+    <description>Modelling for the game. Includes Character and Environment Modelling</description>
+    <duration>175</duration>
+    <deliverable>Zipped Folder Containing all Models and Documentation</deliverable>
+    <startdate>Feb 11, 2011</startdate>
+    <deadline>Dec 18, 2014</deadline>
+    <peopleassigned>
+      <id>0</id>
+      <id>1</id>
+      <id>12</id>
+      <id>6</id>
+    </peopleassigned>
+    <completion>0</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
+  </task>
+  <task>
+    <identifier>17</identifier>
+    <title>hjgjgj</title>
+    <description>Modelling for the game. Includes Character and Environment Modelling</description>
+    <duration>175</duration>
+    <deliverable>Zipped Folder Containing all Models and Documentation</deliverable>
+    <startdate>Feb 11, 2011</startdate>
+    <deadline>Dec 18, 2014</deadline>
+    <peopleassigned>
+      <id>0</id>
+      <id>1</id>
+      <id>12</id>
+      <id>6</id>
+    </peopleassigned>
+    <completion>0</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
+  </task>
+  <task>
+    <identifier>18</identifier>
+    <title>asdfasbn</title>
+    <description>Modelling for the game. Includes Character and Environment Modelling</description>
+    <duration>175</duration>
+    <deliverable>Zipped Folder Containing all Models and Documentation</deliverable>
+    <startdate>Feb 11, 2011</startdate>
+    <deadline>Dec 18, 2014</deadline>
+    <peopleassigned>
+      <id>0</id>
+      <id>1</id>
+      <id>12</id>
+      <id>6</id>
+    </peopleassigned>
+    <completion>0</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
+  </task>
+  <task>
+    <identifier>19</identifier>
+    <title>sdssd</title>
+    <description>Modelling for the game. Includes Character and Environment Modelling</description>
+    <duration>175</duration>
+    <deliverable>Zipped Folder Containing all Models and Documentation</deliverable>
+    <startdate>Feb 11, 2011</startdate>
+    <deadline>Dec 18, 2014</deadline>
+    <peopleassigned>
+      <id>0</id>
+      <id>1</id>
+      <id>12</id>
+      <id>6</id>
+    </peopleassigned>
+    <completion>0</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
+  </task>
+  <task>
+    <identifier>20</identifier>
+    <title>dfdfdf</title>
+    <description>Modelling for the game. Includes Character and Environment Modelling</description>
+    <duration>175</duration>
+    <deliverable>Zipped Folder Containing all Models and Documentation</deliverable>
+    <startdate>Feb 11, 2011</startdate>
+    <deadline>Dec 18, 2014</deadline>
+    <peopleassigned>
+      <id>0</id>
+      <id>1</id>
+      <id>12</id>
+      <id>6</id>
+    </peopleassigned>
+    <completion>0</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
+  </task>
+  <task>
+    <identifier>21</identifier>
+    <title>asdfsafd</title>
+    <description>Modelling for the game. Includes Character and Environment Modelling</description>
+    <duration>175</duration>
+    <deliverable>Zipped Folder Containing all Models and Documentation</deliverable>
+    <startdate>Feb 11, 2011</startdate>
+    <deadline>Dec 18, 2014</deadline>
+    <peopleassigned>
+      <id>0</id>
+      <id>1</id>
+      <id>12</id>
+      <id>6</id>
+    </peopleassigned>
+    <completion>0</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
+  </task>
+  <task>
+    <identifier>22</identifier>
+    <title>alain</title>
+    <description>Modelling for the game. Includes Character and Environment Modelling</description>
+    <duration>175</duration>
+    <deliverable>Zipped Folder Containing all Models and Documentation</deliverable>
+    <startdate>Feb 11, 2011</startdate>
+    <deadline>Dec 18, 2014</deadline>
+    <peopleassigned>
+      <id>0</id>
+      <id>1</id>
+      <id>12</id>
+      <id>6</id>
+    </peopleassigned>
+    <completion>0</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
+  </task>
+  <task>
+    <identifier>23</identifier>
+    <title>was</title>
+    <description>Modelling for the game. Includes Character and Environment Modelling</description>
+    <duration>175</duration>
+    <deliverable>Zipped Folder Containing all Models and Documentation</deliverable>
+    <startdate>Feb 11, 2011</startdate>
+    <deadline>Dec 18, 2014</deadline>
+    <peopleassigned>
+      <id>0</id>
+      <id>1</id>
+      <id>12</id>
+      <id>6</id>
+    </peopleassigned>
+    <completion>0</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
+  </task>
+  <task>
+    <identifier>24</identifier>
+    <title>here</title>
+    <description>Modelling for the game. Includes Character and Environment Modelling</description>
+    <duration>175</duration>
+    <deliverable>Zipped Folder Containing all Models and Documentation</deliverable>
+    <startdate>Feb 11, 2011</startdate>
+    <deadline>Dec 18, 2014</deadline>
+    <peopleassigned>
+      <id>0</id>
+      <id>1</id>
+      <id>12</id>
+      <id>6</id>
+    </peopleassigned>
+    <completion>0</completion>
+    <parent></parent>
+    <parentDependencyId></parentDependencyId>
   </task>
 </tasks>

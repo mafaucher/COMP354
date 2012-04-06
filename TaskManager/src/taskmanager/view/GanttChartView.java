@@ -31,9 +31,6 @@ import java.text.SimpleDateFormat;
 import java.text.ParseException;
 import java.lang.Character;
 
-
-import taskmanager.view.CustomRenderer;
-
 /**
  *
  * @author Jonathan
