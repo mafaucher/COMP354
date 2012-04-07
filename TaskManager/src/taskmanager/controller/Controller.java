@@ -139,6 +139,9 @@ public class Controller
             mw.panelTasks.loadTable(mm.getTaskData());
             mw.panelPeople.loadTable(mm.getPeopleData());
             mw.panelGanttChart.loadList(mm.getTaskData());
+            
+            mw.taskTree.reBuildTree();
+            
             mw.panelTasks.repaint();
         }
     }
