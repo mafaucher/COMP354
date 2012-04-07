@@ -18,7 +18,7 @@
 \belowdisplayshortskip=2mm
 \normalbaselineskip=12pt
 \normalbaselines
-
+ \newcommand{\tab}{\hspace*{2em}}
 \begin{document}
 
 \vspace*{0.5in}
@@ -163,11 +163,11 @@ The requirements tested in the development of the system are listed in the requi
 {
 The requirements listed in the requirements document (included in Appendix C) omitted from the testing and eventual development of the system are requirements F1 and N1.
 
-Functional requirement F1 states “Only one person should be logged in at a time.” This requirement was later dropped from development during the development of Phase 2, as it was deemed beyond the scope of the application, as the application functioned better in a more general form. This functionality was thus not tested as part of the requirements.
+Functional requirement F1 states ï¿½Only one person should be logged in at a time.ï¿½ This requirement was later dropped from development during the development of Phase 2, as it was deemed beyond the scope of the application, as the application functioned better in a more general form. This functionality was thus not tested as part of the requirements.
 
 Functional requirement F11, F12 were discarded, as the notion of administrator users was omitted as part of F1. As this is the case,
 
-Non-functional requirement N1, specifically “the system must know who the user is in order to order the appropriate options”, was thus rendered invalid, as the entire notion of different users using the system was discarded.
+Non-functional requirement N1, specifically ï¿½the system must know who the user is in order to order the appropriate optionsï¿½, was thus rendered invalid, as the entire notion of different users using the system was discarded.
 }
 
 \section{Test Results}
@@ -205,7 +205,7 @@ Initial testing resulted in three failures:
 
 2. Inconsistency in dates between the Task View and XML document.
 
-3. Inconsistency in data between the Task View and Person View. Changing project duration in Task View did not update employee’s hours in Person View.
+3. Inconsistency in data between the Task View and Person View. Changing project duration in Task View did not update employeeï¿½s hours in Person View.
 
    {\bf F6} The user is to be able to view a Tree graph of tasks.
     The tree view is operational. Tested via manual executions of the user interface.  
@@ -302,6 +302,162 @@ $<$completion$>$ : The percentage of completion for the task
 }
 \subsection{Sample Invalid XML Files}
 {
+ $<$ ?xml version="1.0"? $>$ 
+\\ $<$ !-- COMP 354 Project - Group 1 - XML People File-- $>$ 
+\\ $<$ people $>$ 
+\\ \tab$<$ person $>$ 
+\\ \tab\tab $<$ identifier $>$ .0 $<$ /identifier $>$ 
+\\ \tab\tab $<$ fname $>$ K.ai $<$ /fname $>$ 
+\\ \tab\tab $<$ lname $>$ W56ang $<$ /lname $>$ 
+\\ \tab\tab $<$ jobtitle $>$  Tes\%\$t Title $<$ /jobtitle $>$ 
+\\ \tab\tab $<$ jobdescription $>$ Test .Job Description $<$ /jobdescription $>$ 
+\\ \tab\tab $<$ clearance $>$ gh0 $<$ /clearance $>$ 
+\\ \tab$<$ /person $>$ 
+\\ \tab$<$ person $>$ 
+\\ \tab\tab $<$ identifier $>$ h1 $<$ /identifier $>$ 
+\\ \tab\tab $<$ fname $>$ Dmitry $<$ /fname $>$ 
+\\ \tab\tab $<$ lname $>$ Kuznetsov $<$ /lname $>$ 
+\\ \tab\tab $<$ jobtitle $>$ Test \^{} \%\$ Title $<$ /jobtitle $>$ 
+\\ \tab\tab $<$ jobdescription $>$ Test Job.. Description $<$ /jobdescription $>$ 
+\\ \tab\tab $<$ clearance $>$ dgfh0 $<$ /clearance $>$ 
+\\ \tab$<$ /person $>$ 
+\\ \tab$<$ person $>$ 
+\\ \tab\tab $<$ identifier $>$ h2 $<$ /identifier $>$ 
+\\ \tab\tab $<$ fname $>$ Wi5lliam $<$ /fname $>$ 
+\\ \tab\tab $<$ lname $>$ Lin5g $<$ /lname $>$ 
+\\ \tab\tab $<$ jobtitle $>$ Test \%\$\^Title $<$ /jobtitle $>$ 
+\\ \tab\tab $<$ jobdescription $>$ Test Job\%\$\^{} Description $<$ /jobdescription $>$ 
+\\ \tab\tab $<$ clearance $>$ 0hfd $<$ /clearance $>$ 
+\\ \tab$<$ /person $>$ 
+\\ \tab$<$ person $>$ 
+\\ \tab\tab $<$ identifier $>$ h3 $<$ /identifier $>$ 
+\\ \tab\tab $<$ fname $>$ Jef46frey $<$ /fname $>$ 
+\\ \tab\tab $<$ lname $>$ Ho56w $<$ /lname $>$ 
+\\ \tab\tab $<$ jobtitle $>$ Test \%\^{}Title $<$ /jobtitle $>$ 
+\\ \tab\tab $<$ jobdescription $>$ Test J\^{}\%\$ob Description $<$ /jobdescription $>$ 
+\\ \tab\tab $<$ clearance $>$ .. $<$ /clearance $>$ 
+\\ \tab$<$ /person $>$ 
+\\ \tab$<$ person $>$ 
+\\ \tab\tab $<$ identifier $>$ 4\% $<$ /identifier $>$ 
+\\ \tab\tab $<$ fname $>$ Jona56than $<$ /fname $>$ 
+\\ \tab\tab $<$ lname $>$ Berg566eron $<$ /lname $>$ 
+\\ \tab\tab $<$ jobtitle $>$ Test \%\$\^{}Title $<$ /jobtitle $>$ 
+\\ \tab\tab $<$ jobdescription $>$ Test\%\$\^{}  Job Description $<$ /jobdescription $>$ 
+\\ \tab\tab $<$ clearance $>$ hf0 $<$ /clearance $>$ 
+\\ \tab$<$ /person $>$ 
+\\ \tab$<$ person $>$ 
+\\ \tab\tab $<$ identifier $>$ dfh5 $<$ /identifier $>$ 
+\\ \tab\tab $<$ fname $>$ Al354ain $<$ /fname $>$ 
+\\ \tab\tab $<$ lname $>$ Sa54kha $<$ /lname $>$ 
+\\ \tab\tab $<$ jobtitle $>$ Test \$\%Title $<$ /jobtitle $>$ 
+\\ \tab\tab $<$ jobdescription $>$ Test J..ob Description $<$ /jobdescription $>$ 
+\\ \tab\tab $<$ clearance $>$ gdg0 $<$ /clearance $>$ 
+\\ \tab$<$ /person $>$ 
+\\ \tab$<$ person $>$ 
+\\ \tab\tab $<$ identifier $>$ g6 $<$ /identifier $>$ 
+\\ \tab\tab $<$ fname $>$ Marc-An543dre $<$ /fname $>$ 
+\\ \tab\tab $<$ lname $>$ Fauch45er $<$ /lname $>$ 
+\\ \tab\tab $<$ jobtitle $>$ Test T\$\%itle $<$ /jobtitle $>$ 
+\\ \tab\tab $<$ jobdescription $>$ Test Job\#\$\% Description $<$ /jobdescription $>$ 
+\\ \tab\tab $<$ clearance $>$ g0 $<$ /clearance $>$ 
+\\ \tab$<$ /person $>$ 
+\\ \tab$<$ person $>$ 
+\\ \tab\tab $<$ identifier $>$ g7 $<$ /identifier $>$ 
+\\ \tab\tab $<$ fname $>$ T45homas $<$ /fname $>$ 
+\\ \tab\tab $<$ lname $>$ Pa54ulin $<$ /lname $>$ 
+\\ \tab\tab $<$ jobtitle $>$ Te\$\#\%\$st Title $<$ /jobtitle $>$ 
+\\ \tab\tab $<$ jobdescription $>$ Test\#\$\% Job Description $<$ /jobdescription $>$ 
+\\ \tab\tab $<$ clearance $>$ fg0 $<$ /clearance $>$ 
+\\ \tab$<$ /person $>$ 
+\\ $<$ /people $>$ 
+\\ $<$ ?xml version="1.0"? $>$ 
+\\ $<$ !DOCTYPE tasks SYSTEM "tests\textbackslash resources\textbackslash TASK\_DTD\_SCHEMA.dtd" $>$ 
+\\ $<$ !-- COMP 354 Project - Group 1 - XML Task File-- $>$ 
+\\ $<$ tasks $>$ 
+\\ \tab$<$ t2ask $>$ 
+\\ \tab    \tab $<$ identifier $>$ . $<$ /identifier $>$ 
+\\ \tab    \tab $<$ title $>$ Modelling\% $<$ /title $>$ 
+\\ \tab    \tab $<$ description $>$ \-\%Modelling for the game. Includes Character and Environment Modelling $<$ /description $>$ 
+\\ \tab    \tab $<$ duration $>$ 175? $<$ /duration $>$ 
+\\ \tab    \tab $<$ deliverable $>$ Zipped Folder. Containing\%\^{} all Models and Documentation $<$ /deliverable $>$ 
+\\ \tab    \tab $<$ deadline $>$ .Feb 18, 2012 $<$ /deadline $>$ 
+\\ \tab    \tab $<$ personassigned $>$ Kai, \$\%Tom $<$ /personassigned $>$ 
+\\ \tab    \tab $<$ completion $>$ 0h $<$ /completion $>$ 
+\\ \tab    \tab $<$ subtask $>$  $<$ /subtask $>$ 
+\\ \tab$<$ /task $>$ 
+\\ 
+\\ \tab$<$ task $>$ 
+\\ \tab    \tab $<$ identifier $>$ 1h $<$ /identifier $>$ 
+\\ \tab    \tab $<$ title $>$ User .Interface $<$ /title $>$ 
+\\ \tab    \tab $<$ description $>$ Design \^{}and creation of the user interface for the game. Includes the in-game HUD and front-end menus. $<$ /description $>$ 
+\\ \tab    \tab $<$ duration $>$ .114 $<$ /duration $>$ 
+\\ \tab    \tab $<$ deliverable $>$ Zipped Folder ContaininDF\#\$g all Interface files and Documentation $<$ /deliverable $>$ 
+\\ \tab    \tab $<$ deadline $>$ jFeb 15, 2012 $<$ /deadline $>$ 
+\\ \tab    \tab $<$ personassigned $>$ .Jonathon,\# Jeff $<$ /personassigned $>$ 
+\\ \tab    \tab $<$ completion $>$ 0. $<$ /completion $>$ 
+\\ \tab    \tab $<$ subtask $>$  $<$ /subtask $>$ 
+\\ \tab$<$ /task $>$ 
+\\
+\\ \tab$<$ task $>$ 
+\\ \tab    \tab $<$ identifier $>$ .2 $<$ /identifier $>$ 
+\\ \tab    \tab $<$ title $>$ Tes\%ting $<$ /title $>$ 
+\\ \tab    \tab $<$ description $>$ Testing for the\^\$ game. Included QA and Compliance testing $<$ /description $>$ 
+\\ \tab    \tab $<$ duration $>$ 3645h6 $<$ /duration $>$ 
+\\ \tab    \tab $<$ deliverable $>$ Completed\#\@\$ Testing checklist with bug reports. $<$ /deliverable $>$ 
+\\ \tab    \tab $<$ deadline $>$ Feb 1.0, 2012 $<$ /deadline $>$ 
+\\ \tab    \tab $<$ personassigned $>$ Willie, Dmitr\%\$y, Alain $<$ /personassigned $>$ 
+\\ \tab    \tab $<$ completion $>$ 0. $<$ /completion $>$ 
+\\ \tab    \tab $<$ subtask $>$  $<$ /subtask $>$ 
+\\ \tab$<$ /task $>$ 
+\\ 
+\\ \tab$<$ task $>$ 
+\\ \tab    \tab $<$ identifier $>$ 3. $<$ /identifier $>$ 
+\\ \tab    \tab $<$ title $>$ Develop\$\%ment $<$ /title $>$ 
+\\ \tab    \tab $<$ description $>$ Development of source code for th\$\%e game. Includes elements of gameplay, level design, etc. $<$ /description $>$ 
+\\ \tab    \tab $<$ duration $>$ 20.0 $<$ /duration $>$ 
+\\ \tab    \tab $<$ deliverable $>$ Zipped folder 56\%\^containing all main game files $<$ /deliverable $>$ 
+\\ \tab    \tab $<$ deadline $>$ F eb 9, 2012 $<$ /deadline $>$ 
+\\ \tab    \tab $<$ personassigned $>$ \%\^{}Tom, Jeff, Willie, Dmitry $<$ /personassigned $>$ 
+\\ \tab    \tab $<$ completion $>$ .0 $<$ /completion $>$ 
+\\ \tab    \tab $<$ subtask $>$  $<$ /subtask $>$ 
+\\ \tab$<$ /task $>$ 
+\\ 
+\\ \tab$<$ task $>$ 
+\\ \tab    \tab $<$ identifier $>$ .4 $<$ /identifier $>$ 
+\\ \tab    \tab $<$ title $>$ Artificial \%Intelligence $<$ /title $>$ 
+\\ \tab    \tab $<$ description $>$ Artificial InS@telligence $<$ /description $>$ 
+\\ \tab    \tab $<$ duration $>$ 95gh0 $<$ /duration $>$ 
+\\ \tab    \tab $<$ deliverable $>$ Zipped folde\#\$r containing algorithms and AI code $<$ /deliverable $>$ 
+\\ \tab    \tab $<$ deadline $>$ F.eb 15, 2012 $<$ /deadline $>$ 
+\\ \tab    \tab $<$ personassigned $>$ Kai, Jonatho\%n, Alain $<$ /personassigned $>$ 
+\\ \tab    \tab $<$ completion $>$ 0\$\% $<$ /completion $>$ 
+\\ \tab    \tab $<$ subtask $>$  $<$ /subtask $>$ 
+\\ \tab$<$ /task $>$ 
+\\ 
+\\ \tab$<$ task $>$ 
+\\ \tab    \tab $<$ identifier $>$ 5\^{} $<$ /identifier $>$ 
+\\ \tab    \tab $<$ title $>$ Docum\$\#\%entation $<$ /title $>$ 
+\\ \tab    \tab $<$ description $>$ All internal and \$\#external documentation for the game $<$ /description $>$ 
+\\ \tab    \tab $<$ duration $>$ 145\$\#\%00 $<$ /duration $>$ 
+\\ \tab    \tab $<$ deliverable $>$ Zipped folder .containing al\#l documentation, including user manuals $<$ /deliverable $>$ 
+\\ \tab    \tab $<$ deadline $>$ F.eb 21, 2012 $<$ /deadline $>$ 
+\\ \tab    \tab $<$ personassigned $>$ Alain,\# Dmitry $<$ /personassigned $>$ 
+\\ \tab    \tab $<$ completion $>$ .0 $<$ /completion $>$ 
+\\ \tab    \tab $<$ subtask $>$  $<$ /subtask $>$ 
+\\ \tab$<$ /task $>$ 
+\\ 
+\\ \tab$<$ task $>$ 
+\\ \tab    \tab $<$ identifier $>$ 6h $<$ /identifier $>$ 
+\\ \tab    \tab $<$ title $>$ Integra.\$\%tion $<$ /title $>$ 
+\\ \tab    \tab $<$ description $>$ Integratio\#\$@\#n of all features from all tasks $<$ /description $>$ 
+\\ \tab    \tab $<$ duration $>$ 2345\$\%50 $<$ /duration $>$ 
+\\ \tab    \tab $<$ deliverable $>$ \$\%Finalized game executable $<$ /deliverable $>$ 
+\\ \tab    \tab $<$ deadline $>$ 4Feb 30, 2012 $<$ /deadline $>$ 
+\\ \tab    \tab $<$ personassigned $>$ Tom.\#, Jeff, Willie, Jonathon, Kai, Alain $<$ /personassigned $>$ 
+\\ \tab    \tab $<$ completion $>$ .0 $<$ /completion $>$ 
+\\ \tab    \tab $<$ subtask $>$  $<$ /subtask $>$ 
+\\ \tab$<$ /task $>$ 
+\\ $<$ /tasks $>$ 
 
 }
 
@@ -371,7 +527,7 @@ The user is to be able to remove an employee.
 {
 The user must be able to withdraw employees from a task.
 }
-\subsection{C.2 – Non-Functional Requirements}
+\subsection{C.2 ï¿½ Non-Functional Requirements}
 \subsubsection{N1}
 {
 The system must know who the user is in order to order the appropriate options.
