@@ -40,6 +40,9 @@ public class TaskTest {
     private static String DURATION;
     private static String DELIVERABLE;
     private static String DEADLINE;
+    private static String PARENT;
+    private static String PARENTDEPENDENCY;
+    private static String STARTDATE;
     private static ArrayList<String> PEOPLEASSIGNED=new ArrayList<String>();
     private static String COMPLETION;
     public TaskTest( Task _param1_,Boolean _b1_) {
@@ -51,6 +54,10 @@ public class TaskTest {
 		DEADLINE = _param1_.getDeadline();
 		PEOPLEASSIGNED = _param1_.getPeopleassigned();
 		COMPLETION = _param1_.getCompletion();	
+                PARENT = _param1_.getParent();
+                PARENTDEPENDENCY = _param1_.getParentDependencyId();
+                STARTDATE = _param1_.getStartDate();
+                
     }
     
     @Parameterized.Parameters 
@@ -202,8 +209,7 @@ public class TaskTest {
                 Assert.assertTrue(!true);
         }
     }
-
-
+    
     /**
      * Test of setCompletion method, of class Task.
      */
@@ -215,8 +221,45 @@ public class TaskTest {
         Assert.assertTrue(COMPLETION.matches(PATTERN_COMPLETION));
     }
 
-
-
+     /**
+     * Test of setParent method, of class Task.
+     */
+    @Test
+    public void testSetParent() {
+        System.out.println("setParent"+PARENT);
+        String PATTERN_PARENT="^[0-9]*$";
+        assertTrue(PARENT.matches(PATTERN_PARENT));
+    }
+    
+    /**
+     * Test of setParentDependencyID method, of class Task.
+     */
+    @Test
+    public void testSetParentDependencyID() {
+        System.out.println("setParentDependencyID"+PARENTDEPENDENCY);
+        String PATTERN_PARENT="^[0-9]*$";
+        assertTrue(PARENTDEPENDENCY.matches(PATTERN_PARENT));
+    }
+    
+    /**
+     * Test of setStartDate method, of class Task.
+     */
+    @Test
+    public void testSetStartDate() {
+        //fail("Not yet implemented");
+        System.out.println("Testing StartDate: 		" + STARTDATE);
+        DateFormat formatter = new SimpleDateFormat("MMM dd, yyyy", Locale.ENGLISH);;
+            Date date;
+            try {
+                date = (Date) formatter.parse(this.STARTDATE);
+                Assert.assertTrue(true);
+        } catch (ParseException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+                Assert.assertTrue(!true);
+        }
+    }
+    
     /**
      * Test of setPeopleassigned method, of class Task.
      */
