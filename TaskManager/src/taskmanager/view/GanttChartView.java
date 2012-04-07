@@ -4,32 +4,19 @@
  */
 package taskmanager.view;
 
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.GridLayout;
-import java.awt.Rectangle;
-import java.awt.Color;
+import java.awt.*;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import javax.swing.JPanel;
 import org.jfree.chart.ChartFactory;
-import org.jfree.chart.plot.*;
-import org.jfree.chart.renderer.category.*;
-
-
-import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
-import org.jfree.data.category.IntervalCategoryDataset;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.renderer.category.BarRenderer;
 import org.jfree.data.gantt.Task;
 import org.jfree.data.gantt.TaskSeries;
 import org.jfree.data.gantt.TaskSeriesCollection;
-//import org.jfree.data.time.SimpleTimePeriod;
 import taskmanager.model.MainModel;
-import java.util.List;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.text.ParseException;
-import java.lang.Character;
 
 /**
  *

@@ -5,10 +5,8 @@ import java.awt.event.ActionListener;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
-import javax.swing.table.DefaultTableModel;
 import taskmanager.model.MainModel;
 import taskmanager.model.Task;
-import taskmanager.model.TextOutputer;
 import taskmanager.view.MainWindow;
 
 public class Controller 
@@ -134,10 +132,14 @@ public class Controller
                 }
             
             mm.updateXML();
+            
+            mm = null;
+            mm = new MainModel();
+            
             mw.panelTasks.loadTable(mm.getTaskData());
             mw.panelPeople.loadTable(mm.getPeopleData());
             mw.panelGanttChart.loadList(mm.getTaskData());
-            mw.repaint();
+            mw.panelTasks.repaint();
         }
     }
     

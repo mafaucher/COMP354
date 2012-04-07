@@ -49,8 +49,8 @@ public class TaskView extends JPanel
         columnNames[7] = "people assigned";
         columnNames[8] = "completion";
         
-        columnNames[9] = "parentDependencyId";
-        columnNames[10] = "parent";
+        columnNames[9] = "Dependencies";
+        columnNames[10] = "Parent Task";
         
         loadTable(taskData);
     }

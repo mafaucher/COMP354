@@ -112,12 +112,28 @@ public class XMLParser
                 
                 ////////////////////////////////////////////////////////////
                 writer.writeStartElement(PARENT);
-                writer.writeCharacters(alTasks.get(i).getParent());
+                
+                if (alTasks.get(i).getParent() != null)
+                    for (int j = 0; j < alTasks.size(); j++)
+                        if (alTasks.get(i).getParent().equals(alTasks.get(j).getIdentifier()))
+                        {
+                            writer.writeCharacters(alTasks.get(i).getParent());
+                            break;
+                        }
+                
                 writer.writeEndElement();               
                 //////////////////////////////////////////////////////////////   
                 ////////////////////////////////////////////////////////////
                 writer.writeStartElement(PARENT_DEPENDENDY_ID);
-                writer.writeCharacters(alTasks.get(i).getParentDependencyId());
+                
+                if (alTasks.get(i).getParentDependencyId() != null)
+                    for (int j = 0; j < alTasks.size(); j++)
+                        if (alTasks.get(i).getParentDependencyId().equals(alTasks.get(j).getIdentifier()))
+                        {
+                            writer.writeCharacters(alTasks.get(i).getParentDependencyId());
+                            break;
+                        }
+                
                 writer.writeEndElement();               
                 //////////////////////////////////////////////////////////////                 
                 
