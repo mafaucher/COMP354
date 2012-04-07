@@ -1,0 +1,383 @@
+\documentclass[12pt]{article}
+%\usepackage{listings}
+
+\pagestyle{empty}
+\setcounter{secnumdepth}{2}
+
+\topmargin=0cm
+\oddsidemargin=0cm
+\textheight=22.0cm
+\textwidth=16cm
+\parindent=0cm
+\parskip=0.15cm
+\topskip=0truecm
+\raggedbottom
+\abovedisplayskip=3mm
+\belowdisplayskip=3mm
+\abovedisplayshortskip=0mm
+\belowdisplayshortskip=2mm
+\normalbaselineskip=12pt
+\normalbaselines
+
+\begin{document}
+
+\vspace*{0.5in}
+\centerline{\bf\Large Test Document}
+
+\vspace*{0.5in}
+\centerline{\bf\Large Team 1}
+
+\vspace*{0.5in}
+\centerline{\bf\Large 8 April 2012}
+
+\vspace*{1.5in}
+\begin{table}[htbp]
+\caption{Team}
+\begin{center}
+\begin{tabular}{|r | c|}
+\hline
+Name & ID Number \\
+\hline\hline
+Jonathon Bergeron & 9764453 \\
+Marc-Andre Faucher & 9614729 \\
+Jeffrey How & 9430954 \\
+Dmitry Kuznetsov & 5679311 \\
+Willian Ling & 9193480 \\
+Thomas Paulin & 9333630 \\
+Alain Sakha & 9770836 \\
+Kai Wang & 5652723 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\clearpage
+
+\section{Introduction}
+
+{
+This testing plan document outlines the testing to be done on the system that ensures that it meets specified requirements in a proper, organized way, and provides a reasonable user experience within those requirements and that feature set. \\
+
+Specifically, the goals of this document are to formulate a scheduled plan to thoroughly validate that system requirements are met at the system, subsystem and unit levels, along with the inclusion of integration and regression testing, and to list the results of these tests in a manner in which the requirements they meet are known. Additionally, this document aims to verify that the way in which the requirements are implemented provides a certain feature set that has the ability to surprise and delight users. \\
+
+The information contained in this document includes a brief overview of the forms of testing done on the system, the schedule and resources required and used for testing, brief notes on the design of the test cases, as well as detailed test results at each aforementioned level, along with their results and the system requirements which they are intended to satisfy. \\
+}
+
+%\begin{figure}[htbp]
+%\begin{center} \includegraphics[scale=1]{imagename.jpg} \end{center}
+%\caption{Use Case Diagram}
+%\label{fig:use-case-diagram}
+%\end{figure}
+
+\section{Test Plan}
+
+{
+The testing planned for the system spans the various levels of production. As the system was tested starting at the unit level, the method of testing was bottom up. Regardless, the tests will be outlined in a top-down fashion, based on the complete design and implementation of the system. \\
+}
+
+\subsection{System Level Test Cases}
+
+{
+These system test cases define overarching test cases for the software that are designed to test both the design and behavior of the system and its main functional requirements. Specific, detailed scenarios will be covered in the sections describing subsystem and unit tests. \\
+}
+
+\subsubsection{Test Case 1} \label{tc:1}
+
+\noindent
+{\bf Purpose}\\
+State the purpose of the test.
+Indicate which requirement and which aspect of that requirement is being tested.
+
+\noindent
+{\bf Input Specification}\\
+State the context for the test in terms of system state.
+State the input test data. You may need to mention operations invoked as well as data for the operation.
+You can cross-reference to actual file data specified in an appendix.
+
+\noindent
+{\bf Expected Output}\\
+State the expected system response and output.
+You can cross-reference to actual file data specified in an appendix.
+
+\noindent
+{\bf Traces to Use Cases}\\
+State which requirements (at the level of use case and scenario) are tested by this test case.
+
+\subsection{Subsystem Level Test Cases}
+
+{
+The subsystem tests for the system are designed to test specific collections of units of functionality within the system. As the system separates requirements by the Model, View, Controller architecture, those will serve as the major subsystems of the system.
+}
+
+{\it
+One subsection per subsystem
+}
+
+\subsubsection{Subsystem X}
+
+\subsection{Unit Test cases}
+
+{\it
+All test cases for testing at the unit level.
+}
+
+{\it
+One subsection per unit
+}
+
+\subsubsection{Unit X}
+\subsection{Regression Testing}
+\subsection{Integration Testing}
+{
+Implementation testing was performed as components were added to the system. While there are no specific test cases, the regression test were run as components were added.
+
+As stated earlier, the system was implemented in a bottom-up manner, meaning that modules were slowly coupled together, and implemented beginning at the unit. Below is a diagram of the way in which the modules of the system were integrated:
+
+[INSERT BOTTOM-UP DIAGRAM HERE]
+}
+\subsection{Schedule and Resources for Testing}
+{
+This section defines the schedule and resources used in the testing of the system.
+}
+\subsubsection{Testing Schedule}
+{
+[TESTING SCHEDULE]
+}
+\subsubsection{Resources Used}
+{
+[RESOURCES USED]
+}
+\subsection{Notes on Test Case Design}
+{
+The test cases were designed to be operated within the confines of the MVC system, meaning that each case was written and performed keeping the notion of a separate Model, View and Controller in mind. This means that test cases need to ensure that each separate portion of the system maintained integrity both as a whole, and separately.
+}
+\subsection{Requirements Tested and Omitted}
+\subsubsection{Requirements Tested} \label{rt:1}
+       
+{
+The requirements tested in the development of the system are listed in the requirements document and in Appendix C of this document. The specific requirements are labeled functional requirements F2-F10, F13, as well as operational requirement O1, with the omission of functional requirement F1, F11, F12 covered in detail below.
+}
+
+\subsubsection{Requirements Omitted} \label{rt:2}
+
+{
+The requirements listed in the requirements document (included in Appendix C) omitted from the testing and eventual development of the system are requirements F1 and N1.
+
+Functional requirement F1 states “Only one person should be logged in at a time.” This requirement was later dropped from development during the development of Phase 2, as it was deemed beyond the scope of the application, as the application functioned better in a more general form. This functionality was thus not tested as part of the requirements.
+
+Functional requirement F11, F12 were discarded, as the notion of administrator users was omitted as part of F1. As this is the case,
+
+Non-functional requirement N1, specifically “the system must know who the user is in order to order the appropriate options”, was thus rendered invalid, as the entire notion of different users using the system was discarded.
+}
+
+\section{Test Results}
+\subsubsection{Objective} 
+{
+Test system requirements to verify that they are operational and met by the implementation.
+}
+\subsubsection{Requirements Tested} 
+{
+  {\bf F1} Only one person should be logged in at a time.
+    After increment 1, this requirement was deemed unnecessary.
+
+  {\bf F2} A view of tasks in the company is to be shown to the user in order for him to manage
+them.
+    The table view is operational. Tested via manual executions of the user interface.  
+
+  {\bf F3} The user is to be able to enter a new task.
+
+Tested via manual executions of the user interface. Empty task added in Task view.
+
+  {\bf F4} The user is to be able to remove a previously created task.
+    Tested via manual executions of the user interface.
+
+Initial testing resulted in three failures:
+
+1. Removal of task did not update People View appropriately. Project was not removed from employee data.
+
+  {\bf F5} The user is to be able to modify a previously created task.
+
+Tested via manual executions of the user interface.
+
+Initial testing resulted in three failures:
+
+1. Verifying the correct format of data inputted into the system.
+
+2. Inconsistency in dates between the Task View and XML document.
+
+3. Inconsistency in data between the Task View and Person View. Changing project duration in Task View did not update employee’s hours in Person View.
+
+   {\bf F6} The user is to be able to view a Tree graph of tasks.
+    The tree view is operational. Tested via manual executions of the user interface.  
+
+   {\bf F7} The user is to be able to view a Gantt chart of tasks.
+    The gantt view is operational. Tested via manual executions of the user interface.  
+
+   {\bf F8} The user must be able to manage employees on a task.
+
+Tested via manual executions of the user interface.
+
+Initial testing resulted in a failure:
+
+1. Management of employees did not update People View appropriately.
+
+   {\bf F9} The user must be able to assign employees to a task.
+
+Tested via manual executions of the user interface.
+
+Initial testing resulted in a failure:
+
+1. Assignment of employees did not update People View appropriately.
+
+
+  {\bf F10} The user must be able to view a list of employees in the company with their respective data.
+    The Person View is operational. Tested via manual executions of the user interface.  
+
+  {\bf F11} The user is to be able to add a new employee.
+    After increment 1, this requirement was deemed unnecessary.
+
+  {\bf F12} The user is to be able to remove an employee.
+    After increment 1, this requirement was deemed unnecessary.
+
+  {\bf F13} The user must be able to withdraw employees from a task.
+    Tested via manual executions of the user interface.
+
+Initial testing resulted in a failure:
+
+1. Withdrawal of employees did not update People View appropriately in regards to allocating hours.
+}
+\subsubsection{Conclusion}
+{
+In regards to requirements deemed necessary, any failures were communicated with the programmers, who fixed the code. Follow-up tests were performed to ensure the issues were resolved. The testers are satisfied with the final results.
+}
+
+\section{References}
+
+\appendix
+
+\section{Description of Input Files}
+\subsection{People.xml}
+{
+$<$people$>$ : Root node used to specify the beginning of the listing of people
+
+$<$person$>$ : Node used to specify a new person
+
+$<$identifier$>$ : A unique, alphanumberic identifier for each person
+
+$<$fname$>$ : Node used to store the first name of the person
+
+$<$lname$>$ : Node used to store the last name of the person
+
+$<$jobtitle$>$ : Node used to track the job title of the person. Used to differentiate betweenroles
+
+$<$jobdescription$>$ : Node used for the person's job description.
+
+$<$clearance$>$ : Node used to specify the clearance a person within the organization. Restricts permission based on value. 0 - Employee, 1 - Manager, 2 - Administrator
+}
+\subsection{A.2 Tasks.xml}
+{
+$<$tasks$>$ : Root node used to specify the beginning of the listing of tasks
+
+$<$task$>$ : Node used to specify a new task
+
+$<$identifier$>$ : A unique, alphanumberic identifier for each task
+
+$<$title$>$ : Node to store a short title for the task
+
+$<$description$>$ : Node to store a full description for the task
+
+$<$startdate$>$ : Node to store the appropriate start date for the task
+
+$<$duration$>$ : The duration, in hours of the task.
+
+$<$deliverable$>$ : The expected physical deliverable upon task completion
+
+$<$deadline$>$ : The date by which the task must be completed
+
+$<$peopleassigned$>$ : A listing of the individuals assigned to the task. The duration will be split evenly among assignees.
+
+$<$id$>$ : The corresponding identifier for each person assigned
+
+$<$completion$>$ : The percentage of completion for the task
+}
+\subsection{Sample Invalid XML Files}
+{
+
+}
+
+\section{Description of Output Files}
+\subsection{People.txt}
+%\begin{lstlisting}
+
+The list of people with a summary of their names, the total amount of time spent on all projects, and the specific projects to which they are assigned. Sample format:
+
+Name                    | Total Hours | Project List
+--------------------------------------------------------------
+LName , FName           |         X.X | A, B, C
+
+%\end{lstlistings}
+\section{List of Requirements}
+
+\subsection{Functional Requirements}
+\subsubsection{F1}
+{
+ Only one person should be logged in at a time.
+}
+\subsubsection{F2}
+{
+A view of tasks in the company is to be shown to the user in order for him to manage them.
+}
+\subsubsection{F3}
+{
+The user is to be able to enter a new task.
+}
+\subsubsection{F4}
+{
+The user is to be able to remove a previously created task.
+}
+\subsubsection{F5}
+{
+The user is to be able to modify a previously created task.
+}
+\subsubsection{F6}
+{
+The user is to be able to view a dependency graph of tasks.
+}
+\subsubsection{F7}
+{
+The user is to be able to view a Gantt chart of tasks.
+}
+\subsubsection{F8}
+{
+The user must be able to manage employees on a task.
+}
+\subsubsection{F9}
+{
+The user must be able to assign employees to a task.
+}
+\subsubsection{F10}
+{
+The user must be able to view a list of employees in the company in order for him to manage them.
+}
+\subsubsection{F11}
+{
+The user is to be able to add a new employee.
+}
+\subsubsection{F12}
+{
+The user is to be able to remove an employee.
+}
+\subsubsection{F13}                                                                         
+{
+The user must be able to withdraw employees from a task.
+}
+\subsection{C.2 – Non-Functional Requirements}
+\subsubsection{N1}
+{
+The system must know who the user is in order to order the appropriate options.
+}
+\subsubsection{O1}
+{
+It shall be possible to run the system on any computer system that runs the JVM.
+}
+\end{document}
