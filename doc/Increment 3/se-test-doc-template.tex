@@ -78,7 +78,7 @@ The testing planned for the system spans the various levels of production. As th
 \subsection{System Level Test Cases}
 
 {
-These system test cases define overarching test cases for the software that are designed to test both the design and behavior of the system and its main functional requirements. Specific, detailed scenarios will be covered in the sections describing subsystem and unit tests. \\
+These system test cases define overarching test cases for the software that are designed to test both the design and behavior of the system and its main functional requirements. Specifically, detailed scenarios will be covered in the sections describing subsystem and unit tests. \\
 }
 
 \subsubsection{Test Case 1} \label{tc:1}
@@ -184,49 +184,47 @@ List requirements indicating the percentage of tests that passed for that requir
 \section{Description of Input Files}
 \subsection{People.xml}
 {
-<people> : Root node used to specify the beginning of the listing of people
+\texttt{<people>} : Root node used to specify the beginning of the listing of people
 
-<person> : Node used to specify a new person
+\texttt{<person>} : Node used to specify a new person
 
-<identifier> : A unique, alphanumberic identifier for each person
+\texttt{<identifier>} : A unique, alphanumberic identifier for each person
 
-<fname> : Node used to store the first name of the person
+\texttt{<fname>} : Node used to store the first name of the person
 
-<lname> : Node used to store the last name of the person
+\texttt{<lname>} : Node used to store the last name of the person
 
-<jobtitle> : Node used to track the job title of the person. Used to differentiate betweenroles
+\textt{<jobtitle>} : Node used to track the job title of the person. Used to differentiate betweenroles
 
-<jobdescription> : Node used for the person's job description.
+\textt{<jobdescription>} : Node used for the person's job description.
 
-<clearance> : Node used to specify the clearance a person within the organization. Restricts permission based on value. 0 - Employee, 1 - Manager, 2 - Administrator
+\texttt{<clearance>} : Node used to specify the clearance a person within the organization. Restricts permission based on value. 0 - Employee, 1 - Manager, 2 - Administrator
 }
 \subsection{A.2 Tasks.xml}
 {
-<tasks> : Root node used to specify the beginning of the listing of tasks
+\texttt{<tasks>} : Root node used to specify the beginning of the listing of tasks
 
-<task> : Node used to specify a new task
+\texttt{<task>} : Node used to specify a new task
 
-<identifier> : A unique, alphanumberic identifier for each task
+\texttt{<identifier>} : A unique, alphanumberic identifier for each task
 
-<title> : Node to store a short title for the task
+\texttt{<title>} : Node to store a short title for the task
 
-<description> : Node to store a full description for the task
+\texttt{<description>} : Node to store a full description for the task
 
-<startdate> : Node to store the appropriate start date for the task
+\texttt{<startdate>} : Node to store the appropriate start date for the task
 
-<duration> : The duration, in hours of the task.
+\texttt{<duration>} : The duration, in hours of the task.
 
-<deliverable> : The expected physical deliverable upon task completion
+\texttt{<deliverable>} : The expected physical deliverable upon task completion
 
-$<$deadline$>$ : The date by which the task must be completed
+\texttt{<deadline>} : The date by which the task must be completed
 
-$<$peopleassigned$>$ : A listing of the individuals assigned to the task. The duration will
+\texttt{<peopleassigned>} : A listing of the individuals assigned to the task. The duration will be split evenly among assignees.
 
-be split evenly among assignees.
+\texttt{<id} : The corresponding identifier for each person assigned
 
-$<$id$>$ : The corresponding identifier for each person assigned
-
-$<$completion$>$ : The percentage of completion for the task
+\texttt{<completion>} : The percentage of completion for the task
 }
 \subsection{Sample Invalid XML Files}
 {

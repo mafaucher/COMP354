@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
-%\usepackage{listings}
+\usepackage{listings}
 \usepackage[pdftex]{graphicx}
 
 
@@ -76,9 +76,9 @@ The testing planned for the system spans the various levels of production. As th
 
 \subsection{System Level Test Cases}
 {
-These system test cases define overarching test cases for the software that are designed to test both the design and behavior of the system and its main functional requirements. Specific, detailed scenarios will be covered in the sections describing subsystem and unit tests.
+These system test cases define overarching test cases for the software that are designed to test both the design and behavior of the system and its main functional requirements. Specifically, detailed scenarios will be covered in the sections describing subsystem and unit tests.
 }
-\subsubsection{Test Case 1 � System Execution}
+\subsubsection{Test Case 1 - System Execution}
 \begin{quote}
 {\bf Purpose}
 {
@@ -100,16 +100,16 @@ The system is expected to be able to run the application regardless of hardware 
 {\bf Traces to Use Cases}
 \\
 {
-This system test relates directly to the non-functional requirement O1 from the requirements document (also included in Appendix C) which states �It shall be possible to run the system on any computer system that run the JVM.�
+This system test relates directly to the non-functional requirement O1 from the requirements document (also included in Appendix C) which states ``It shall be possible to run the system on any computer system that run the JVM."
 }
 \end{quote}
 
-\subsubsection {Test Case 2 � System Navigation and Use}
+\subsubsection {Test Case 2 - System Navigation and Use}
 \begin{quote}
 {\bf Purpose}
 \\
 {
-The purpose of this system test is to ensure the user has access to all system functions, interface options, and generally can perform any given specified requirement of the system.
+The purpose of this system test is to ensure the user has access to all system functions, interface options, and generally can perform any given specified requirement of the system. \\
 }
 {\bf Input Specification}
 \\
@@ -126,7 +126,7 @@ The system is expected to be able to run without error, and the user has access 
 {\bf Traces to Use Cases}
 \\
 {
-The system test should validate all use cases, scenarios and requirements implemented for the system. Specifically, the requirements F2 � F13 as specified by the requirements document, and included for reference in Appendix C.
+The system test should validate all use cases, scenarios and requirements implemented for the system. Specifically, the requirements F2 - F13 as specified by the requirements document, and included for reference in Appendix C.
 }
 \end{quote}
 
@@ -341,7 +341,7 @@ Ensure that the title being set is valid according to its type.
 {
 Regression testing performed on the system involved ensuring that all previous code and functionality is not effective after changes made for the current increment. The regression tests were divided into three major test cases, file format validation, MVC architecture validation, and functionality verification.
 }
-\subsubsection{Test Case 1 � XML File Formats Validation}
+\subsubsection{Test Case 1 - XML File Formats Validation}
 \begin{quote}
 {\bf Purpose}
 \\
@@ -367,7 +367,7 @@ The expected system response is to be able to handle and report appropriate data
 This test case does not satisfy an explicit user requirement or use case, but does satisfy an implicit system requirement, that the XML input files must be readable, and the system must be able to survive data errors in a user-friendly way.
 }
 \end{quote}
-\subsubsection {Test Case 2 � MVC Architecture Validation}
+\subsubsection {Test Case 2 - MVC Architecture Validation}
 \begin{quote}
 {\bf Purpose}
 \\
@@ -393,7 +393,7 @@ The system is expected to function as normal. There is no specific output other 
 This test case does not satisfy an explicit user requirement or use case, but does satisfies an implicit requirement that the MVC architecture is used to implement the system.
 }
 \end{quote}
-\subsubsection{Test Case 3 � Functionality Verification}
+\subsubsection{Test Case 3 - Functionality Verification}
 \begin{quote}
 {\bf Purpose}
 \\
@@ -456,11 +456,11 @@ The requirements tested in the development of the system are listed in the requi
 {
 The requirements listed in the requirements document (included in Appendix C) omitted from the testing and eventual development of the system are requirements F1 and N1.
 
-Functional requirement F1 states �Only one person should be logged in at a time.� This requirement was later dropped from development during the development of Phase 2, as it was deemed beyond the scope of the application, as the application functioned better in a more general form. This functionality was thus not tested as part of the requirements.
+Functional requirement F1 states ``Only one person should be logged in at a time." This requirement was later dropped from development during the development of Phase 2, as it was deemed beyond the scope of the application, as the application functioned better in a more general form. This functionality was thus not tested as part of the requirements.
 
 Functional requirement F11, F12 were discarded, as the notion of administrator users was omitted as part of F1. As this is the case,
 
-Non-functional requirement N1, specifically �the system must know who the user is in order to order the appropriate options�, was thus rendered invalid, as the entire notion of different users using the system was discarded.
+Non-functional requirement N1, specifically ``the system must know who the user is in order to order the appropriate options", was thus rendered invalid, as the entire notion of different users using the system was discarded.
 }
 
 \subsubsection{Testing Schedule}
@@ -518,7 +518,7 @@ Initial testing resulted in three failures:
 
 2. Inconsistency in dates between the Task View and XML document.
 
-3. Inconsistency in data between the Task View and Person View. Changing project duration in Task View did not update employee�s hours in Person View.
+3. Inconsistency in data between the Task View and Person View. Changing project duration in Task View did not update employee's hours in Person View.
 
    {\bf F6} The user is to be able to view a Tree graph of tasks.
     The tree view is operational. Tested via manual executions of the user interface.  
@@ -776,7 +776,7 @@ $<$completion$>$ : The percentage of completion for the task
 
 \section{Description of Output Files}
 \subsection{People.txt}
-%\begin{lstlisting}
+\begin{lstlisting}
 
 The list of people with a summary of their names, the total amount of time spent on all projects, and the specific projects to which they are assigned. Sample format:
 
@@ -784,7 +784,7 @@ Name                    | Total Hours | Project List
 --------------------------------------------------------------
 LName , FName           |         X.X | A, B, C
 
-%\end{lstlistings}
+\end{lstlisting}
 \section{List of Requirements}
 
 \subsection{Functional Requirements}
@@ -840,7 +840,7 @@ The user is to be able to remove an employee.
 {
 The user must be able to withdraw employees from a task.
 }
-\subsection{C.2 � Non-Functional Requirements}
+\subsection{C.2 - Non-Functional Requirements}
 \subsubsection{N1}
 {
 The system must know who the user is in order to order the appropriate options.
