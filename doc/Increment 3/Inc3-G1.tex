@@ -262,7 +262,7 @@ Test if by using the taskID, we can get the expected task
 Test if the assigned ID is the expected ID.
 }
 
-{\bf setIdentifier()}
+{\bf testSetIdentifier()}
 {
 Test if the identifier fits its proper type pattern.
 }
@@ -274,58 +274,62 @@ Test if the first name fits its proper type pattern.
 
 {\bf testSetLName()}
 {
-Test if the last name fits its proper type pattern.
+Test if the last name fits its proper type pattern. 
 }
 
 {\bf testSetJobTitle()}{
 Test if the job title fits the proper type pattern.
 }
-{\bf testSetJobDescription()}
-{
+
+{\bf testSetJobDescription()}{
 Test if the job description fits the proper type pattern.
 }
-{\bf testSetTotalHours()}
-{
- Test if the total hours set for a project is an integer number.
+
+{\bf testSetTotalHours()}{
+Test if the total hours set for a project is an integer number.
 }
 
-{\bf setCompletion()}
-{
+{\bf testSetCompletion()}{
 Test if completion is a percentage number.
 }
 
-{\bf setDeadline()}
-{
+{\bf testSetDeadline()}{
 Test if the deadline is a valid date.
 }
 
-{\bf setDeliverable()}
-{
+{\bf testSetParent()}{
+Test if the parent ID is a valid ID.
+}
+
+{\bf testSetParentDependencyID()}{
+Test if the parent dependency ID is a valid ID. 
+}
+
+{\bf testSetStartDate()}{
+Test if the start date is a valid date.
+}
+
+{\bf testSetDeliverable()}{
 Test if the deliverable follows correct type pattern.
 }
 
-{\bf setDescription()}
-{
+{\bf testSetDescription()}{
 Test if the description follows correct type pattern.
 }
 
-{\bf setDuration()}
-{
+{\bf testSetDuration()}{
 Test if duration is an integer number.
 }
 
-{\bf setIdentifier()}
-{
+{\bf testSetIdentifier()}{
 Test if the Identifier ID is an integer number.
 }
 
-{\bf setPeopleAssignedarray()}
-{
+{\bf testSetPeopleAssignedarray()}{
 Test if all the ID's of people assigned are integers.
 }
 
-{\bf setTitle()}
-{
+{\bf testSetTitle()}{
 Ensure that the title being set is valid according to its type.
 }
 
@@ -587,7 +591,7 @@ $<$jobdescription$>$ : Node used for the person's job description.
 
 $<$clearance$>$ : Node used to specify the clearance a person within the organization. Restricts permission based on value. 0 - Employee, 1 - Manager, 2 - Administrator
 }
-\subsection{A.2 Tasks.xml}
+\subsection{Tasks.xml}
 {
 $<$tasks$>$ : Root node used to specify the beginning of the listing of tasks
 
@@ -606,6 +610,10 @@ $<$duration$>$ : The duration, in hours of the task.
 $<$deliverable$>$ : The expected physical deliverable upon task completion
 
 $<$deadline$>$ : The date by which the task must be completed
+
+$<$parentDependencyId$>$ : The identifier of the task which must be completed before this task can be completed.
+
+$<$parent$>$ : The identifier for which this task is a subtask.
 
 $<$peopleassigned$>$ : A listing of the individuals assigned to the task. The duration will be split evenly among assignees.
 
@@ -778,7 +786,9 @@ $<$completion$>$ : The percentage of completion for the task
 \subsection{People.txt}
 \begin{lstlisting}
 
-The list of people with a summary of their names, the total amount of time spent on all projects, and the specific projects to which they are assigned. Sample format:
+The list of people with a summary of their names, the total amount
+of time spent on all projects, and the specific projects to which
+they are assigned. Sample format:
 
 Name                    | Total Hours | Project List
 --------------------------------------------------------------
